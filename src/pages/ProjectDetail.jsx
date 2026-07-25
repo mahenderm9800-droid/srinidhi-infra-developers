@@ -181,24 +181,24 @@ const ProjectDetail = () => {
               <h3 className="font-serif text-lg font-bold text-slate-950 border-b border-slate-100 pb-2">
                 Specifications & Price
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-4 text-sm">
                 <div className="space-y-3">
-                  <div className="flex justify-between border-b border-slate-50 pb-2.5">
-                    <span className="text-slate-500">Price Range</span>
+                  <div className="flex items-center space-x-2 border-b border-slate-50 pb-2.5">
+                    <span className="text-slate-500 font-medium">Price Range:</span>
                     <span className="font-bold text-accent-600 font-sans">{project.priceRange}</span>
                   </div>
-                  <div className="flex justify-between border-b border-slate-50 pb-2.5">
-                    <span className="text-slate-500">Project Type</span>
+                  <div className="flex items-center space-x-2 border-b border-slate-50 pb-2.5">
+                    <span className="text-slate-500 font-medium">Project Type:</span>
                     <span className="font-semibold text-slate-800 capitalize">{project.type}</span>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div className="flex justify-between border-b border-slate-50 pb-2.5">
-                    <span className="text-slate-500">Location</span>
+                  <div className="flex items-center space-x-2 border-b border-slate-50 pb-2.5">
+                    <span className="text-slate-500 font-medium">Location:</span>
                     <span className="font-semibold text-slate-800">{project.location.split(',')[0]}</span>
                   </div>
-                  <div className="flex justify-between border-b border-slate-50 pb-2.5">
-                    <span className="text-slate-500">Status</span>
+                  <div className="flex items-center space-x-2 border-b border-slate-50 pb-2.5">
+                    <span className="text-slate-500 font-medium">Status:</span>
                     <span className="font-semibold text-slate-800 capitalize">{project.status}</span>
                   </div>
                 </div>
