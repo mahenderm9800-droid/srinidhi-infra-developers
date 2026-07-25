@@ -84,21 +84,21 @@ const About = () => {
       </section>
 
       {/* 3. Core Values */}
-      <section className="bg-gradient-to-r from-emerald-850 to-emerald-950 text-white py-16">
+      <section className="bg-gradient-to-r from-emerald-900 to-emerald-950 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-accent-400 text-xs font-semibold tracking-widest uppercase block mb-2">How We Operate</span>
-            <h2 className="text-2xl md:text-3xl font-serif font-bold">Our Core Values</h2>
+            <span className="text-emerald-300 text-xs font-semibold tracking-widest uppercase block mb-2">How We Operate</span>
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-white">Our Core Values</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((v, i) => (
-              <div key={i} className="bg-emerald-900/40 p-6 rounded-xl border border-slate-800 flex items-start space-x-4">
-                <div className="p-2.5 bg-accent-500/15 rounded-lg text-accent-400 shrink-0">
+              <div key={i} className="bg-emerald-800/30 p-6 rounded-xl border border-emerald-700/30 flex items-start space-x-4">
+                <div className="p-2.5 bg-emerald-500/10 rounded-lg text-emerald-300 shrink-0">
                   <v.icon className="h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="font-serif text-base font-bold text-white mb-2">{v.title}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">{v.desc}</p>
+                  <p className="text-xs text-emerald-100/80 leading-relaxed">{v.desc}</p>
                 </div>
               </div>
             ))}
