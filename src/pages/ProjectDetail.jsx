@@ -272,9 +272,9 @@ const ProjectDetail = () => {
           {/* Right Column: Lead Form & Brochure */}
           <div className="space-y-8">
             {/* Brochure Card */}
-            <div className="bg-gradient-to-r from-emerald-850 to-emerald-950 text-white p-6 rounded-xl border border-slate-800 shadow-lg space-y-4">
+            <div className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white p-6 rounded-xl border border-emerald-700/40 shadow-lg space-y-4">
               <h3 className="font-serif text-base font-bold text-white">Project Brochure</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-emerald-100/80 leading-relaxed">
                 Download the complete e-brochure containing detailed layout plans, building elevations, and full unit configurations.
               </p>
               <button
