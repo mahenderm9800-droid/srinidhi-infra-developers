@@ -61,12 +61,19 @@ const Services = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* Hero Banner */}
-      <section className="bg-slate-900 pt-32 pb-16 text-white text-center relative border-b border-slate-850">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-850 via-slate-900 to-black opacity-50" />
+      <section className="relative pt-32 pb-16 text-white text-center overflow-hidden border-b border-slate-800 bg-slate-900">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" 
+            alt="Construction Site Background" 
+            className="w-full h-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <span className="text-accent-500 text-xs font-bold uppercase tracking-widest block mb-2">Capabilities</span>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">Srinidhi Services</h1>
-          <p className="text-slate-350 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-355 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Complete design-build solutions covering architecture, interiors, civil contracting, and smart amenities.
           </p>
         </div>

@@ -67,7 +67,7 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="bg-slate-50 pt-24 min-h-screen pb-20">
+    <div className="bg-white pt-24 min-h-screen pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}

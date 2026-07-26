@@ -60,8 +60,16 @@ const Contact = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* Header Banner */}
-      <section className="bg-slate-900 pt-32 pb-12 text-white relative border-b border-slate-850">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+      <section className="relative pt-32 pb-12 text-white overflow-hidden border-b border-slate-800 bg-slate-900">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
+            alt="Office Meeting Room Background" 
+            className="w-full h-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
           <span className="text-accent-500 text-xs font-semibold tracking-widest uppercase block mb-2">Connect With Us</span>
           <h1 className="text-4xl font-serif font-bold text-white">Contact Us</h1>
           <p className="text-xs sm:text-sm text-slate-350 mt-2 max-w-xl">

@@ -131,7 +131,7 @@ const Home = () => {
               Srinidhi Infra Developers
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif leading-tight max-w-4xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight max-w-4xl mx-auto">
               Turning Visions into Reality with <span className="text-accent-400">Quality & Trust</span>
             </h1>
             
