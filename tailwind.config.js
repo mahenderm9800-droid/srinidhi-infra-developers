@@ -35,8 +35,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Outfit', 'sans-serif'],
+        sans: ['Rubik', 'system-ui', 'sans-serif'],
       }
     },
   },

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Building2, Menu, X, PhoneCall, ChevronRight } from 'lucide-react';
+import { Building2, Menu, X, PhoneCall } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -20,7 +20,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on page change
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -28,7 +27,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Projects', path: '/projects' },
+    { name: 'Services', path: '/services' },
     { name: 'News & Blog', path: '/blog' },
     { name: 'Contact Us', path: '/contact' },
   ];
@@ -43,7 +42,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/60 py-3' 
-          : 'bg-[#F8F9FB]/90 backdrop-blur-[2px] py-4 border-b border-slate-200/30'
+          : 'bg-white/90 backdrop-blur-[2px] py-4 border-b border-slate-200/30'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,15 +71,15 @@ const Navbar = () => {
                   to={link.path}
                   className={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 ${
                     isActive(link.path)
-                      ? 'text-accent-500 font-semibold'
-                      : 'text-slate-600 hover:text-accent-650'
+                      ? 'text-accent-600 font-semibold'
+                      : 'text-slate-600 hover:text-accent-500'
                   }`}
                 >
                   {link.name}
                   {isActive(link.path) && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-500"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-600"
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -127,8 +126,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isActive(link.path)
-                      ? 'bg-slate-50 text-accent-500 font-semibold'
-                      : 'text-slate-600 hover:bg-slate-50 hover:text-slate-905'
+                      ? 'bg-slate-50 text-accent-600 font-semibold'
+                      : 'text-slate-650 hover:bg-slate-50 hover:text-slate-900'
                   }`}
                 >
                   {link.name}

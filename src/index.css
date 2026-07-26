@@ -8,7 +8,13 @@
   body {
     @apply bg-slate-50 text-slate-900 font-sans antialiased scroll-smooth;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
   }
 }
@@ -18,9 +24,11 @@
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   @apply bg-slate-100;
 }
+
 ::-webkit-scrollbar-thumb {
   @apply bg-slate-300 rounded hover:bg-slate-400;
 }

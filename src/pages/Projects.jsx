@@ -88,11 +88,10 @@ const Projects = () => {
                   <button
                     key={st.value}
                     onClick={() => setSelectedStatus(st.value)}
-                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                      selectedStatus === st.value
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${selectedStatus === st.value
                         ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-650 hover:bg-slate-200'
-                    }`}
+                      }`}
                   >
                     {st.label}
                   </button>
@@ -108,11 +107,10 @@ const Projects = () => {
                   <button
                     key={tp.value}
                     onClick={() => setSelectedType(tp.value)}
-                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                      selectedType === tp.value
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${selectedType === tp.value
                         ? 'bg-accent-500 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-650 hover:bg-slate-200'
-                    }`}
+                      }`}
                   >
                     {tp.label}
                   </button>
@@ -134,16 +132,16 @@ const Projects = () => {
             <Layers className="h-12 w-12 text-slate-350 mx-auto mb-4" />
             <h3 className="font-serif text-lg font-bold text-slate-800 mb-2">No Projects Match Selected Filters</h3>
             <p className="text-sm text-slate-500 mb-6">Try selecting a different status or type filter.</p>
-            <button 
-              onClick={() => { setSelectedStatus('all'); setSelectedType('all'); }} 
+            <button
+              onClick={() => { setSelectedStatus('all'); setSelectedType('all'); }}
               className="px-6 py-2 bg-emerald-600 text-white text-xs font-semibold rounded-lg hover:bg-slate-800 transition-colors"
             >
               Reset Filters
             </button>
           </div>
         ) : (
-          <motion.div 
-            layout 
+          <motion.div
+            layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence mode="popLayout">
@@ -158,18 +156,17 @@ const Projects = () => {
                   className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group"
                 >
                   <div className="relative h-56 overflow-hidden">
-                    <img 
-                      src={proj.images?.[0] || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80'} 
+                    <img
+                      src={proj.images?.[0] || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80'}
                       alt={proj.name}
                       className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4 bg-emerald-700/90 text-white text-xs font-semibold px-2.5 py-1 rounded capitalize tracking-wide">
                       {proj.type}
                     </div>
-                    <div className={`absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded capitalize tracking-wide shadow ${
-                      proj.status === 'ongoing' ? 'bg-amber-500 text-slate-950' : 
-                      proj.status === 'completed' ? 'bg-green-600 text-white' : 'bg-blue-600 text-white'
-                    }`}>
+                    <div className={`absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded capitalize tracking-wide shadow ${proj.status === 'ongoing' ? 'bg-amber-500 text-slate-950' :
+                        proj.status === 'completed' ? 'bg-green-600 text-white' : 'bg-blue-600 text-white'
+                      }`}>
                       {proj.status}
                     </div>
                   </div>
@@ -193,12 +190,12 @@ const Projects = () => {
                         <span>Price Range:</span>
                         <span className="font-semibold text-accent-600">{proj.priceRange}</span>
                       </div>
-                      
-                      <Link 
-                        to={`/projects/${proj.id}`} 
+
+                      <Link
+                        to={`/projects/${proj.id}`}
                         className="w-full inline-flex items-center justify-center px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition-colors group/btn"
                       >
-                        View Project Details 
+                        View Project Details
                         <ArrowRight className="h-3.5 w-3.5 ml-1.5 group-hover/btn:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>
