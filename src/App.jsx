@@ -8,8 +8,6 @@ import Services from './pages/Services';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
-import Admin from './pages/Admin';
-import AdminLogin from './pages/AdminLogin';
 
 // Scroll to Top on Page Navigation
 const ScrollToTop = () => {
@@ -28,17 +26,6 @@ function App() {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-white text-slate-900">
         <Routes>
-          {/* Admin layouts shouldn't show standard Navbar/Footer */}
-          <Route 
-            path="/admin/*" 
-            element={
-              <Routes>
-                <Route index element={<Admin />} />
-                <Route path="login" element={<AdminLogin />} />
-              </Routes>
-            } 
-          />
-          
           {/* Main Website Layout */}
           <Route 
             path="/*" 

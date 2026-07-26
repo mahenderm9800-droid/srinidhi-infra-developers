@@ -190,7 +190,8 @@ export const getProjects = async () => {
     try {
       const q = query(collection(db, 'projects'), orderBy('createdAt', 'desc'));
       const querySnapshot = await getDocs(q);
-      return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const results = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      if (results.length > 0) return results;
     } catch (error) {
       console.error("Firebase getProjects failed. Falling back to mock data.", error);
     }
@@ -284,7 +285,8 @@ export const getTestimonials = async () => {
   if (isFirebaseAvailable) {
     try {
       const querySnapshot = await getDocs(collection(db, 'testimonials'));
-      return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const results = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      if (results.length > 0) return results;
     } catch (error) {
       console.error("Firebase getTestimonials failed. Falling back to mock data.", error);
     }
@@ -416,7 +418,8 @@ export const getPosts = async () => {
     try {
       const q = query(collection(db, 'posts'), orderBy('publishedAt', 'desc'));
       const querySnapshot = await getDocs(q);
-      return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const results = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      if (results.length > 0) return results;
     } catch (error) {
       console.error("Firebase getPosts failed. Falling back to mock data.", error);
     }
@@ -512,7 +515,8 @@ export const getSettings = async () => {
       const docRef = doc(db, 'settings', 'global');
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        return docSnap.data();
+        const data = docSnap.data();
+        if (data && Object.keys(data).length > 0) return data;
       }
     } catch (error) {
       console.error("Firebase getSettings failed. Falling back to mock data.", error);
@@ -544,7 +548,8 @@ export const getLeadership = async () => {
   if (isFirebaseAvailable) {
     try {
       const querySnapshot = await getDocs(collection(db, 'leadership'));
-      return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const results = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      if (results.length > 0) return results;
     } catch (error) {
       console.error("Firebase getLeadership failed. Falling back to mock data.", error);
     }
@@ -596,7 +601,9 @@ export const getMilestones = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, 'milestones'));
       const list = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      return list.sort((a, b) => Number(a.year) - Number(b.year));
+      if (list.length > 0) {
+        return list.sort((a, b) => Number(a.year) - Number(b.year));
+      }
     } catch (error) {
       console.error("Firebase getMilestones failed. Falling back to mock data.", error);
     }

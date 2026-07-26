@@ -132,6 +132,22 @@ export const seedTestimonials = [
     quote: "We have been living in Srinidhi Heights for over a year now. The maintenance is exceptional, construction details are solid, and the community environment is perfect for kids and elderly alike.",
     rating: 4.8,
     photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80"
+  },
+  {
+    id: "test-4",
+    clientName: "Siddharth Sen",
+    projectRef: "Srinidhi Grandeur",
+    quote: "The modular kitchen, electrical points, and plumbing fixtures were exactly as specified in the agreement. Absolutely hassle-free experience with Srinidhi team.",
+    rating: 5,
+    photoUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80"
+  },
+  {
+    id: "test-5",
+    clientName: "Priyanka Joshi",
+    projectRef: "Srinidhi Boulevard",
+    quote: "Their customer relationship managers sent weekly photo updates of the foundation and slab casting phases. Highly transparent progress tracking!",
+    rating: 5,
+    photoUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
   }
 ];
 

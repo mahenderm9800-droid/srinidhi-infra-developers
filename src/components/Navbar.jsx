@@ -41,56 +41,53 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/60 py-3' 
-          : 'bg-white/90 backdrop-blur-[2px] py-4 border-b border-slate-200/30'
+          ? 'bg-white shadow-sm border-b border-slate-200/50 py-2' 
+          : 'bg-white py-2.5 border-b border-slate-200/30'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-to-tr from-accent-500 to-accent-600 p-2 rounded-lg text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-              <Building2 className="h-6 w-6" />
-            </div>
-            <div>
-              <span className="font-serif text-lg md:text-xl font-bold text-slate-900 tracking-wide block leading-tight">
-                SRINIDHI
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-accent-600 font-semibold block leading-none">
-                Infra Developers
-              </span>
-            </div>
-          </Link>
+        <div className="flex justify-between items-center flex-wrap md:flex-nowrap">
+          
+          {/* Logo & Navigation links grouped together on the left (Notion style) */}
+          <div className="flex items-center space-x-10">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2.5 group">
+              <div className="bg-gradient-to-tr from-accent-500 to-accent-600 p-2 rounded-lg text-white shadow-sm group-hover:scale-105 transition-transform duration-200">
+                <Building2 className="h-5.5 w-5.5" />
+              </div>
+              <div>
+                <span className="font-serif text-base md:text-lg font-bold text-slate-900 tracking-wide block leading-tight">
+                  SRINIDHI
+                </span>
+                <span className="text-[9px] uppercase tracking-[0.2em] text-accent-600 font-semibold block leading-none">
+                  Infra Developers
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-6">
+            {/* Desktop Navigation Links aligned left immediately next to logo */}
+            <div className="hidden md:flex space-x-6 items-center pt-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-[11px] uppercase tracking-[0.25em] font-medium transition-colors duration-200 relative py-1 ${
+                  className={`text-[13px] transition-colors duration-200 py-1 ${
                     isActive(link.path)
-                      ? 'text-accent-600 font-semibold'
-                      : 'text-slate-600 hover:text-accent-500'
+                      ? 'text-slate-900 font-medium'
+                      : 'text-slate-500 hover:text-slate-900 font-normal'
                   }`}
                 >
                   {link.name}
-                  {isActive(link.path) && (
-                    <motion.div
-                      layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-600"
-                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                    />
-                  )}
                 </Link>
               ))}
             </div>
+          </div>
 
-            {/* Nav CTA (Pill-shaped, uppercase, bordered, fills on hover) */}
+          {/* Desktop Right CTA ("Get Notion free" style rounded dark button) */}
+          <div className="hidden md:block">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-6 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] rounded-full border-2 border-accent-500 text-accent-600 bg-transparent hover:bg-accent-500 hover:text-white transition-all duration-300"
+              className="inline-flex items-center justify-center px-5 py-2 text-[13px] font-medium rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors duration-200 shadow-sm"
             >
               Enquire Now
             </Link>
@@ -123,10 +120,10 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`block px-3 py-2 rounded-md text-sm font-medium uppercase tracking-[0.15em] transition-colors ${
+                  className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(link.path)
-                      ? 'bg-slate-50 text-accent-600 font-semibold'
-                      : 'text-slate-650 hover:bg-slate-50 hover:text-slate-900'
+                      ? 'bg-slate-50 text-slate-900 font-medium'
+                      : 'text-slate-550 hover:bg-slate-50 hover:text-slate-900 font-normal'
                   }`}
                 >
                   {link.name}
@@ -135,7 +132,7 @@ const Navbar = () => {
               <div className="pt-4 pb-2 px-3">
                 <Link
                   to="/contact"
-                  className="w-full inline-flex items-center justify-center px-4 py-3 rounded-full border-2 border-accent-500 text-accent-600 bg-transparent hover:bg-accent-500 hover:text-white font-semibold text-xs uppercase tracking-[0.2em] transition-all"
+                  className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 font-semibold text-sm transition-colors"
                 >
                   Enquire Now
                 </Link>
