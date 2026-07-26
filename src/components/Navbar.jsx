@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Building2, Menu, X, PhoneCall } from 'lucide-react';
+import { Building2, Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 ${
+                  className={`text-[11px] uppercase tracking-[0.25em] font-medium transition-colors duration-200 relative py-1 ${
                     isActive(link.path)
                       ? 'text-accent-600 font-semibold'
                       : 'text-slate-600 hover:text-accent-500'
@@ -87,12 +87,11 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Nav CTA */}
+            {/* Nav CTA (Pill-shaped, uppercase, bordered, fills on hover) */}
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg bg-accent-500 text-white hover:bg-accent-600 transition-colors duration-200 shadow-md hover:shadow-accent-500/20"
+              className="inline-flex items-center justify-center px-6 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] rounded-full border-2 border-accent-500 text-accent-600 bg-transparent hover:bg-accent-500 hover:text-white transition-all duration-300"
             >
-              <PhoneCall className="h-4 w-4 mr-2" />
               Enquire Now
             </Link>
           </div>
@@ -124,7 +123,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  className={`block px-3 py-2 rounded-md text-sm font-medium uppercase tracking-[0.15em] transition-colors ${
                     isActive(link.path)
                       ? 'bg-slate-50 text-accent-600 font-semibold'
                       : 'text-slate-650 hover:bg-slate-50 hover:text-slate-900'
@@ -136,9 +135,8 @@ const Navbar = () => {
               <div className="pt-4 pb-2 px-3">
                 <Link
                   to="/contact"
-                  className="w-full inline-flex items-center justify-center px-4 py-3 rounded-md bg-accent-500 text-white font-semibold hover:bg-accent-600 transition-colors shadow-md"
+                  className="w-full inline-flex items-center justify-center px-4 py-3 rounded-full border-2 border-accent-500 text-accent-600 bg-transparent hover:bg-accent-500 hover:text-white font-semibold text-xs uppercase tracking-[0.2em] transition-all"
                 >
-                  <PhoneCall className="h-4 w-4 mr-2" />
                   Enquire Now
                 </Link>
               </div>

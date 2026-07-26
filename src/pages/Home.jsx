@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { 
   Building2, ShieldCheck, Calendar, FileText, 
   ArrowRight, Award, MapPin, Users, Key, Star, Sparkles
@@ -12,6 +12,25 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [settings, setSettings] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      subtitle: "Rules Of Construction",
+      title: "Industrial Construction Responsibility",
+      bgImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+    },
+    {
+      subtitle: "Grow Your Building",
+      title: "Industrial Solution To Build Factory",
+      bgImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80"
+    },
+    {
+      subtitle: "Get Construction Help",
+      title: "Delivering The Results You Think That",
+      bgImage: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80"
+    }
+  ];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +50,13 @@ const Home = () => {
       }
     };
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
   const stats = [
@@ -108,52 +134,65 @@ const Home = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* 1. HERO SECTION */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center bg-slate-900 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80" 
-            alt="Flagship Project Background" 
-            className="w-full h-full object-cover object-center opacity-30 scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white mt-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
+      <section className="relative h-[85vh] min-h-[500px] flex items-center justify-start bg-slate-900 overflow-hidden">
+        {/* Background Images with transitions */}
+        {slides.map((slide, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out z-0 ${
+              idx === currentSlide ? 'opacity-35' : 'opacity-0'
+            }`}
           >
-            <div className="inline-flex items-center space-x-2 bg-accent-500/10 border border-accent-500/30 px-3.5 py-1.5 rounded-full text-accent-400 text-xs font-semibold uppercase tracking-widest">
-              <Sparkles className="h-4 w-4 mr-1 animate-pulse" />
-              Srinidhi Infra Developers
-            </div>
-            
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight max-w-4xl mx-auto">
-              Turning Visions into Reality with <span className="text-accent-400">Quality & Trust</span>
-            </h1>
-            
-            <p className="text-lg sm:text-xl text-slate-350 max-w-2xl mx-auto font-sans leading-relaxed">
-              We specialize in delivering superior turnkey construction, architectural design, project management, and premium interior systems.
-            </p>
+            <img 
+              src={slide.bgImage} 
+              alt={slide.title} 
+              className="w-full h-full object-cover object-center scale-105"
+            />
+          </div>
+        ))}
+        {/* Soft Left-to-Right and Top-to-Bottom overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10" />
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link
-                to="/services"
-                className="w-full sm:w-auto px-8 py-4 text-base font-semibold rounded-lg bg-accent-500 text-white hover:bg-accent-600 transition-colors shadow-lg hover:shadow-accent-500/20 text-center"
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-white mt-16 w-full">
+          <div className="max-w-3xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 30 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
               >
-                Our Services
-              </Link>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto px-8 py-4 text-base font-semibold rounded-lg bg-slate-800 border border-slate-700 text-white hover:bg-slate-705 transition-colors text-center"
-              >
-                Enquire Now
-              </Link>
-            </div>
-          </motion.div>
+                <div className="text-accent-400 text-xs font-bold uppercase tracking-[0.25em] block leading-none">
+                  {slides[currentSlide].subtitle}
+                </div>
+                
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight text-white">
+                  {slides[currentSlide].title}
+                </h1>
+                
+                <p className="text-sm sm:text-base text-slate-300 max-w-2xl font-sans leading-relaxed font-light">
+                  Srinidhi Infra Developers is a leading design-build firm specializing in turning residential and commercial visions into structurally superior environments.
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="absolute bottom-8 left-4 sm:left-8 flex space-x-3 z-30">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? 'bg-accent-500 w-8' : 'bg-white/40 w-2 hover:bg-white/70'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -259,7 +298,7 @@ const Home = () => {
               "Transparent Communication"
             ].map((pt, i) => (
               <div key={i} className="bg-slate-50 p-6 rounded-xl border border-slate-200/80 flex flex-col items-center justify-center hover:border-accent-500/20 transition-all duration-200">
-                <span className="text-3xl font-extrabold text-accent-550 block mb-2 font-sans">0{i+1}</span>
+                <span className="text-3xl font-extrabold text-accent-555 block mb-2 font-sans">0{i+1}</span>
                 <h4 className="text-xs font-bold text-slate-800 tracking-wide uppercase leading-tight">{pt}</h4>
               </div>
             ))}
@@ -302,7 +341,7 @@ const Home = () => {
                   />
                   <div>
                     <h4 className="font-serif text-sm font-bold text-slate-900">{test.clientName}</h4>
-                    <span className="text-[11px] text-accent-550 font-medium tracking-wide block uppercase">
+                    <span className="text-[11px] text-accent-555 font-medium tracking-wide block uppercase">
                       Client
                     </span>
                   </div>
