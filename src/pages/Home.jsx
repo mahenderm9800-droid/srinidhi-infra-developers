@@ -246,14 +246,14 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 relative z-10">
           {features.map((feat, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200 flex flex-col items-start hover:border-accent-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
-              <div className="p-3.5 bg-accent-500/10 rounded-lg text-accent-500 mb-6 border border-accent-500/20">
+            <div key={idx} className="bg-white p-4 sm:p-8 rounded-xl border border-slate-200 flex flex-col items-start hover:border-accent-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
+              <div className="p-3.5 bg-accent-500/10 rounded-lg text-accent-500 mb-4 sm:mb-6 border border-accent-500/20">
                 <feat.icon className="h-6 w-6" />
               </div>
-              <h3 className="font-serif text-lg font-bold mb-3 text-slate-900">{feat.title}</h3>
-              <p className="text-sm text-slate-550 leading-relaxed">{feat.desc}</p>
+              <h3 className="font-serif text-base sm:text-lg font-bold mb-2 sm:mb-3 text-slate-900">{feat.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-555 leading-relaxed">{feat.desc}</p>
             </div>
           ))}
         </div>
@@ -270,18 +270,18 @@ const Home = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-accent-500 text-sm font-semibold tracking-wider uppercase block mb-2">Pricing</span>
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-slate-900">Home Construction Packages</h2>
-            <p className="text-slate-500 text-sm mt-4 leading-relaxed">
+            <p className="text-slate-550 text-sm mt-4 leading-relaxed">
               Transparent, milestone-based packages utilizing premium materials and vetted trade partner specifications.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {packages.map((pkg, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between hover:border-accent-500/30 hover:shadow-lg transition-all duration-300">
+              <div key={idx} className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between hover:border-accent-500/30 hover:shadow-lg transition-all duration-300">
                 <div>
-                  <h3 className="font-serif text-base font-bold text-slate-900 mb-2">{pkg.name}</h3>
-                  <div className="text-2xl font-extrabold text-accent-600 mb-6">{pkg.price}</div>
-                  <ul className="space-y-3.5 text-xs text-slate-555 font-medium">
+                  <h3 className="font-serif text-sm sm:text-base font-bold text-slate-900 mb-1 sm:mb-2">{pkg.name}</h3>
+                  <div className="text-xl sm:text-2xl font-extrabold text-accent-600 mb-4 sm:mb-6">{pkg.price}</div>
+                  <ul className="space-y-2 sm:space-y-3.5 text-[11px] sm:text-xs text-slate-555 font-medium">
                     {pkg.details.map((detail, dIdx) => (
                       <li key={dIdx} className="flex items-center">
                         <span className="h-1.5 w-1.5 bg-accent-500 rounded-full mr-2" />
@@ -290,7 +290,7 @@ const Home = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-8 border-t border-slate-100 pt-4">
+                <div className="mt-6 sm:mt-8 border-t border-slate-100 pt-4">
                   <Link 
                     to="/contact" 
                     className="w-full inline-flex items-center justify-center py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs rounded-lg transition-colors"

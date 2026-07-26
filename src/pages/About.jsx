@@ -66,22 +66,22 @@ const About = () => {
               {settings?.about?.story || "At Srinidhi Infra Developers, we believe that constructing homes and business hubs is a sacred duty. We started our journey in Hyderabad with a simple goal: to provide high-quality, legally sound real estate that stands the test of time.\n\nOver the last decade, we have successfully developed premium residential townships, commercial workspaces, and highly profitable open layouts. By prioritizing strategic locations, utilizing premium building materials, and strictly complying with state mandates like RERA, we have earned the trust of thousands of clients."}
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200/80 shadow-sm">
-              <div className="p-3 bg-accent-500/10 rounded-lg text-accent-500 inline-block mb-4 border border-accent-500/20">
-                <Target className="h-6 w-6" />
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            <div className="bg-slate-50 p-4 sm:p-6 rounded-xl border border-slate-200/80 shadow-sm">
+              <div className="p-2 sm:p-3 bg-accent-500/10 rounded-lg text-accent-500 inline-block mb-3 sm:mb-4 border border-accent-500/20">
+                <Target className="h-5 sm:h-6 w-5 sm:w-6" />
               </div>
-              <h3 className="font-serif text-lg font-bold text-slate-900 mb-2">Our Mission</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <h3 className="font-serif text-sm sm:text-lg font-bold text-slate-900 mb-1 sm:mb-2">Our Mission</h3>
+              <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed">
                 {settings?.about?.mission || "To build high-value residential and commercial properties with absolute compliance, premium materials, and timely project delivery."}
               </p>
             </div>
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200/80 shadow-sm">
-              <div className="p-3 bg-accent-500/10 rounded-lg text-accent-500 inline-block mb-4 border border-accent-500/20">
-                <Eye className="h-6 w-6" />
+            <div className="bg-slate-50 p-4 sm:p-6 rounded-xl border border-slate-200/80 shadow-sm">
+              <div className="p-2 sm:p-3 bg-accent-500/10 rounded-lg text-accent-500 inline-block mb-3 sm:mb-4 border border-accent-500/20">
+                <Eye className="h-5 sm:h-6 w-5 sm:w-6" />
               </div>
-              <h3 className="font-serif text-lg font-bold text-slate-900 mb-2">Our Vision</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <h3 className="font-serif text-sm sm:text-lg font-bold text-slate-900 mb-1 sm:mb-2">Our Vision</h3>
+              <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed">
                 {settings?.about?.vision || "To be the most trusted infrastructure development brand, known for transparent dealings, quality engineering, and customer satisfaction."}
               </p>
             </div>
@@ -96,15 +96,15 @@ const About = () => {
             <span className="text-accent-500 text-xs font-semibold tracking-widest uppercase block mb-2">How We Operate</span>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900">Our Core Values</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {values.map((v, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-slate-200/80 flex items-start space-x-4 shadow-sm">
+              <div key={i} className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200/80 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 shadow-sm">
                 <div className="p-2.5 bg-accent-500/10 rounded-lg text-accent-500 shrink-0 border border-accent-500/20">
                   <v.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-base font-bold text-slate-900 mb-2">{v.title}</h3>
-                  <p className="text-xs text-slate-550 leading-relaxed">{v.desc}</p>
+                  <h3 className="font-serif text-sm sm:text-base font-bold text-slate-900 mb-1 sm:mb-2">{v.title}</h3>
+                  <p className="text-[10px] sm:text-xs text-slate-555 leading-relaxed">{v.desc}</p>
                 </div>
               </div>
             ))}
@@ -118,20 +118,20 @@ const About = () => {
           <span className="text-accent-500 text-xs font-semibold tracking-widest uppercase block mb-2">Management</span>
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900">Our Leadership Team</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-2 gap-4 md:gap-12">
           {leadership.map((leader, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6 hover:shadow-md transition-shadow">
+            <div key={index} className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200/80 shadow-sm flex flex-col items-center text-center space-y-4 hover:shadow-md transition-shadow">
               <img 
                 src={leader.photo} 
                 alt={leader.name} 
-                className="h-28 w-28 rounded-xl object-cover shrink-0 border border-slate-200"
+                className="h-20 sm:h-28 w-20 sm:w-28 rounded-xl object-cover shrink-0 border border-slate-200"
               />
-              <div className="text-center sm:text-left">
-                <h3 className="font-serif text-lg font-bold text-slate-900">{leader.name}</h3>
-                <span className="text-xs text-accent-500 font-bold uppercase tracking-wider block mb-3">
+              <div>
+                <h3 className="font-serif text-sm sm:text-lg font-bold text-slate-900 leading-tight">{leader.name}</h3>
+                <span className="text-[10px] sm:text-xs text-accent-500 font-bold uppercase tracking-wider block mb-2 sm:mb-3">
                   {leader.role}
                 </span>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed line-clamp-4">
                   {leader.bio}
                 </p>
               </div>
@@ -151,7 +151,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {milestones.map((m, idx) => (
               <div 
                 key={idx} 
@@ -160,19 +160,19 @@ const About = () => {
                 {/* Accent Top Bar */}
                 <div className="h-1.5 bg-gradient-to-r from-accent-400 to-accent-500 w-full" />
                 
-                <div className="p-6 flex-grow flex flex-col justify-between">
+                <div className="p-4 sm:p-6 flex-grow flex flex-col justify-between">
                   <div>
-                    <span className="text-3xl font-extrabold text-accent-500 block mb-2 tracking-wide font-sans group-hover:scale-105 origin-left transition-transform duration-300">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-accent-555 block mb-1 sm:mb-2 tracking-wide font-sans group-hover:scale-105 origin-left transition-transform duration-300">
                       {m.year}
                     </span>
-                    <h3 className="font-serif text-base font-bold text-slate-900 mb-3">{m.title}</h3>
-                    <p className="text-xs text-slate-550 leading-relaxed font-sans font-light">
+                    <h3 className="font-serif text-xs sm:text-base font-bold text-slate-900 mb-2 sm:mb-3">{m.title}</h3>
+                    <p className="text-[10px] sm:text-xs text-slate-555 leading-relaxed font-sans font-light line-clamp-4">
                       {m.desc}
                     </p>
                   </div>
                   
                   {/* Subtle step count in footer */}
-                  <div className="border-t border-slate-100 pt-4 mt-6 flex justify-between items-center text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                  <div className="border-t border-slate-100 pt-3 sm:pt-4 mt-4 sm:mt-6 flex justify-between items-center text-[8px] sm:text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                     <span>Phase</span>
                     <span>0{idx + 1}</span>
                   </div>

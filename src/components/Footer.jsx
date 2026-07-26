@@ -23,9 +23,9 @@ const Footer = () => {
     <footer className="relative bg-slate-950 text-slate-400 pt-16 pb-8 font-sans border-t border-slate-900 overflow-hidden">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img 
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80" 
-          alt="Construction Footer Background" 
+        <img
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+          alt="Construction Footer Background"
           className="w-full h-full object-cover object-center opacity-10 scale-105"
         />
         <div className="absolute inset-0 bg-slate-955/90" />
@@ -33,7 +33,7 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* About Column */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2 group">
