@@ -79,7 +79,7 @@ const BlogPost = () => {
 
         {/* Article Meta */}
         <div className="space-y-4 mb-8">
-          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-450 font-semibold uppercase">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 font-semibold uppercase">
             <span className="flex items-center bg-slate-100 px-2.5 py-1 rounded">
               <Calendar className="h-3.5 w-3.5 mr-1.5 text-accent-500" />
               {new Date(post.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -112,7 +112,7 @@ const BlogPost = () => {
         <div className="bg-white p-6 sm:p-10 rounded-xl border border-slate-200 shadow-sm space-y-6">
           {/* Share Action */}
           <div className="flex justify-between items-center border-b border-slate-100 pb-4">
-            <span className="text-xs text-slate-450 font-bold uppercase tracking-wider">Official Publication</span>
+            <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">Official Publication</span>
             <button 
               onClick={handleShare}
               className="inline-flex items-center text-xs font-bold text-slate-600 hover:text-accent-600 border border-slate-200 rounded-lg px-3 py-1.5 hover:border-accent-500 transition-colors"

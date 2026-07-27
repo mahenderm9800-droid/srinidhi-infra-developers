@@ -16,16 +16,16 @@ const Home = () => {
 
   const slides = [
     {
-      subtitle: "Rules Of Construction",
-      title: "Industrial Construction Responsibility"
+      subtitle: "Turnkey Construction Specialists",
+      title: "Crafting Premium Living Spaces with Trust"
     },
     {
-      subtitle: "Grow Your Building",
-      title: "Industrial Solution To Build Factory"
+      subtitle: "Architectural Excellence",
+      title: "Designing Bespoke Homes That Inspire Life"
     },
     {
-      subtitle: "Get Construction Help",
-      title: "Delivering The Results You Think That"
+      subtitle: "Premium Interiors & PMC",
+      title: "Executing Perfection from Blueprint to Handover"
     }
   ];
 
@@ -207,29 +207,42 @@ const Home = () => {
       </section>
 
       {/* 2. QUICK STATS BAR */}
-      <section className="relative z-20 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white text-slate-850 rounded-xl shadow-xl border border-slate-200/80 p-6 md:p-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-y-2 divide-slate-100 lg:divide-y-0 lg:divide-x-2 lg:divide-slate-100">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="relative z-20 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-slate-200/80 p-6 md:p-8 text-slate-800">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-y divide-slate-100 lg:divide-y-0 lg:divide-x lg:divide-slate-100">
             {stats.map((stat, idx) => (
               <div key={idx} className="flex items-center space-x-4 pt-6 first:pt-0 lg:pt-0 lg:pl-8 first:pl-0">
-                <div className="p-3 bg-accent-500/5 rounded-lg text-accent-650 border border-accent-500/10">
+                <div className="p-3.5 bg-accent-500/10 rounded-xl text-accent-600 border border-accent-500/20">
                   <stat.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">{stat.value}</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{stat.value}</div>
                   <div className="text-xs sm:text-sm text-slate-505 tracking-wide font-medium">{stat.label}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 3. PROVIDED FEATURES (SERVICES SUM) */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+      <section className="py-24 bg-slate-950 border-y border-slate-900 relative overflow-hidden text-white">
+        {/* Dark Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 z-0" />
+
+        {/* Glow Blobs */}
+        <div className="glow-blob w-[500px] h-[500px] bg-accent-500/10 top-0 left-0" />
+        <div className="glow-blob w-[500px] h-[500px] bg-emerald-500/5 bottom-0 right-0" />
+
         {/* Geometric Compass SVG Background Illustration */}
-        <div className="absolute right-0 bottom-0 opacity-[0.03] pointer-events-none translate-x-20 translate-y-20 z-0">
-          <svg width="450" height="450" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-accent-500">
+        <div className="absolute right-0 bottom-0 opacity-[0.015] pointer-events-none translate-x-20 translate-y-20 z-0">
+          <svg width="450" height="450" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-accent-400">
             <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
             <circle cx="50" cy="50" r="30" strokeWidth="0.25" />
             <line x1="50" y1="10" x2="50" y2="90" strokeWidth="0.5" strokeDasharray="1 1" />
@@ -238,100 +251,154 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-          <span className="text-accent-500 text-sm font-semibold tracking-wider uppercase block mb-2">Capabilities</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-serif text-slate-900">Provided Features</h2>
-          <p className="text-slate-500 text-sm mt-4 leading-relaxed">
-            Construction, design, interiors, and PMC come together under one roof so that your project feels seamless from the first draft to handover.
-          </p>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block mb-3">Capabilities</span>
+            <h2 className="text-3xl md:text-5xl font-bold font-serif text-white tracking-tight">Provided Features</h2>
+            <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
+            <p className="text-slate-200 text-sm sm:text-base mt-5 leading-relaxed font-normal">
+              Construction, design, interiors, and PMC come together under one roof so that your project feels seamless from the first draft to handover.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 relative z-10">
-          {features.map((feat, idx) => (
-            <div key={idx} className="bg-white p-4 sm:p-8 rounded-xl border border-slate-200 flex flex-col items-start hover:border-accent-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
-              <div className="p-3.5 bg-accent-500/10 rounded-lg text-accent-500 mb-4 sm:mb-6 border border-accent-500/20">
-                <feat.icon className="h-6 w-6" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {features.map((feat, idx) => (
+              <div key={idx} className="bg-slate-900/50 border border-white/5 backdrop-blur-md rounded-2xl p-8 hover:bg-slate-900/80 hover:border-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start group">
+                <div className="p-4 bg-accent-500/10 rounded-xl text-accent-400 mb-6 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-md">
+                  <feat.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-serif text-lg font-bold mb-3 text-white group-hover:text-accent-400 transition-colors">{feat.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-light">{feat.desc}</p>
               </div>
-              <h3 className="font-serif text-base sm:text-lg font-bold mb-2 sm:mb-3 text-slate-900">{feat.title}</h3>
-              <p className="text-xs sm:text-sm text-slate-555 leading-relaxed">{feat.desc}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
       {/* 4. HOME CONSTRUCTION PACKAGES */}
       <section 
-        className="border-t border-b border-slate-200/50 py-20 relative overflow-hidden bg-slate-50"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40h40M40 0v40' fill='none' stroke='rgba(4,120,87,0.025)' stroke-width='1'/%3E%3C/svg%3E")`
-        }}
+        className="border-t border-b border-slate-200/50 py-24 relative overflow-hidden bg-slate-50/50 premium-grid"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Glow Blobs */}
+        <div className="glow-blob w-[500px] h-[500px] bg-accent-400/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-accent-500 text-sm font-semibold tracking-wider uppercase block mb-2">Pricing</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-serif text-slate-900">Home Construction Packages</h2>
-            <p className="text-slate-550 text-sm mt-4 leading-relaxed">
+            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-3">Pricing Plans</span>
+            <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Home Construction Packages</h2>
+            <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
+            <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed font-light">
               Transparent, milestone-based packages utilizing premium materials and vetted trade partner specifications.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {packages.map((pkg, idx) => (
-              <div key={idx} className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between hover:border-accent-500/30 hover:shadow-lg transition-all duration-300">
-                <div>
-                  <h3 className="font-serif text-sm sm:text-base font-bold text-slate-900 mb-1 sm:mb-2">{pkg.name}</h3>
-                  <div className="text-xl sm:text-2xl font-extrabold text-accent-600 mb-4 sm:mb-6">{pkg.price}</div>
-                  <ul className="space-y-2 sm:space-y-3.5 text-[11px] sm:text-xs text-slate-555 font-medium">
-                    {pkg.details.map((detail, dIdx) => (
-                      <li key={dIdx} className="flex items-center">
-                        <span className="h-1.5 w-1.5 bg-accent-500 rounded-full mr-2" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {packages.map((pkg, idx) => {
+              const isFeatured = pkg.name === "Premium Signature";
+              return (
+                <div 
+                  key={idx} 
+                  className={`relative flex flex-col justify-between rounded-2xl transition-all duration-300 p-6 ${
+                    isFeatured 
+                      ? 'bg-slate-900 text-white border-2 border-accent-500 shadow-2xl scale-[1.03] md:translate-y-[-4px] z-20' 
+                      : 'bg-white text-slate-800 border border-slate-200/80 shadow-sm hover:border-accent-500/30 hover:shadow-lg hover:scale-[1.01] z-10'
+                  }`}
+                >
+                  {isFeatured && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+                      Most Popular
+                    </span>
+                  )}
+                  <div>
+                    <h3 className={`font-serif text-base font-bold mb-2 ${isFeatured ? 'text-white' : 'text-slate-900'}`}>{pkg.name}</h3>
+                    <div className={`text-2xl font-extrabold mb-6 tracking-tight ${isFeatured ? 'text-accent-400' : 'text-accent-600'}`}>{pkg.price}</div>
+                    
+                    <div className={`h-px w-full my-4 ${isFeatured ? 'bg-white/10' : 'bg-slate-100'}`} />
+
+                    <ul className="space-y-3.5 text-xs font-light">
+                      {pkg.details.map((detail, dIdx) => (
+                        <li key={dIdx} className="flex items-start">
+                          <span className="h-1.5 w-1.5 bg-accent-500 rounded-full mr-2.5 mt-2 flex-shrink-0" />
+                          <span className={isFeatured ? 'text-slate-300' : 'text-slate-600'}>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-8 pt-4">
+                    <Link 
+                      to="/contact" 
+                      className={`w-full inline-flex items-center justify-center py-2.5 font-semibold text-xs rounded-xl transition-all duration-200 ${
+                        isFeatured 
+                          ? 'bg-accent-500 hover:bg-accent-600 text-white shadow-lg hover:shadow-accent-500/20' 
+                          : 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm'
+                      }`}
+                    >
+                      Select Plan
+                    </Link>
+                  </div>
                 </div>
-                <div className="mt-6 sm:mt-8 border-t border-slate-100 pt-4">
-                  <Link 
-                    to="/contact" 
-                    className="w-full inline-flex items-center justify-center py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs rounded-lg transition-colors"
-                  >
-                    Select Plan
-                  </Link>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 5. WHY CHOOSE US / OUR QUALITY */}
-      <section 
-        className="py-24 relative overflow-hidden bg-white border-t border-slate-100"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='rgba(4,120,87,0.02)'/%3E%3C/svg%3E")`
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-24 relative overflow-hidden bg-slate-950 text-white border-t border-b border-slate-900">
+        {/* Background Image with Dark Overlay */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+            alt="Construction Quality Background"
+            className="w-full h-full object-cover object-center opacity-10 scale-105"
+          />
+          <div className="absolute inset-0 bg-slate-950/95" />
+        </div>
+
+        {/* Glow Blob */}
+        <div className="glow-blob w-[500px] h-[500px] bg-accent-500/10 top-0 left-0" />
+
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Left Column: Headline and description */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="text-accent-500 text-sm font-semibold tracking-wider uppercase block">
+              <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block">
                 Our Quality
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
                 Building Excellence With Dedication
               </h2>
-              <p className="text-slate-550 text-sm sm:text-base leading-relaxed">
+              <div className="h-1 w-20 bg-accent-500 rounded-full" />
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
                 We stand apart from other builders by maintaining absolute adherence to legal parameters, utilizing the highest grade materials, and upholding transparency.
               </p>
               <div className="pt-4">
                 <Link
                   to="/about"
-                  className="inline-flex items-center text-sm font-bold text-accent-600 hover:text-accent-700 transition-colors"
+                  className="inline-flex items-center text-sm font-bold text-accent-400 hover:text-accent-305 transition-colors group"
                 >
                   Learn More About Our Standards
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -347,17 +414,17 @@ const Home = () => {
               ].map((pt, i) => (
                 <div 
                   key={i} 
-                  className="bg-slate-50/50 p-5 rounded-xl border border-slate-200/60 flex items-center justify-between hover:border-accent-500/20 hover:bg-slate-50 transition-all duration-300 shadow-sm"
+                  className="bg-slate-900/40 border border-white/5 backdrop-blur-md p-5 rounded-2xl flex items-center justify-between hover:bg-slate-900/70 hover:border-accent-500/30 transition-all duration-300 group/item shadow-xl shadow-black/5"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-500/10 flex items-center justify-center text-accent-600 font-serif font-bold text-sm">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-accent-500/20 flex items-center justify-center text-accent-400 font-serif font-bold text-base transition-colors group-hover/item:bg-accent-500 group-hover/item:text-white">
                       0{i+1}
                     </div>
-                    <span className="text-slate-800 font-serif font-bold text-base sm:text-lg">{pt}</span>
+                    <span className="text-white font-serif font-bold text-base sm:text-lg">{pt}</span>
                   </div>
-                  <div className="text-accent-500">
+                  <div className="text-accent-400 group-hover/item:translate-x-1 transition-transform">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
@@ -365,11 +432,15 @@ const Home = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 6. TESTIMONIALS SECTION */}
-      <section className="bg-slate-50 border-t border-slate-200/60 py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-xl my-10 relative overflow-hidden">
+      <section className="bg-slate-50/50 border-t border-b border-slate-200/60 py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl my-6 relative overflow-hidden premium-grid">
+        {/* Glow Blobs */}
+        <div className="glow-blob w-96 h-96 bg-accent-400/10 -top-20 -right-20" />
+        <div className="glow-blob w-80 h-80 bg-primary-500/10 -bottom-20 -left-20" />
+
         {/* Subtle structural trace lines in background */}
         <div className="absolute left-0 top-0 opacity-[0.02] pointer-events-none translate-x-5 translate-y-5 z-0">
           <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-slate-900">
@@ -379,25 +450,34 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-          <span className="text-accent-500 text-sm font-semibold tracking-wider uppercase block mb-2">Client Testimonials</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-serif text-slate-900">Words from Our Clients</h2>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10"
+        >
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-2">Client Testimonials</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-gradient">Words from Our Clients</h2>
+            <div className="h-1 w-20 bg-accent-500 mx-auto mt-3 rounded-full" />
+          </div>
 
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             {[1, 2, 3].map((n) => (
-              <div key={n} className="bg-white rounded-xl border border-slate-200 p-6 h-64 animate-pulse" />
+              <div key={n} className="bg-white rounded-2xl border border-slate-200 p-6 h-48 animate-pulse" />
             ))}
           </div>
         ) : (
           <>
             {/* Desktop Static Grid Layout (shows first 3 reviews) */}
-            <div className="hidden md:grid md:grid-cols-3 gap-8 relative z-10">
+            <div className="hidden md:grid md:grid-cols-3 gap-6 relative z-10">
               {testimonials.slice(0, 3).map((test) => (
-                <div key={test.id} className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-all duration-300">
-                  <div>
-                    <div className="flex items-center text-accent-500 space-x-0.5 mb-4">
+                <div key={test.id} className="relative bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+                  <span className="absolute top-2 right-4 text-5xl text-slate-100 font-serif pointer-events-none select-none group-hover:text-accent-500/10 transition-colors">“</span>
+                  <div className="relative z-10">
+                    <div className="flex items-center text-accent-500 space-x-0.5 mb-3">
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
@@ -405,19 +485,14 @@ const Home = () => {
                         />
                       ))}
                     </div>
-                    <p className="text-sm italic text-slate-600 leading-relaxed mb-6">
+                    <p className="text-xs sm:text-sm italic text-slate-650 leading-relaxed mb-4 font-light">
                       "{test.quote}"
                     </p>
                   </div>
-                  <div className="flex items-center">
-                    <img 
-                      src={test.photoUrl} 
-                      alt={test.clientName} 
-                      className="h-10 w-10 rounded-full object-cover mr-3 border-2 border-slate-200"
-                    />
+                  <div className="flex items-center border-t border-slate-100 pt-3 mt-auto">
                     <div>
                       <h4 className="font-serif text-sm font-bold text-slate-900">{test.clientName}</h4>
-                      <span className="text-[11px] text-accent-555 font-medium tracking-wide block uppercase">
+                      <span className="text-[10px] text-accent-605 font-bold tracking-wider block uppercase mt-0.5">
                         {test.projectRef}
                       </span>
                     </div>
@@ -427,7 +502,7 @@ const Home = () => {
             </div>
 
             {/* Mobile Autoscrolling Carousel Layout */}
-            <div className="md:hidden relative z-10 px-2 min-h-[280px] flex flex-col justify-between">
+            <div className="md:hidden relative z-10 px-2 min-h-[190px] flex flex-col justify-between">
               <AnimatePresence mode="wait">
                 {testimonials.length > 0 && (
                   <motion.div
@@ -436,10 +511,11 @@ const Home = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -30 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between flex-grow"
+                    className="relative bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between flex-grow group"
                   >
-                    <div>
-                      <div className="flex items-center text-accent-500 space-x-0.5 mb-4">
+                    <span className="absolute top-2 right-4 text-5xl text-slate-100 font-serif pointer-events-none select-none">“</span>
+                    <div className="relative z-10">
+                      <div className="flex items-center text-accent-500 space-x-0.5 mb-3">
                         {[...Array(5)].map((_, i) => (
                           <Star 
                             key={i} 
@@ -447,19 +523,14 @@ const Home = () => {
                           />
                         ))}
                       </div>
-                      <p className="text-sm italic text-slate-655 leading-relaxed mb-6">
+                      <p className="text-xs sm:text-sm italic text-slate-655 leading-relaxed mb-4 font-light">
                         "{testimonials[activeTestimonial]?.quote}"
                       </p>
                     </div>
-                    <div className="flex items-center mt-auto">
-                      <img 
-                        src={testimonials[activeTestimonial]?.photoUrl} 
-                        alt={testimonials[activeTestimonial]?.clientName} 
-                        className="h-10 w-10 rounded-full object-cover mr-3 border-2 border-slate-200"
-                      />
+                    <div className="flex items-center border-t border-slate-100 pt-3 mt-auto">
                       <div>
                         <h4 className="font-serif text-sm font-bold text-slate-900">{testimonials[activeTestimonial]?.clientName}</h4>
-                        <span className="text-[10px] text-accent-555 font-medium tracking-wide block uppercase">
+                        <span className="text-[9px] text-accent-605 font-bold tracking-wider block uppercase mt-0.5">
                           {testimonials[activeTestimonial]?.projectRef}
                         </span>
                       </div>
@@ -469,7 +540,7 @@ const Home = () => {
               </AnimatePresence>
 
               {/* Autoscroller Dot Indicators */}
-              <div className="flex justify-center space-x-2 mt-6">
+              <div className="flex justify-center space-x-2 mt-4">
                 {testimonials.map((_, idx) => (
                   <button
                     key={idx}
@@ -484,6 +555,7 @@ const Home = () => {
             </div>
           </>
         )}
+        </motion.div>
       </section>
 
       {/* 7. CONTACT / ENQUIRY BANNER */}
@@ -492,7 +564,7 @@ const Home = () => {
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">
             Looking for a Trusted Design & Construction Partner?
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
+          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
             Outline requirements, scopes, and budget goals. Our engineering and architecture specialists will respond with a tailored project roadmap.
           </p>
           <Link

@@ -35,8 +35,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['Outfit', 'sans-serif'],
-        sans: ['Rubik', 'system-ui', 'sans-serif'],
+        serif: ['Outfit', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Outfit', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
       }
     },
   },

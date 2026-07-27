@@ -79,41 +79,45 @@ const Contact = () => {
       </section>
 
       {/* Main Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative overflow-hidden">
+        {/* Glow Blob */}
+        <div className="glow-blob w-96 h-96 bg-accent-400/10 top-1/4 left-1/4" />
+        <div className="glow-blob w-96 h-96 bg-primary-500/10 bottom-1/4 right-1/4" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
           
           {/* Left Column: Details */}
           <div className="lg:col-span-1 space-y-8">
             {/* Contact Details Card */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl border border-slate-200/80 shadow-sm space-y-6">
-              <h2 className="font-serif text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+            <div className="premium-card p-6 sm:p-8 space-y-6">
+              <h2 className="font-serif text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
                 Corporate Office
               </h2>
-              <ul className="space-y-5 text-xs text-slate-650 font-medium">
+              <ul className="space-y-5 text-xs text-slate-605 font-medium">
                 <li className="flex items-start">
-                  <MapPin className="h-5 w-5 mr-3.5 text-accent-500 shrink-0 mt-0.5" />
-                  <span className="leading-relaxed whitespace-pre-line">
+                  <MapPin className="h-5 w-5 mr-3.5 text-accent-600 shrink-0 mt-0.5" />
+                  <span className="leading-relaxed whitespace-pre-line text-slate-600 font-light">
                     {settings?.contact?.address || "Plot No. 42, Silicon Valley Layout, Image Gardens Road, Madhapur, Hyderabad, Telangana - 500081"}
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="h-4.5 w-4.5 mr-3.5 text-accent-500" />
-                  <a href={`tel:${settings?.contact?.phone || '+91 98765 43210'}`} className="hover:text-accent-500 transition-colors">
+                  <Phone className="h-4.5 w-4.5 mr-3.5 text-accent-600" />
+                  <a href={`tel:${settings?.contact?.phone || '+91 98765 43210'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
                     {settings?.contact?.phone || "+91 98765 43210"}
                   </a>
                 </li>
                 <li className="flex items-center">
-                  <Mail className="h-4.5 w-4.5 mr-3.5 text-accent-500" />
-                  <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfra.com'}`} className="hover:text-accent-500 transition-colors">
+                  <Mail className="h-4.5 w-4.5 mr-3.5 text-accent-600" />
+                  <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfra.com'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
                     {settings?.contact?.email || "info@srinidhiinfra.com"}
                   </a>
                 </li>
                 <li className="flex items-start">
-                  <Clock className="h-4.5 w-4.5 mr-3.5 text-accent-500 shrink-0 mt-0.5" />
+                  <Clock className="h-4.5 w-4.5 mr-3.5 text-accent-600 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-bold text-slate-800">Office Hours:</p>
-                    <p className="text-slate-500">{settings?.contact?.hours || "Mon - Sat: 09:30 AM - 06:30 PM"}</p>
-                    <p className="text-[10px] text-slate-400">Sundays Closed</p>
+                    <p className="text-slate-500 font-light mt-0.5">{settings?.contact?.hours || "Mon - Sat: 09:30 AM - 06:30 PM"}</p>
+                    <p className="text-[10px] text-slate-400 font-light mt-0.5">Sundays Closed</p>
                   </div>
                 </li>
               </ul>
@@ -124,7 +128,7 @@ const Contact = () => {
                   href={`https://wa.me/${settings?.contact?.whatsapp?.replace(/[^0-9]/g, '') || "919876543210"}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition-colors shadow-md"
+                  className="w-full inline-flex items-center justify-center px-4 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition-all duration-200 shadow-md hover:shadow-emerald-600/10"
                 >
                   <MessageSquare className="h-4.5 w-4.5 mr-2" />
                   Chat on WhatsApp
@@ -133,9 +137,10 @@ const Contact = () => {
             </div>
 
             {/* Quick Notes */}
-            <div className="bg-slate-50 text-slate-700 p-6 rounded-xl border border-slate-200/80 shadow-sm">
-              <h3 className="font-serif text-sm font-bold mb-2">Quality Guarantee</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed">
+            <div className="premium-card p-6 relative overflow-hidden group">
+              <div className="glow-blob w-20 h-20 bg-accent-500/5 -bottom-5 -right-5" />
+              <h3 className="font-serif text-sm font-bold mb-2 text-slate-900">Quality Guarantee</h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-light">
                 All packages carry structured timelines, vetted procurement checks, and post-project checks to ensure your project stands the test of time.
               </p>
             </div>
@@ -143,19 +148,19 @@ const Contact = () => {
 
           {/* Right Column: Lead Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-6 sm:p-10 rounded-xl border border-slate-200/80 shadow-sm space-y-6">
+            <div className="premium-card p-6 sm:p-10 space-y-6">
               <div>
                 <h2 className="font-serif text-xl font-bold text-slate-900">Online Inquiry</h2>
-                <p className="text-xs text-slate-550 mt-1">
+                <p className="text-xs text-slate-550 mt-1.5 font-light">
                   Have a specific question, or want to schedule a physical site visit? Please submit your query below.
                 </p>
               </div>
 
               {submitStatus.text && (
-                <div className={`p-4 rounded-lg text-xs font-semibold ${
+                <div className={`p-4 rounded-xl text-xs font-semibold ${
                   submitStatus.type === 'success' 
-                    ? 'bg-green-50 border border-green-200 text-green-700' 
-                    : 'bg-red-50 border border-red-200 text-red-700'
+                    ? 'bg-green-50 border border-green-200/80 text-green-700' 
+                    : 'bg-red-50 border border-red-200/80 text-red-700'
                 }`}>
                   {submitStatus.text}
                 </div>
@@ -164,7 +169,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6 text-xs font-medium">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-slate-600 mb-1.5 font-bold uppercase tracking-wider">FullName *</label>
+                    <label htmlFor="name" className="block text-slate-500 mb-2 font-bold uppercase tracking-wider">Full Name *</label>
                     <input
                       type="text"
                       id="name"
@@ -173,11 +178,11 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="Your full name"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-accent-500 text-slate-800"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-800 text-xs font-light transition-all duration-200"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-slate-600 mb-1.5 font-bold uppercase tracking-wider">Phone Number *</label>
+                    <label htmlFor="phone" className="block text-slate-500 mb-2 font-bold uppercase tracking-wider">Phone Number *</label>
                     <input
                       type="tel"
                       id="phone"
@@ -186,14 +191,14 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="10-digit mobile number"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-accent-500 text-slate-800"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-800 text-xs font-light transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-slate-600 mb-1.5 font-bold uppercase tracking-wider">Email Address *</label>
+                    <label htmlFor="email" className="block text-slate-500 mb-2 font-bold uppercase tracking-wider">Email Address *</label>
                     <input
                       type="email"
                       id="email"
@@ -202,17 +207,17 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="name@example.com"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-accent-500 text-slate-800"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-800 text-xs font-light transition-all duration-200"
                     />
                   </div>
                   <div>
-                    <label htmlFor="projectRef" className="block text-slate-600 mb-1.5 font-bold uppercase tracking-wider">Plan of Interest</label>
+                    <label htmlFor="projectRef" className="block text-slate-500 mb-2 font-bold uppercase tracking-wider">Plan of Interest</label>
                     <select
                       id="projectRef"
                       name="projectRef"
                       value={formData.projectRef}
                       onChange={handleInputChange}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-accent-500 text-slate-700"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-700 text-xs font-light transition-all duration-200"
                     >
                       <option value="">General Query / Other</option>
                       <option value="Premium Signature">Premium Signature (₹2,200/- per sft)</option>
@@ -224,7 +229,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-slate-600 mb-1.5 font-bold uppercase tracking-wider">Message / Details</label>
+                  <label htmlFor="message" className="block text-slate-500 mb-2 font-bold uppercase tracking-wider">Message / Details</label>
                   <textarea
                     id="message"
                     name="message"
@@ -232,14 +237,14 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Provide details about your query (budget range, preferred floor, unit size etc.)"
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-accent-500 text-slate-800 resize-none font-sans"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-800 text-xs font-light resize-none font-sans transition-all duration-200"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center justify-center px-8 py-3.5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-lg transition-colors disabled:opacity-50 text-xs uppercase tracking-wider shadow"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all duration-200 disabled:opacity-50 text-xs uppercase tracking-wider shadow"
                 >
                   {submitting ? "Sending..." : (
                     <>

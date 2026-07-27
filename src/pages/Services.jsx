@@ -80,15 +80,17 @@ const Services = () => {
       </section>
 
       {/* Competencies Grid */}
-      <section 
-        className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30h30M30 0v30' fill='none' stroke='rgba(4,120,87,0.015)' stroke-width='1'/%3E%3C/svg%3E")`
-        }}
-      >
+      <section className="py-24 bg-slate-950 border-y border-slate-900 relative overflow-hidden text-white">
+        {/* Dark Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 z-0" />
+
+        {/* Glow Blobs */}
+        <div className="glow-blob w-[500px] h-[500px] bg-accent-500/10 top-0 left-0" />
+        <div className="glow-blob w-[500px] h-[500px] bg-emerald-500/5 bottom-0 right-0" />
+
         {/* Geometric Compass SVG Background Illustration */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.025] pointer-events-none translate-x-12 z-0">
-          <svg width="400" height="400" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-accent-500">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.015] pointer-events-none translate-x-12 z-0">
+          <svg width="400" height="400" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-accent-400">
             <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
             <circle cx="50" cy="50" r="30" strokeWidth="0.25" />
             <line x1="50" y1="5" x2="50" y2="95" strokeWidth="0.5" strokeDasharray="1 1" />
@@ -97,25 +99,24 @@ const Services = () => {
           </svg>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-8 relative z-10">
-          {competencies.map((comp, idx) => (
-            <div key={idx} className="bg-white p-4 sm:p-8 rounded-xl border border-slate-200/80 flex flex-col items-start hover:border-accent-500/30 hover:shadow-lg transition-all duration-300 shadow-sm">
-              <div className="p-3 bg-accent-500/10 rounded-lg text-accent-500 mb-4 sm:mb-6 border border-accent-500/20">
-                <comp.icon className="h-6 w-6" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {competencies.map((comp, idx) => (
+              <div key={idx} className="bg-slate-900/50 border border-white/5 backdrop-blur-md rounded-2xl p-8 hover:bg-slate-900/80 hover:border-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start group">
+                <div className="p-3.5 bg-accent-500/10 rounded-xl text-accent-400 mb-6 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm">
+                  <comp.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-serif text-lg font-bold mb-3 text-white group-hover:text-accent-400 transition-colors">{comp.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-light">{comp.desc}</p>
               </div>
-              <h3 className="font-serif text-base sm:text-lg font-bold mb-2 sm:mb-3 text-slate-900">{comp.title}</h3>
-              <p className="text-[11px] sm:text-xs text-slate-505 leading-relaxed">{comp.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Workflow Section */}
       <section 
-        className="bg-slate-50 border-t border-b border-slate-200/60 py-20 relative overflow-hidden"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='rgba(4,120,87,0.015)'/%3E%3C/svg%3E")`
-        }}
+        className="bg-slate-50/50 border-t border-b border-slate-200/60 py-24 relative overflow-hidden premium-grid"
       >
         {/* Subtle trace grid in background */}
         <div className="absolute left-0 bottom-0 opacity-[0.02] pointer-events-none translate-x-4 translate-y-4 z-0">
@@ -128,20 +129,22 @@ const Services = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent-500 text-xs font-semibold tracking-widest uppercase block mb-2">The Process</span>
-            <h2 className="text-3xl font-serif font-bold text-slate-900">Our Execution Workflow</h2>
-            <p className="text-slate-500 text-xs mt-3 leading-relaxed">
+            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-3">The Process</span>
+            <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Our Execution Workflow</h2>
+            <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
+            <p className="text-slate-500 text-sm mt-5 leading-relaxed font-light">
               Structured workflows ensure precision, predictability, and complete peace of mind.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {workflow.map((w, idx) => (
-              <div key={idx} className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between hover:border-accent-500/20 hover:shadow-md transition-all duration-205">
+              <div key={idx} className="premium-card premium-card-hover p-6 flex flex-col justify-between group relative overflow-hidden">
+                <div className="glow-blob w-24 h-24 bg-accent-500/5 -bottom-10 -right-10 group-hover:scale-125 transition-transform" />
                 <div>
-                  <span className="text-2xl sm:text-3xl font-extrabold text-accent-500/20 block mb-3 sm:mb-4">{w.step}</span>
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 sm:mb-2">{w.name}</h3>
-                  <p className="text-[10px] sm:text-xs text-slate-505 leading-relaxed font-light">{w.desc}</p>
+                  <span className="text-3xl font-black text-accent-500/20 block mb-4 group-hover:text-accent-500/30 transition-colors font-sans">{w.step}</span>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-2 group-hover:text-accent-600 transition-colors">{w.name}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed font-light">{w.desc}</p>
                 </div>
               </div>
             ))}
@@ -151,10 +154,7 @@ const Services = () => {
 
       {/* Addons & Complementary Services */}
       <section 
-        className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40h40M40 0v40' fill='none' stroke='rgba(4,120,87,0.015)' stroke-width='1'/%3E%3C/svg%3E")`
-        }}
+        className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden premium-grid"
       >
         {/* Drafting protractor vector illustration */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none -translate-x-12 z-0">
@@ -166,21 +166,22 @@ const Services = () => {
           </svg>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div>
-            <span className="text-accent-500 text-xs font-semibold tracking-widest uppercase block mb-2">Extended Capabilities</span>
-            <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4">Complementary Expertise</h2>
-            <p className="text-sm text-slate-550 leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-5 space-y-4">
+            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block">Extended Capabilities</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-gradient mb-4">Complementary Expertise</h2>
+            <div className="h-1 w-20 bg-accent-500 mt-4 mb-6 rounded-full" />
+            <p className="text-slate-500 text-sm leading-relaxed font-light">
               We coordinate technical parameters such as MEP structures, interior acoustics, and landscape irrigation to deliver comprehensive design-build envelopes under one consolidated management team.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {addons.map((a, i) => (
-              <div key={i} className="bg-slate-50 p-4 sm:p-6 rounded-xl border border-slate-200/80 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-4">
-                <div className="p-2 sm:p-2.5 bg-accent-500/10 rounded-lg text-accent-500 shrink-0 border border-accent-500/20">
+              <div key={i} className="premium-card premium-card-hover p-5 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-4 group">
+                <div className="p-3 bg-accent-500/10 rounded-xl text-accent-600 shrink-0 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                   <a.icon className="h-5 w-5" />
                 </div>
-                <span className="text-[10px] sm:text-xs font-medium text-slate-800">{a.name}</span>
+                <span className="text-xs font-semibold text-slate-800 mt-2.5 sm:mt-1.5">{a.name}</span>
               </div>
             ))}
           </div>
