@@ -302,10 +302,14 @@ const Home = () => {
       </motion.section>
 
       {/* 2.5. ABOUT US SECTION */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        {/* Subtle decorative background items */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-50/40 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32" />
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-primary-900 to-slate-900">
+        {/* Blueprint grid + construction gradient wash */}
+        <div className="absolute inset-0 premium-grid opacity-[0.18] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.18),transparent_55%),radial-gradient(circle_at_85%_80%,rgba(251,191,36,0.12),transparent_50%)] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent-400/30 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
