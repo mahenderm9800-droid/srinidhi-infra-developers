@@ -60,11 +60,11 @@ const Contact = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* Header Banner */}
-      <section className="relative pt-32 pb-12 text-white overflow-hidden border-b border-slate-800 bg-slate-900">
+      <section className="relative pt-48 pb-24 text-white overflow-hidden border-b border-slate-800 bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
-            alt="Office Meeting Room Background" 
+            src="/thankyou.jpg" 
+            alt="Thank You Banner Background" 
             className="w-full h-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
