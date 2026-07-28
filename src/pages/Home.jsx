@@ -655,21 +655,39 @@ const Home = () => {
       </section>
 
       {/* 7. CONTACT / ENQUIRY BANNER */}
-      <section className="bg-slate-900 py-10 md:py-16 text-center text-white border-t border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">
-            Looking for a Trusted Design & Construction Partner?
-          </h2>
-          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
-            Outline requirements, scopes, and budget goals. Our engineering and architecture specialists will respond with a tailored project roadmap.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-3.5 text-base font-semibold rounded-lg bg-accent-500 text-white hover:bg-accent-600 transition-colors shadow-lg hover:shadow-accent-500/20"
-          >
-            Submit Enquiry
-            <ArrowRight className="h-5 w-5 ml-2" />
-          </Link>
+      <section className="bg-white py-12 md:py-20 border-y border-slate-200/60 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl bg-slate-950 text-white p-8 md:p-12 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-900">
+            {/* Tech Grid Pattern inside the card */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20 pointer-events-none" />
+            {/* Glow Blobs inside the card */}
+            <div className="absolute -top-24 -right-24 w-60 h-60 bg-accent-500/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-primary-500/10 rounded-full blur-3xl" />
+
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <span className="section-eyebrow text-accent-400 mb-4 inline-block">GET STARTED</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
+                Looking for a Trusted Design & Construction Partner?
+              </h2>
+              <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-light">
+                Outline requirements, scopes, and budget goals. Our engineering and architecture specialists will respond with a tailored project roadmap.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link 
+                  to="/contact" 
+                  className="w-full sm:w-auto px-8 py-4 bg-accent-500 hover:bg-accent-400 text-white font-medium rounded-xl transition-all duration-300 shadow-lg shadow-accent-500/10 hover:shadow-accent-500/20 text-sm flex items-center justify-center gap-2 group"
+                >
+                  Submit Enquiry <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <a 
+                  href={`tel:${settings?.contact?.phone || '9866615535'}`}
+                  className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white font-medium rounded-xl transition-all duration-300 border border-slate-800 text-sm flex items-center justify-center gap-2"
+                >
+                  Call Specialist: {settings?.contact?.phone || '9866615535'}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
