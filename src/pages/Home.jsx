@@ -220,7 +220,7 @@ const Home = () => {
             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80')` }}
           />
           <video
-            src="https://assets.mixkit.co/videos/preview/mixkit-building-under-construction-in-a-city-41721-large.mp4"
+            src="/smiridhi6.mp4"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65"
             autoPlay
             loop
