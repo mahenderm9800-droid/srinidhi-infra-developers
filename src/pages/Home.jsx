@@ -211,7 +211,7 @@ const Home = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* 1. HERO SECTION */}
-      <section className="relative h-[85vh] min-h-[500px] flex items-center justify-start bg-slate-900 overflow-hidden">
+      <section className="relative h-[100dvh] md:h-[85vh] min-h-[500px] flex items-center justify-start bg-slate-900 overflow-hidden">
         {/* Looping HTML5 Background Video with fallback image layout */}
         <div className="absolute inset-0 z-0 bg-slate-900">
           {/* Static fallback background displayed immediately while video buffers */}
@@ -259,20 +259,6 @@ const Home = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
-
-        {/* Navigation Dots (Centered bottom relative to section to avoid description overlay) */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === currentSlide ? 'bg-accent-500 w-8' : 'bg-white/45 w-2 hover:bg-white/70'
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
         </div>
       </section>
 
