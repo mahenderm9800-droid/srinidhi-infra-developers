@@ -61,23 +61,13 @@ const Services = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* Hero Banner */}
-      <section className="relative pt-32 pb-16 text-white text-center overflow-hidden border-b border-slate-800 bg-slate-900">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" 
-            alt="Construction Site Background" 
-            className="w-full h-full object-cover opacity-35"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <span className="text-accent-500 text-xs font-bold uppercase tracking-widest block mb-2">Capabilities</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">Srinidhi Services</h1>
-          <p className="text-slate-355 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Complete design-build solutions covering architecture, interiors, civil contracting, and smart amenities.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Capabilities"
+        title="Srinidhi Services"
+        image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80"
+        description="Complete design-build solutions covering architecture, interiors, civil contracting, and smart amenities."
+      />
+
 
       {/* Competencies Grid */}
       <section className="py-24 bg-slate-950 border-y border-slate-900 relative overflow-hidden text-white">
