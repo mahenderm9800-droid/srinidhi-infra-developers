@@ -38,14 +38,13 @@ const About = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* 1. Header Section */}
-      <section className="relative pt-32 pb-16 text-white text-center overflow-hidden border-b border-slate-800 bg-slate-900">
+      <section className="relative pt-48 pb-28 text-white text-center overflow-hidden border-b border-slate-800 bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" 
-            alt="Office Building Background" 
-            className="w-full h-full object-cover opacity-35"
+            src="/consulting.jpg" 
+            alt="Consulting Banner Background" 
+            className="w-full h-full object-cover opacity-90"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <span className="text-accent-400 text-xs font-bold uppercase tracking-widest block mb-2">Our Story</span>
