@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Target, Eye, ShieldCheck, Compass, Heart, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getSettings, getLeadership, getMilestones } from '../services/db';
+import PageHero from '../components/PageHero';
 
 const About = () => {
   const [settings, setSettings] = useState(null);
