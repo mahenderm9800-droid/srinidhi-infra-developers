@@ -48,7 +48,7 @@ const About = () => {
 
 
       {/* 2. Brand Story, Mission & Vision */}
-      <section className="py-24 relative overflow-hidden bg-white border-b border-slate-200/60 premium-grid">
+      <section className="py-12 md:py-24 relative overflow-hidden bg-white border-b border-slate-200/60 premium-grid">
         {/* Subtle Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
@@ -102,7 +102,7 @@ const About = () => {
       </section>
 
       {/* 3. Core Values */}
-      <section className="bg-slate-50/50 border-t border-b border-slate-200/60 text-slate-800 py-24 relative overflow-hidden premium-grid">
+      <section className="bg-slate-50/50 border-t border-b border-slate-200/60 text-slate-800 py-12 md:py-24 relative overflow-hidden premium-grid">
         {/* Glow Blob */}
         <div className="glow-blob w-96 h-96 bg-accent-400/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         
@@ -130,7 +130,7 @@ const About = () => {
       </section>
 
       {/* 4. Leadership Section */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+      <section className="py-12 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="section-eyebrow mb-4">Management</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Our Leadership Team</h2>
@@ -161,7 +161,7 @@ const About = () => {
       </section>
 
       {/* 5. Timeline / Milestones */}
-      <section className="bg-slate-950 py-24 border-y border-slate-900 relative overflow-hidden text-white">
+      <section className="bg-slate-950 py-12 md:py-24 border-y border-slate-900 relative overflow-hidden text-white">
         {/* Attractive Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
@@ -224,7 +224,7 @@ const About = () => {
       </section>
 
       {/* 6. Certifications & Badges */}
-      <section className="py-16 text-center max-w-7xl mx-auto px-4">
+      <section className="py-8 md:py-16 text-center max-w-7xl mx-auto px-4">
         <div className="bg-white rounded-xl border border-slate-200/80 p-8 shadow-sm">
           <Award className="h-10 w-10 text-accent-500 mx-auto mb-4" />
           <h3 className="font-serif text-lg font-bold text-slate-900 mb-2">Registered Turnkey Developer</h3>

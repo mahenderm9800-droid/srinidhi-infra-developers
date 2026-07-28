@@ -19,7 +19,7 @@ const PageHero = ({
       : 'text-center items-center';
 
   return (
-    <section className="relative pt-36 pb-24 text-white overflow-hidden bg-slate-950">
+    <section className="relative pt-24 pb-14 md:pt-36 md:pb-24 text-white overflow-hidden bg-slate-950">
       <div className="absolute inset-0 z-0">
         {image && (
           <img

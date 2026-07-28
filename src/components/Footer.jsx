@@ -1,7 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Building2, Phone, Mail, MapPin, Clock, ArrowRight, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { getSettings } from '../services/db';
+
+const CollapsibleFooterSection = ({ title, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      {/* Mobile Header (clickable) */}
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex md:hidden items-center justify-between text-white font-serif text-sm font-bold mb-2 tracking-wide pb-2 border-b border-slate-900"
+      >
+        <span>{title}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="h-4 w-4 text-slate-400" />
+        </motion.div>
+      </button>
+
+      {/* Desktop Header (static) */}
+      <h3 className="hidden md:block text-white font-serif text-sm font-bold mb-4 tracking-wide">
+        {title}
+      </h3>
+
+      {/* Mobile Collapsible / Desktop Content */}
+      <div className="hidden md:block">
+        {children}
+      </div>
+
+      <div className="block md:hidden">
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden pb-4"
+            >
+              {children}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -57,7 +106,7 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 mb-12">
 
           {/* About Column */}
           <div className="space-y-4">
@@ -80,8 +129,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links Column */}
-          <div>
-            <h3 className="text-white font-serif text-sm font-bold mb-4 tracking-wide">Quick Links</h3>
+          <CollapsibleFooterSection title="Quick Links">
             <ul className="space-y-2.5 text-xs font-medium text-slate-300">
               <li>
                 <Link to="/about" className="hover:text-white transition-colors flex items-center">
@@ -104,11 +152,10 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </CollapsibleFooterSection>
 
           {/* Contact Details Column */}
-          <div>
-            <h3 className="text-white font-serif text-sm font-bold mb-4 tracking-wide">Contact Us</h3>
+          <CollapsibleFooterSection title="Contact Us">
             <ul className="space-y-3.5 text-xs font-medium text-slate-200">
               <li className="flex items-start">
                 <MapPin className="h-4.5 w-4.5 mr-3 text-accent-400 shrink-0 mt-0.5" />
@@ -138,11 +185,10 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </CollapsibleFooterSection>
 
           {/* Office Hours Column */}
-          <div>
-            <h3 className="text-white font-serif text-sm font-bold mb-4 tracking-wide">Office Hours</h3>
+          <CollapsibleFooterSection title="Office Hours">
             <ul className="space-y-3.5 text-xs font-medium text-slate-300">
               <li className="flex items-center">
                 <Clock className="h-4 w-4 mr-3 text-accent-400" />
@@ -159,13 +205,26 @@ const Footer = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </CollapsibleFooterSection>
 
         </div>
 
         {/* Footer Bottom / Disclaimers */}
         <div className="border-t border-slate-900 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 space-y-4 md:space-y-0 font-semibold uppercase tracking-wider">
-          <p>© {currentYear} Srinidhi Infra Developers. All rights reserved.</p>
+          <div className="space-y-2 text-center md:text-left">
+            <p>© {currentYear} Srinidhi Infra Developers. All rights reserved.</p>
+            <p className="normal-case tracking-normal text-slate-500 font-medium text-[11px]">
+              Developed By{' '}
+              <a 
+                href="https://www.octaleads.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-accent-500 hover:text-accent-400 font-semibold transition-colors"
+              >
+                Octaleads Pvt Ltd.
+              </a>
+            </p>
+          </div>
           <div className="flex space-x-6">
             <span className="hover:underline hover:text-white cursor-pointer">Privacy Policy</span>
             <span className="hover:underline hover:text-white cursor-pointer">Terms of Service</span>

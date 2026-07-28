@@ -302,7 +302,7 @@ const Home = () => {
       </motion.section>
 
       {/* 2.5. ABOUT US SECTION */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-accent-50/40">
+      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-accent-50/40">
         {/* Soft construction gradient wash */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_90%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
         <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
@@ -378,7 +378,7 @@ const Home = () => {
 
       {/* 4. HOME CONSTRUCTION PACKAGES */}
       <section 
-        className="border-t border-b border-slate-200/50 py-24 relative overflow-hidden bg-slate-50/50 premium-grid"
+        className="border-t border-b border-slate-200/50 py-12 md:py-24 relative overflow-hidden bg-slate-50/50 premium-grid"
       >
         {/* Glow Blobs */}
         <div className="glow-blob w-[500px] h-[500px] bg-accent-400/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -452,7 +452,7 @@ const Home = () => {
       </section>
 
       {/* 5. WHY CHOOSE US / OUR QUALITY */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/40">
+      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/40">
         {/* Soft construction gradient wash */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_10%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
         <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
@@ -546,7 +546,7 @@ const Home = () => {
 
 
       {/* 6. TESTIMONIALS SECTION */}
-      <section className="bg-slate-50/50 border-t border-b border-slate-200/60 py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl my-6 relative overflow-hidden premium-grid">
+      <section className="bg-slate-50/50 border-t border-b border-slate-200/60 py-8 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl my-4 md:my-6 relative overflow-hidden premium-grid">
         {/* Glow Blobs */}
         <div className="glow-blob w-96 h-96 bg-accent-400/10 -top-20 -right-20" />
         <div className="glow-blob w-80 h-80 bg-primary-500/10 -bottom-20 -left-20" />
@@ -669,7 +669,7 @@ const Home = () => {
       </section>
 
       {/* 7. CONTACT / ENQUIRY BANNER */}
-      <section className="bg-slate-900 py-16 text-center text-white border-t border-slate-800">
+      <section className="bg-slate-900 py-10 md:py-16 text-center text-white border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">
             Looking for a Trusted Design & Construction Partner?

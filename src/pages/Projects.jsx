@@ -71,7 +71,7 @@ const Projects = () => {
 
 
       {/* Filter and Content Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative overflow-hidden">
         {/* Glow Blob */}
         <div className="glow-blob w-96 h-96 bg-accent-400/10 top-20 right-10" />
 

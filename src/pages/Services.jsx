@@ -71,7 +71,7 @@ const Services = () => {
 
 
       {/* Competencies Grid */}
-      <section className="py-24 bg-slate-950 border-y border-slate-900 relative overflow-hidden text-white">
+      <section className="py-12 md:py-24 bg-slate-950 border-y border-slate-900 relative overflow-hidden text-white">
         {/* Dark Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 z-0" />
 
@@ -107,7 +107,7 @@ const Services = () => {
 
       {/* Workflow Section */}
       <section 
-        className="bg-slate-50/50 border-t border-b border-slate-200/60 py-24 relative overflow-hidden premium-grid"
+        className="bg-slate-50/50 border-t border-b border-slate-200/60 py-12 md:py-24 relative overflow-hidden premium-grid"
       >
         {/* Subtle trace grid in background */}
         <div className="absolute left-0 bottom-0 opacity-[0.02] pointer-events-none translate-x-4 translate-y-4 z-0">
@@ -145,7 +145,7 @@ const Services = () => {
 
       {/* Addons & Complementary Services */}
       <section 
-        className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden premium-grid"
+        className="py-12 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden premium-grid"
       >
         {/* Drafting protractor vector illustration */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none -translate-x-12 z-0">

@@ -35,7 +35,7 @@ const Blog = () => {
 
 
       {/* Blog Listing Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 relative overflow-hidden">
         {/* Glow Blob */}
         <div className="glow-blob w-96 h-96 bg-accent-400/10 top-20 right-10" />
 
