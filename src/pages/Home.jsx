@@ -509,11 +509,11 @@ const Home = () => {
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+            src="/AdobeStock_464201407.jpg"
             alt="Construction Quality Background"
-            className="w-full h-full object-cover object-center opacity-10 scale-105"
+            className="w-full h-full object-cover object-center opacity-25 scale-105"
           />
-          <div className="absolute inset-0 bg-slate-950/95" />
+          <div className="absolute inset-0 bg-slate-950/80" />
         </div>
 
         {/* Glow Blob */}
