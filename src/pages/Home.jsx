@@ -359,14 +359,14 @@ const Home = () => {
             {/* Right Column: Narrative & Values */}
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-4">
-                <span className="text-accent-600 text-xs font-extrabold tracking-widest uppercase block">Who We Are</span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 tracking-tight leading-tight">
-                  Crafting Structures, Cultivating Trust
+                <span className="section-eyebrow-light">Who We Are</span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+                  Crafting Structures, <span className="bg-gradient-to-r from-accent-300 to-emerald-200 bg-clip-text text-transparent">Cultivating Trust</span>
                 </h2>
-                <div className="h-1.5 w-20 bg-accent-500 rounded-full" />
+                <div className="h-1.5 w-20 bg-gradient-to-r from-accent-400 to-emerald-300 rounded-full" />
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                 Founded with a core philosophy of delivering precision, transparency, and superior engineering strength, Srinidhi Infra Developers is a trusted name in Hyderabad's civil landscape. We bridge the gap between architectural elegance and structural longevity.
               </p>
 
