@@ -47,39 +47,33 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center flex-wrap md:flex-nowrap">
+        <div className="flex justify-between items-center h-16">
           
-          {/* Logo & Navigation links grouped together on the left (Notion style) */}
-          <div className="flex items-center space-x-10">
-            {/* Logo */}
-            <Link to="/" className="flex items-center group">
-              <img
-                src="/logo-header.png"
-                alt="Srinidhi Infra Developers"
-                className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
-              />
-            </Link>
+          {/* Logo — Left */}
+          <Link to="/" className="flex items-center group shrink-0">
+            <img
+              src="/logo-header.png"
+              alt="Srinidhi Infra Developers"
+              className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+            />
+          </Link>
 
-            {/* Desktop Navigation Links aligned left immediately next to logo */}
-            <div className="hidden md:flex space-x-6 items-center pt-0.5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-[13px] transition-colors duration-200 py-1 ${
-                    isActive(link.path)
-                      ? 'text-slate-900 font-medium'
-                      : 'text-slate-500 hover:text-slate-900 font-normal'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop Right CTA ("Get Notion free" style rounded dark button) */}
-          <div className="hidden md:block">
+          {/* Desktop Navigation Links — Right */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-[13px] transition-colors duration-200 py-1 ${
+                  isActive(link.path)
+                    ? 'text-slate-900 font-medium'
+                    : 'text-slate-500 hover:text-slate-900 font-normal'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            {/* CTA Button */}
             <Link
               to="/contact"
               className="inline-flex items-center justify-center px-5 py-2 text-[13px] font-medium rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors duration-200 shadow-sm"
@@ -88,7 +82,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Hamburger — Right */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
