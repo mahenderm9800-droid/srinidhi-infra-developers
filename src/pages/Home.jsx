@@ -284,16 +284,16 @@ const Home = () => {
         transition={{ duration: 0.6 }}
         className="relative z-20 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-slate-200/80 p-6 md:p-8 text-slate-800">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-y divide-slate-100 lg:divide-y-0 lg:divide-x lg:divide-slate-100">
+        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-slate-200/80 p-4 sm:p-6 md:p-8 text-slate-800">
+          <div className="grid grid-cols-4 gap-2 sm:gap-6 md:gap-12 divide-x divide-slate-100">
             {stats.map((stat, idx) => (
-              <div key={idx} className="flex items-center space-x-4 pt-6 first:pt-0 lg:pt-0 lg:pl-8 first:pl-0">
-                <div className="p-3.5 bg-accent-500/10 rounded-xl text-accent-600 border border-accent-500/20">
+              <div key={idx} className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left space-y-1 sm:space-y-0 sm:space-x-4 pl-1 first:pl-0 sm:pl-4 md:pl-8">
+                <div className="hidden sm:block p-3.5 bg-accent-500/10 rounded-xl text-accent-600 border border-accent-500/20">
                   <stat.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-slate-505 tracking-wide font-medium">{stat.label}</div>
+                  <div className="text-sm sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">{stat.value}</div>
+                  <div className="text-[8px] sm:text-xs lg:text-sm text-slate-500 tracking-wide font-medium leading-tight">{stat.label}</div>
                 </div>
               </div>
             ))}
