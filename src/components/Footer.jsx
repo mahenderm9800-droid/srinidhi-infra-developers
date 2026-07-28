@@ -114,7 +114,7 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="Srinidhi Infra Developers"
-                className="h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-200"
+                className="h-20 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-200"
               />
             </Link>
             <p className="text-xs leading-relaxed text-slate-300">
