@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, User, Calendar, ArrowRight } from 'lucide-react';
 import { getPosts } from '../services/db';
+import PageHero from '../components/PageHero';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);

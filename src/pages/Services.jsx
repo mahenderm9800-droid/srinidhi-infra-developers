@@ -4,6 +4,7 @@ import {
   Building2, PenTool, Layout, ClipboardList, HardHat, RefreshCw, 
   MapPin, CheckCircle, ShieldCheck, Cpu, Droplets, Volume2 
 } from 'lucide-react';
+import PageHero from '../components/PageHero';
 
 const Services = () => {
   const competencies = [

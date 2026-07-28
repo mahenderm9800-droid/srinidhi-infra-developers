@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ArrowRight, Grid, Home as HomeIcon, Layers, Filter } from 'lucide-react';
 import { getProjects } from '../services/db';
+import PageHero from '../components/PageHero';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
