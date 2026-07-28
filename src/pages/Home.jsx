@@ -452,83 +452,98 @@ const Home = () => {
       </section>
 
       {/* 5. WHY CHOOSE US / OUR QUALITY */}
-      <section className="py-24 relative overflow-hidden bg-slate-950 text-white border-t border-b border-slate-900">
-        {/* Background Image with Dark Overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src="/AdobeStock_464201407.jpg"
-            alt="Construction Quality Background"
-            className="w-full h-full object-cover object-center opacity-85 scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-slate-950/20" />
-        </div>
+      <section className="py-24 relative overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/40">
+        {/* Soft construction gradient wash */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_10%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
 
-        {/* Glow Blob */}
-        <div className="glow-blob w-[500px] h-[500px] bg-accent-500/10 top-0 left-0" />
-
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
-        >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Column: Headline and description */}
-            <div className="lg:col-span-5 space-y-6">
-              <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block">
+
+            {/* Left Column: Narrative */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-6"
+            >
+              <span className="block text-accent-600 text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em]">
                 Our Quality
               </span>
-              <h2 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
-                Building Excellence With Dedication
+
+              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold uppercase text-slate-900 tracking-tight leading-[1.1]">
+                Building excellence with{' '}
+                <span className="bg-gradient-to-r from-accent-600 to-emerald-500 bg-clip-text text-transparent">
+                  dedication
+                </span>{' '}
+                in every detail.
               </h2>
-              <div className="h-1 w-20 bg-accent-500 rounded-full" />
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
-                We stand apart from other builders by maintaining absolute adherence to legal parameters, utilizing the highest grade materials, and upholding transparency.
+
+              <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                We stand apart from other builders by maintaining absolute adherence to legal parameters, utilizing the highest grade materials, and upholding transparency at every milestone.
               </p>
-              <div className="pt-4">
+
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "Uncompromising Quality",
+                  "Experienced Professionals",
+                  "Tailored Solutions",
+                  "Timely Completion",
+                  "Transparent Communication"
+                ].map((pt, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 rounded-2xl bg-white/80 border border-slate-200/80 backdrop-blur-sm px-4 py-3 shadow-sm hover:shadow-md hover:border-accent-500/40 transition-all duration-300"
+                  >
+                    <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-accent-500/15 text-accent-600 flex items-center justify-center text-xs font-extrabold">
+                      0{i + 1}
+                    </span>
+                    <span className="text-slate-800 text-xs sm:text-sm font-semibold">{pt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Link
                   to="/about"
-                  className="inline-flex items-center text-sm font-bold text-accent-400 hover:text-accent-305 transition-colors group"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  Learn More About Our Standards
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <span>Contact Us</span>
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right Column: Premium vertical indicators */}
-            <div className="lg:col-span-7 space-y-4">
-              {[
-                "Uncompromising Quality",
-                "Experienced Professionals",
-                "Tailored Solutions",
-                "Timely Completion",
-                "Transparent Communication"
-              ].map((pt, i) => (
-                <div 
-                  key={i} 
-                  className="bg-slate-900/40 border border-white/5 backdrop-blur-md p-5 rounded-2xl flex items-center justify-between hover:bg-slate-900/70 hover:border-accent-500/30 transition-all duration-300 group/item shadow-xl shadow-black/5"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-accent-500/20 flex items-center justify-center text-accent-400 font-serif font-bold text-base transition-colors group-hover/item:bg-accent-500 group-hover/item:text-white">
-                      0{i+1}
-                    </div>
-                    <span className="text-white font-serif font-bold text-base sm:text-lg">{pt}</span>
-                  </div>
-                  <div className="text-accent-400 group-hover/item:translate-x-1 transition-transform">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Right Column: Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="lg:col-span-6 relative order-first lg:order-last"
+            >
+              <div className="absolute -inset-5 bg-gradient-to-bl from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                <img
+                  src="/AdobeStock_464201407.jpg"
+                  alt="Quality construction standards at Srinidhi Infra Developers"
+                  className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
 
           </div>
-        </motion.div>
+        </div>
       </section>
+
 
       {/* 6. TESTIMONIALS SECTION */}
       <section className="bg-slate-50/50 border-t border-b border-slate-200/60 py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl my-6 relative overflow-hidden premium-grid">
