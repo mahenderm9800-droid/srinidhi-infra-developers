@@ -345,13 +345,13 @@ const Home = () => {
               </motion.div>
 
               {/* Small blueprint overlay badge */}
-              <div className="absolute -top-6 -left-6 bg-white border border-slate-200 p-4 rounded-xl shadow-lg hidden md:flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-50 flex items-center justify-center text-accent-600">
+              <div className="absolute -top-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg hidden md:flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-lg bg-accent-500/20 flex items-center justify-center text-accent-300">
                   <Building2 className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-[9px] text-slate-400 uppercase tracking-wider font-bold">Standard</div>
-                  <div className="text-xs font-extrabold text-slate-800">ISO 9001:2015</div>
+                  <div className="text-[9px] text-slate-300 uppercase tracking-wider font-bold">Standard</div>
+                  <div className="text-xs font-extrabold text-white">ISO 9001:2015</div>
                 </div>
               </div>
             </div>
