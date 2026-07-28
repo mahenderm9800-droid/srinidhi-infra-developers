@@ -120,7 +120,7 @@ const Services = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-3">The Process</span>
+            <span className="section-eyebrow mb-4">The Process</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Our Execution Workflow</h2>
             <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
             <p className="text-slate-500 text-sm mt-5 leading-relaxed font-light">
@@ -130,7 +130,7 @@ const Services = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {workflow.map((w, idx) => (
-              <div key={idx} className="premium-card premium-card-hover p-6 flex flex-col justify-between group relative overflow-hidden">
+              <div key={idx} className="premium-card premium-card-hover card-sheen p-6 flex flex-col justify-between group relative overflow-hidden">
                 <div className="glow-blob w-24 h-24 bg-accent-500/5 -bottom-10 -right-10 group-hover:scale-125 transition-transform" />
                 <div>
                   <span className="text-3xl font-black text-accent-500/20 block mb-4 group-hover:text-accent-500/30 transition-colors font-sans">{w.step}</span>
@@ -159,7 +159,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block">Extended Capabilities</span>
+            <span className="section-eyebrow mb-2">Extended Capabilities</span>
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-gradient mb-4">Complementary Expertise</h2>
             <div className="h-1 w-20 bg-accent-500 mt-4 mb-6 rounded-full" />
             <p className="text-slate-500 text-sm leading-relaxed font-light">
@@ -168,7 +168,7 @@ const Services = () => {
           </div>
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {addons.map((a, i) => (
-              <div key={i} className="premium-card premium-card-hover p-5 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-4 group">
+              <div key={i} className="premium-card premium-card-hover card-sheen p-5 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-4 group">
                 <div className="p-3 bg-accent-500/10 rounded-xl text-accent-600 shrink-0 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                   <a.icon className="h-5 w-5" />
                 </div>

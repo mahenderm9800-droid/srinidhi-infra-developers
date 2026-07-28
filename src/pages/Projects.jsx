@@ -156,7 +156,7 @@ const Projects = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
                   key={proj.id}
-                  className="premium-card premium-card-hover overflow-hidden flex flex-col group"
+                  className="premium-card premium-card-hover card-sheen overflow-hidden flex flex-col group"
                 >
                   <div className="relative h-56 overflow-hidden">
                     <img

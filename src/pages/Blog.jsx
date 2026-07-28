@@ -56,7 +56,7 @@ const Blog = () => {
             {posts.map((post) => (
               <article 
                 key={post.id} 
-                className="premium-card premium-card-hover overflow-hidden flex flex-col group"
+                className="premium-card premium-card-hover card-sheen overflow-hidden flex flex-col group"
               >
                 <div className="relative h-48 sm:h-64 overflow-hidden bg-slate-100">
                   <img 
