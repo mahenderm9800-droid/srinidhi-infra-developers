@@ -511,9 +511,9 @@ const Home = () => {
           <img
             src="/AdobeStock_464201407.jpg"
             alt="Construction Quality Background"
-            className="w-full h-full object-cover object-center opacity-25 scale-105"
+            className="w-full h-full object-cover object-center opacity-85 scale-105"
           />
-          <div className="absolute inset-0 bg-slate-950/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-950/40" />
         </div>
 
         {/* Glow Blob */}
