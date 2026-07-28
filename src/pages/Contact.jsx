@@ -97,17 +97,26 @@ const Contact = () => {
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 mr-3.5 text-accent-600 shrink-0 mt-0.5" />
                   <span className="leading-relaxed whitespace-pre-line text-slate-600 font-light">
-                    {settings?.contact?.address || "Plot No. 42, Silicon Valley Layout, Image Gardens Road, Madhapur, Hyderabad, Telangana - 500081"}
+                    {settings?.contact?.address || "H.no..1-159/1  Gandhi nagar kapra.secunderbad pin code 500062"}
                   </span>
                 </li>
-                <li className="flex items-center">
-                  <Phone className="h-4.5 w-4.5 mr-3.5 text-accent-600" />
-                  <a href={`tel:${settings?.contact?.phone || '+91 98765 43210'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
-                    {settings?.contact?.phone || "+91 98765 43210"}
-                  </a>
+                <li className="flex flex-col space-y-2">
+                  <div className="flex items-center">
+                    <Phone className="h-4.5 w-4.5 mr-3.5 text-accent-600 shrink-0" />
+                    <a href={`tel:${settings?.contact?.phone || '9866615535'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
+                      {settings?.contact?.phone || "9866615535"} (Main)
+                    </a>
+                  </div>
+                  {(settings?.contact?.phone2 || "9866615525") && (
+                    <div className="flex items-center pl-8 text-slate-500 font-light">
+                      <a href={`tel:${settings?.contact?.phone2 || '9866615525'}`} className="hover:text-accent-605 hover:text-slate-900 transition-colors">
+                        {settings?.contact?.phone2 || "9866615525"} (Alt)
+                      </a>
+                    </div>
+                  )}
                 </li>
                 <li className="flex items-center">
-                  <Mail className="h-4.5 w-4.5 mr-3.5 text-accent-600" />
+                  <Mail className="h-4.5 w-4.5 mr-3.5 text-accent-600 shrink-0" />
                   <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfra.com'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
                     {settings?.contact?.email || "info@srinidhiinfra.com"}
                   </a>
@@ -264,7 +273,7 @@ const Contact = () => {
       <section className="h-96 w-full border-t border-slate-200 relative bg-slate-100">
         <iframe
           title="Google Map Office Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4050720448107!2d78.3792376148777!3d17.440316488048256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e2f5555555%3A0x6bcf3f99e334e2c!2sSilicon%20Valley%252C%2520Madhapur%252C%2520Hyderabad%252C%2520Telangana%2520500081!5e0!3m2!1sen!2sin!4v1627254564891!5m2!1sen!2sin"
+          src="https://maps.google.com/maps?q=Gandhi%20Nagar%20Kapra%20Secunderabad%20500062&t=&z=15&ie=UTF8&iwloc=&output=embed"
           className="w-full h-full border-0 grayscale"
           allowFullScreen=""
           loading="lazy"

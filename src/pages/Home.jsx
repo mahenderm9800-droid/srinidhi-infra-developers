@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { 
   Building2, ShieldCheck, Calendar, FileText, 
-  ArrowRight, Award, MapPin, Users, Key, Star, Sparkles
+  ArrowRight, Award, MapPin, Users, Key, Star, Sparkles,
+  PenTool, Layout, Calculator
 } from 'lucide-react';
 import { getTestimonials, getPosts, getSettings } from '../services/db';
 
@@ -50,6 +51,57 @@ const Home = () => {
   }, []);
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
+  
+  // Tab 0: Civil Construction Calculator States
+  const [constArea, setConstArea] = useState(2500);
+  const [constPkg, setConstPkg] = useState('signature');
+  
+  // Tab 1: Architectural Design Calculator States
+  const [archPlot, setArchPlot] = useState(250);
+  const [archPkg, setArchPkg] = useState('standard');
+  
+  // Tab 2: Interiors & Styling Calculator States
+  const [intRooms, setIntRooms] = useState('3bhk');
+  const [intPkg, setIntPkg] = useState('luxury');
+
+  const constRates = {
+    signature: 2200,
+    elite: 1985,
+    smart: 1785,
+    starter: 1685
+  };
+
+  const constSpecs = {
+    signature: ["Fe 550D Steel Grade", "Ultratech Cement", "Premium Kajaria Tiles", "Kohler/Jaguar Fittings"],
+    elite: ["TATA / JSW Steel", "Ultratech/Birla Cement", "Kajaria Tiles", "Parryware Fittings"],
+    smart: ["Shree/Radha Steel", "Birla Cement", "Standard Tiles", "Cera Fittings"],
+    starter: ["Standard Steel Grade", "Coromandel Cement", "Ceramic Tiles", "Basic Class Fittings"]
+  };
+
+  const archRates = {
+    basic: 45,
+    standard: 95,
+    premium: 180
+  };
+
+  const archSpecs = {
+    basic: ["2D Spatial Floorplans", "3D Front Elevation Render", "Structural Column Drawings", "Plumbing & Electrical Drafts"],
+    standard: ["All Basic Package details", "3D Exterior walkthrough", "Bespoke ceiling layouts", "Liaisoning documentation support"],
+    premium: ["All Standard Package details", "Detailed VR Walkthrough", "Bespoke Landscaping details", "Soil test & foundation review"]
+  };
+
+  const intRates = {
+    premium: { '2bhk': 4.5, '3bhk': 6.2, 'villa': 10.5 },
+    luxury: { '2bhk': 6.8, '3bhk': 8.5, 'villa': 15.0 },
+    ultra: { '2bhk': 9.5, '3bhk': 12.8, 'villa': 22.0 }
+  };
+
+  const intSpecs = {
+    premium: ["Modular Laminate Kitchen", "Standard MDF Wardrobes", "Gypsum Board False Ceiling", "LED Profile Spotlights"],
+    luxury: ["Acrylic finish modular kitchen", "Hettich soft-close hardware", "Veneer finish wardrobes", "Designer false ceiling accents"],
+    ultra: ["PU-lacquer modular kitchen", "Blum motion sensor hardware", "Premium walk-in glass wardrobes", "Automation integrated lighting"]
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -76,18 +128,36 @@ const Home = () => {
   const features = [
     {
       title: "Building Constructions",
-      desc: "From residential villas to commercial workspaces, we construct with high precision, durability, and modern engineering layout controls.",
-      icon: ShieldCheck,
+      desc: "From residential villas to commercial workspaces, we construct high-performance environments with structured civil protocols and quality audits.",
+      icon: Building2,
+      points: [
+        "Residential Villas & Communities",
+        "Commercial Blocks & Workspaces",
+        "High-Grade Material Procurement",
+        "Civil & Structural Quality Audits"
+      ]
     },
     {
       title: "Architectural Design",
-      desc: "Our architects blend functional spatial flow mapping with vastu-compliant blueprints to create spaces that impress.",
-      icon: Calendar,
+      desc: "Vastu-compliant layouts, spatial flow blueprints, and detailed construction documentation delivered by our core design team.",
+      icon: PenTool,
+      points: [
+        "2D & 3D Spatial Flow Blueprints",
+        "Vastu-Compliant Elevation Designs",
+        "Authority Approvals & Liaisons",
+        "Structural Detailing & Engineering"
+      ]
     },
     {
       title: "Interiors & Styling",
-      desc: "Transform your home and office interiors with custom modular setups, premium flooring, and curated lighting packages.",
-      icon: FileText,
+      desc: "Transform your home and office interiors with premium modular setups, customized cabinetry, flooring layout designs, and curated lighting.",
+      icon: Layout,
+      points: [
+        "Custom Modular Kitchens & Storage",
+        "Premium False Ceiling & Lighting",
+        "Material Selection & Consulting",
+        "Turnkey Execution & Snag Resolution"
+      ]
     },
   ];
 
@@ -161,8 +231,8 @@ const Home = () => {
         </div>
         
         {/* Softer overlay to make the background video more clear and visible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/15 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10" />
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-white mt-16 w-full">
           <div className="max-w-3xl">
@@ -231,55 +301,133 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* 3. PROVIDED FEATURES (SERVICES SUM) */}
-      <section className="py-24 bg-slate-950 border-y border-slate-900 relative overflow-hidden text-white">
-        {/* Dark Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 z-0" />
+      {/* 2.5. ABOUT US SECTION */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Subtle decorative background items */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-50/40 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32" />
 
-        {/* Glow Blobs */}
-        <div className="glow-blob w-[500px] h-[500px] bg-accent-500/10 top-0 left-0" />
-        <div className="glow-blob w-[500px] h-[500px] bg-emerald-500/5 bottom-0 right-0" />
-
-        {/* Geometric Compass SVG Background Illustration */}
-        <div className="absolute right-0 bottom-0 opacity-[0.015] pointer-events-none translate-x-20 translate-y-20 z-0">
-          <svg width="450" height="450" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-accent-400">
-            <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
-            <circle cx="50" cy="50" r="30" strokeWidth="0.25" />
-            <line x1="50" y1="10" x2="50" y2="90" strokeWidth="0.5" strokeDasharray="1 1" />
-            <line x1="10" y1="50" x2="90" y2="50" strokeWidth="0.5" strokeDasharray="1 1" />
-            <polygon points="50,20 54,46 80,50 54,54 50,80 46,54 20,50 46,46" strokeWidth="0.5" />
-          </svg>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
-        >
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block mb-3">Capabilities</span>
-            <h2 className="text-3xl md:text-5xl font-bold font-serif text-white tracking-tight">Provided Features</h2>
-            <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
-            <p className="text-slate-200 text-sm sm:text-base mt-5 leading-relaxed font-normal">
-              Construction, design, interiors, and PMC come together under one roof so that your project feels seamless from the first draft to handover.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {features.map((feat, idx) => (
-              <div key={idx} className="bg-slate-900/50 border border-white/5 backdrop-blur-md rounded-2xl p-8 hover:bg-slate-900/80 hover:border-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start group">
-                <div className="p-4 bg-accent-500/10 rounded-xl text-accent-400 mb-6 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-md">
-                  <feat.icon className="h-6 w-6" />
-                </div>
-                <h3 className="font-serif text-lg font-bold mb-3 text-white group-hover:text-accent-400 transition-colors">{feat.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-light">{feat.desc}</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Column: Media / Illustration */}
+            <div className="lg:col-span-6 relative">
+              {/* Decorative Frame */}
+              <div className="absolute -inset-4 bg-slate-100/70 rounded-3xl -rotate-1 pointer-events-none" />
+              
+              {/* Main Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+                <img 
+                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
+                  alt="Srinidhi Construction Site Engineering" 
+                  className="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
               </div>
-            ))}
+
+              {/* Floating Quality Badge */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="absolute -bottom-6 -right-6 bg-accent-600 text-white p-6 rounded-2xl shadow-xl max-w-[220px] border border-accent-500 hidden sm:block"
+              >
+                <div className="text-3xl font-extrabold tracking-tight">100%</div>
+                <div className="text-xs font-bold uppercase tracking-wider mt-1">Quality Audited</div>
+                <div className="text-[10px] text-accent-100 font-light mt-1.5 leading-relaxed">
+                  Every structure complies with high-grade Indian concrete & steel specifications.
+                </div>
+              </motion.div>
+
+              {/* Small blueprint overlay badge */}
+              <div className="absolute -top-6 -left-6 bg-white border border-slate-200 p-4 rounded-xl shadow-lg hidden md:flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-lg bg-accent-50 flex items-center justify-center text-accent-600">
+                  <Building2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-slate-400 uppercase tracking-wider font-bold">Standard</div>
+                  <div className="text-xs font-extrabold text-slate-800">ISO 9001:2015</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Narrative & Values */}
+            <div className="lg:col-span-6 space-y-8">
+              <div className="space-y-4">
+                <span className="text-accent-600 text-xs font-extrabold tracking-widest uppercase block">Who We Are</span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 tracking-tight leading-tight">
+                  Crafting Structures, Cultivating Trust
+                </h2>
+                <div className="h-1.5 w-20 bg-accent-500 rounded-full" />
+              </div>
+
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+                Founded with a core philosophy of delivering precision, transparency, and superior engineering strength, Srinidhi Infra Developers is a trusted name in Hyderabad's civil landscape. We bridge the gap between architectural elegance and structural longevity.
+              </p>
+
+              {/* Value Propositions */}
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start space-x-4">
+                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-800">Milestone-Based Auditing</h3>
+                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                      We offer full visibility into raw material receipts, soil testing reports, and structural certifications at every concrete pour stage.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-800">Architectural & Vastu Harmony</h3>
+                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                      Every project is designed by professional structural engineers and Vastu experts to ensure safety, ventilation, and peace of mind.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-800">Fixed Cost Guarantee</h3>
+                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                      Zero surprise escalations. The rates signed in our detailed work spec contract remain lock-in protected throughout construction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Call to Action Button */}
+              <div className="pt-4">
+                <Link 
+                  to="/about"
+                  className="inline-flex items-center space-x-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-bold hover:bg-accent-600 transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
+                  <span>Learn More About Our Journey</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
           </div>
-        </motion.div>
+        </div>
       </section>
+
+
 
       {/* 4. HOME CONSTRUCTION PACKAGES */}
       <section 

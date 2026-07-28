@@ -21,14 +21,39 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-slate-950 text-slate-300 pt-16 pb-8 font-sans border-t border-slate-900 overflow-hidden">
-      {/* Background Image with Dark Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
-          alt="Construction Footer Background"
-          className="w-full h-full object-cover object-center opacity-5 scale-105"
-        />
-        <div className="absolute inset-0 bg-slate-950/98" />
+      {/* Modern Technical Blueprint/Grid SVG Backdrop */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-40">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          {/* Tech Grid */}
+          <defs>
+            <pattern id="footer-tech-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#334155" strokeWidth="0.5" className="opacity-30" />
+              <circle cx="0" cy="0" r="1.5" fill="#475569" className="opacity-40" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#footer-tech-grid)" />
+
+          {/* Compass / Engineering circle graphics on the bottom-right */}
+          <g transform="translate(1100, 80)" stroke="#475569" strokeWidth="0.75" fill="none" className="opacity-25">
+            <circle cx="100" cy="100" r="70" />
+            <circle cx="100" cy="100" r="75" strokeDasharray="3 3" />
+            <circle cx="100" cy="100" r="30" />
+            <line x1="100" y1="10" x2="100" y2="190" />
+            <line x1="10" y1="100" x2="190" y2="100" />
+          </g>
+
+          {/* Schematic Blueprint Isometric lines on the bottom-left */}
+          <g transform="translate(50, 40)" stroke="#475569" strokeWidth="0.5" fill="none" className="opacity-20">
+            {/* Draw abstract isometric building cubes */}
+            <path d="M 0 50 L 50 25 L 100 50 L 50 75 Z" />
+            <path d="M 0 50 L 0 100 L 50 125 L 50 75 Z" />
+            <path d="M 100 50 L 100 100 L 50 125 Z" />
+
+            <path d="M 120 70 L 150 55 L 180 70 L 150 85 Z" strokeDasharray="2 2" />
+            <path d="M 120 70 L 120 110 L 150 125 L 150 85 Z" strokeDasharray="2 2" />
+            <path d="M 180 70 L 180 110 L 150 125 Z" strokeDasharray="2 2" />
+          </g>
+        </svg>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,18 +112,27 @@ const Footer = () => {
             <ul className="space-y-3.5 text-xs font-medium text-slate-200">
               <li className="flex items-start">
                 <MapPin className="h-4.5 w-4.5 mr-3 text-accent-400 shrink-0 mt-0.5" />
-                <span className="whitespace-pre-line leading-relaxed">
-                  {settings?.contact?.address || "Plot No. 42, Silicon Valley Layout, Image Gardens Road, Madhapur, Hyderabad, Telangana - 500081"}
+                <span className="whitespace-pre-line leading-relaxed font-light">
+                  {settings?.contact?.address || "H.no..1-159/1  Gandhi nagar kapra.secunderbad pin code 500062"}
                 </span>
               </li>
-              <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-3 text-accent-400" />
-                <a href={`tel:${settings?.contact?.phone || '+91 98765 43210'}`} className="hover:text-white transition-colors">
-                  {settings?.contact?.phone || "+91 98765 43210"}
-                </a>
+              <li className="flex flex-col space-y-1.5">
+                <div className="flex items-center">
+                  <Phone className="h-4 w-4 mr-3 text-accent-400 shrink-0" />
+                  <a href={`tel:${settings?.contact?.phone || '9866615535'}`} className="hover:text-white transition-colors">
+                    {settings?.contact?.phone || "9866615535"}
+                  </a>
+                </div>
+                {(settings?.contact?.phone2 || "9866615525") && (
+                  <div className="flex items-center pl-7 text-[11px] text-slate-400">
+                    <a href={`tel:${settings?.contact?.phone2 || '9866615525'}`} className="hover:text-white transition-colors">
+                      {settings?.contact?.phone2 || "9866615525"}
+                    </a>
+                  </div>
+                )}
               </li>
               <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-3 text-accent-400" />
+                <Mail className="h-4 w-4 mr-3 text-accent-400 shrink-0" />
                 <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfra.com'}`} className="hover:text-white transition-colors">
                   {settings?.contact?.email || "info@srinidhiinfra.com"}
                 </a>

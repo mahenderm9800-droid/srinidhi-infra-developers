@@ -203,11 +203,12 @@ export const seedSettings = {
     families: "2,000+"
   },
   contact: {
-    phone: "+91 98765 43210",
+    phone: "+91 98666 15535",
+    phone2: "+91 98666 15525",
     email: "info@srinidhiinfra.com",
-    address: "Plot No. 42, Silicon Valley Layout, Image Gardens Road, Madhapur, Hyderabad, Telangana - 500081",
+    address: "H.no..1-159/1  Gandhi nagar kapra.secunderbad pin code 500062",
     hours: "Mon - Sat: 09:30 AM - 06:30 PM",
-    whatsapp: "+91 98765 43210"
+    whatsapp: "+91 98666 15535"
   },
   about: {
     story: "At Srinidhi Infra Developers, we believe that constructing homes and business hubs is a sacred duty. We started our journey in Hyderabad with a simple goal: to provide high-quality, legally sound real estate that stands the test of time.\n\nOver the last decade, we have successfully developed premium residential townships, commercial workspaces, and highly profitable open layouts. By prioritizing strategic locations, utilizing premium building materials, and strictly complying with state mandates like RERA, we have earned the trust of thousands of clients.",

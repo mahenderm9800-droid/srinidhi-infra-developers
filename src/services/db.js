@@ -107,7 +107,8 @@ const initMockDB = () => {
     }
 
     // Seeding Settings
-    if (!localStorage.getItem('srinidhi_settings')) {
+    const storedSettings = localStorage.getItem('srinidhi_settings');
+    if (!storedSettings || storedSettings.includes('98765 43210')) {
       localStorage.setItem('srinidhi_settings', JSON.stringify(seedSettings));
     }
 
