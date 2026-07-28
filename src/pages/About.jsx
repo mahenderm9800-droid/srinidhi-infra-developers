@@ -38,22 +38,13 @@ const About = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* 1. Header Section */}
-      <section className="relative pt-48 pb-28 text-white text-center overflow-hidden border-b border-slate-800 bg-slate-900">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/consulting.jpg" 
-            alt="Consulting Banner Background" 
-            className="w-full h-full object-cover opacity-90"
-          />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <span className="text-accent-400 text-xs font-bold uppercase tracking-widest block mb-2">Our Story</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">About Us</h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Crafting inspiring spaces built on quality, clarity, and trust.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Story"
+        title="About Us"
+        image="/consulting.jpg"
+        description="Crafting inspiring spaces built on quality, clarity, and trust."
+      />
+
 
       {/* 2. Brand Story, Mission & Vision */}
       <section className="py-24 relative overflow-hidden bg-white border-b border-slate-200/60 premium-grid">
