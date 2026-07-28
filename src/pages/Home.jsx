@@ -302,130 +302,73 @@ const Home = () => {
       </motion.section>
 
       {/* 2.5. ABOUT US SECTION */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-primary-900 to-slate-900">
-        {/* Blueprint grid + construction gradient wash */}
-        <div className="absolute inset-0 premium-grid opacity-[0.18] pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.18),transparent_55%),radial-gradient(circle_at_85%_80%,rgba(251,191,36,0.12),transparent_50%)] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/50 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent-400/30 to-transparent" />
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-accent-50/40">
+        {/* Soft construction gradient wash */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_90%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            
-            {/* Left Column: Media / Illustration */}
-            <div className="lg:col-span-6 relative">
-              {/* Decorative Frame */}
-              <div className="absolute -inset-4 bg-white/5 border border-white/10 rounded-3xl -rotate-1 pointer-events-none backdrop-blur-sm" />
-              
-              {/* Main Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15">
-                <img 
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
-                  alt="Srinidhi Construction Site Engineering" 
-                  className="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+            {/* Left Column: Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-6 relative"
+            >
+              <div className="absolute -inset-5 bg-gradient-to-br from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80"
+                  alt="Srinidhi Infra Developers construction site in Hyderabad"
+                  className="w-full h-[430px] object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
               </div>
+            </motion.div>
 
-              {/* Floating Quality Badge */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="absolute -bottom-6 -right-6 bg-accent-600 text-white p-6 rounded-2xl shadow-xl max-w-[220px] border border-accent-500 hidden sm:block"
-              >
-                <div className="text-3xl font-extrabold tracking-tight">100%</div>
-                <div className="text-xs font-bold uppercase tracking-wider mt-1">Quality Audited</div>
-                <div className="text-[10px] text-accent-100 font-light mt-1.5 leading-relaxed">
-                  Every structure complies with high-grade Indian concrete & steel specifications.
-                </div>
-              </motion.div>
+            {/* Right Column: Narrative */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="lg:col-span-6"
+            >
+              <span className="block text-accent-600 text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em]">
+                About Us
+              </span>
 
-              {/* Small blueprint overlay badge */}
-              <div className="absolute -top-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg hidden md:flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-500/20 flex items-center justify-center text-accent-300">
-                  <Building2 className="h-5 w-5" />
-                </div>
-                <div>
-                  <div className="text-[9px] text-slate-300 uppercase tracking-wider font-bold">Standard</div>
-                  <div className="text-xs font-extrabold text-white">ISO 9001:2015</div>
-                </div>
-              </div>
-            </div>
+              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold uppercase text-slate-900 tracking-tight leading-[1.1]">
+                Turning visions into reality with a{' '}
+                <span className="bg-gradient-to-r from-accent-600 to-emerald-500 bg-clip-text text-transparent">
+                  legacy of quality
+                </span>{' '}
+                and trust.
+              </h2>
 
-            {/* Right Column: Narrative & Values */}
-            <div className="lg:col-span-6 space-y-8">
-              <div className="space-y-4">
-                <span className="section-eyebrow-light">Who We Are</span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
-                  Crafting Structures, <span className="bg-gradient-to-r from-accent-300 to-emerald-200 bg-clip-text text-transparent">Cultivating Trust</span>
-                </h2>
-                <div className="h-1.5 w-20 bg-gradient-to-r from-accent-400 to-emerald-300 rounded-full" />
-              </div>
-
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                Founded with a core philosophy of delivering precision, transparency, and superior engineering strength, Srinidhi Infra Developers is a trusted name in Hyderabad's civil landscape. We bridge the gap between architectural elegance and structural longevity.
+              <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                Srinidhi Infra Developers specializes in delivering superior construction, design, and project management services. Our experienced team of architects, engineers, and interior designers works passionately to build spaces that inspire.
               </p>
 
-              {/* Value Propositions */}
-              <div className="space-y-4 pt-2">
-                <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white">Milestone-Based Auditing</h3>
-                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
-                      We offer full visibility into raw material receipts, soil testing reports, and structural certifications at every concrete pour stage.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white">Architectural & Vastu Harmony</h3>
-                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
-                      Every project is designed by professional structural engineers and Vastu experts to ensure safety, ventilation, and peace of mind.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white">Fixed Cost Guarantee</h3>
-                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
-                      Zero surprise escalations. The rates signed in our detailed work spec contract remain lock-in protected throughout construction.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Call to Action Button */}
-              <div className="pt-4">
-                <Link 
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <Link
                   to="/about"
-                  className="inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-accent-500 to-emerald-500 text-white rounded-xl text-xs sm:text-sm font-bold hover:from-accent-400 hover:to-emerald-400 transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <span>Learn More About Our Journey</span>
+                  <span>Read More</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <span>Contact Us</span>
+                </Link>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
