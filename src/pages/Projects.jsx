@@ -61,23 +61,14 @@ const Projects = () => {
   return (
     <div className="bg-slate-50/50 min-h-screen font-sans">
       {/* Page Header */}
-      <section className="bg-slate-900 pt-32 pb-16 text-white relative overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" 
-            alt="Office Building Background" 
-            className="w-full h-full object-cover opacity-35"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-          <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block mb-2">Our Portfolio</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white">Srinidhi Developments</h1>
-          <p className="text-sm text-slate-305 mt-3 max-w-2xl leading-relaxed font-light">
-            Explore our range of quality construction projects, gated plot layouts, and corporate workspaces. Filter to find the right investment.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Portfolio"
+        title="Srinidhi Developments"
+        align="left"
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
+        description="Explore our range of quality construction projects, gated plot layouts, and corporate workspaces. Filter to find the right investment."
+      />
+
 
       {/* Filter and Content Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden">
