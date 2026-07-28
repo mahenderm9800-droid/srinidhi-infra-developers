@@ -302,10 +302,14 @@ const Home = () => {
       </motion.section>
 
       {/* 2.5. ABOUT US SECTION */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        {/* Subtle decorative background items */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-50/40 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32" />
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-primary-900 to-slate-900">
+        {/* Blueprint grid + construction gradient wash */}
+        <div className="absolute inset-0 premium-grid opacity-[0.18] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.18),transparent_55%),radial-gradient(circle_at_85%_80%,rgba(251,191,36,0.12),transparent_50%)] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent-400/30 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -313,10 +317,10 @@ const Home = () => {
             {/* Left Column: Media / Illustration */}
             <div className="lg:col-span-6 relative">
               {/* Decorative Frame */}
-              <div className="absolute -inset-4 bg-slate-100/70 rounded-3xl -rotate-1 pointer-events-none" />
+              <div className="absolute -inset-4 bg-white/5 border border-white/10 rounded-3xl -rotate-1 pointer-events-none backdrop-blur-sm" />
               
               {/* Main Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15">
                 <img 
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
                   alt="Srinidhi Construction Site Engineering" 
@@ -341,13 +345,13 @@ const Home = () => {
               </motion.div>
 
               {/* Small blueprint overlay badge */}
-              <div className="absolute -top-6 -left-6 bg-white border border-slate-200 p-4 rounded-xl shadow-lg hidden md:flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-50 flex items-center justify-center text-accent-600">
+              <div className="absolute -top-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg hidden md:flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-lg bg-accent-500/20 flex items-center justify-center text-accent-300">
                   <Building2 className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-[9px] text-slate-400 uppercase tracking-wider font-bold">Standard</div>
-                  <div className="text-xs font-extrabold text-slate-800">ISO 9001:2015</div>
+                  <div className="text-[9px] text-slate-300 uppercase tracking-wider font-bold">Standard</div>
+                  <div className="text-xs font-extrabold text-white">ISO 9001:2015</div>
                 </div>
               </div>
             </div>
@@ -355,56 +359,56 @@ const Home = () => {
             {/* Right Column: Narrative & Values */}
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-4">
-                <span className="text-accent-600 text-xs font-extrabold tracking-widest uppercase block">Who We Are</span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 tracking-tight leading-tight">
-                  Crafting Structures, Cultivating Trust
+                <span className="section-eyebrow-light">Who We Are</span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+                  Crafting Structures, <span className="bg-gradient-to-r from-accent-300 to-emerald-200 bg-clip-text text-transparent">Cultivating Trust</span>
                 </h2>
-                <div className="h-1.5 w-20 bg-accent-500 rounded-full" />
+                <div className="h-1.5 w-20 bg-gradient-to-r from-accent-400 to-emerald-300 rounded-full" />
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                 Founded with a core philosophy of delivering precision, transparency, and superior engineering strength, Srinidhi Infra Developers is a trusted name in Hyderabad's civil landscape. We bridge the gap between architectural elegance and structural longevity.
               </p>
 
               {/* Value Propositions */}
               <div className="space-y-4 pt-2">
                 <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-800">Milestone-Based Auditing</h3>
-                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                    <h3 className="text-sm font-bold text-white">Milestone-Based Auditing</h3>
+                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
                       We offer full visibility into raw material receipts, soil testing reports, and structural certifications at every concrete pour stage.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-800">Architectural & Vastu Harmony</h3>
-                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                    <h3 className="text-sm font-bold text-white">Architectural & Vastu Harmony</h3>
+                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
                       Every project is designed by professional structural engineers and Vastu experts to ensure safety, ventilation, and peace of mind.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-800">Fixed Cost Guarantee</h3>
-                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                    <h3 className="text-sm font-bold text-white">Fixed Cost Guarantee</h3>
+                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
                       Zero surprise escalations. The rates signed in our detailed work spec contract remain lock-in protected throughout construction.
                     </p>
                   </div>
@@ -415,7 +419,7 @@ const Home = () => {
               <div className="pt-4">
                 <Link 
                   to="/about"
-                  className="inline-flex items-center space-x-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-bold hover:bg-accent-600 transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-accent-500 to-emerald-500 text-white rounded-xl text-xs sm:text-sm font-bold hover:from-accent-400 hover:to-emerald-400 transition-colors duration-200 shadow-md hover:shadow-lg"
                 >
                   <span>Learn More About Our Journey</span>
                   <ArrowRight className="h-4 w-4" />
