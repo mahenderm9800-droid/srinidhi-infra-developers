@@ -69,7 +69,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="relative bg-slate-950 text-slate-300 pt-16 pb-8 font-sans border-t border-slate-900 overflow-hidden">
+    <footer className="relative bg-slate-950 text-slate-300 pt-8 md:pt-16 pb-8 font-sans border-t border-slate-900 overflow-hidden">
       {/* Modern Technical Blueprint/Grid SVG Backdrop */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-40">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 mb-4 md:mb-12">
 
           {/* About Column */}
           <div className="space-y-4">
@@ -210,7 +210,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom / Disclaimers */}
-        <div className="border-t border-slate-900 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 space-y-4 md:space-y-0 font-semibold uppercase tracking-wider">
+        <div className="border-t border-slate-900 pt-6 mt-4 md:mt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 space-y-4 md:space-y-0 font-semibold uppercase tracking-wider">
           <div className="space-y-2 text-center md:text-left">
             <p>© {currentYear} Srinidhi Infra Developers. All rights reserved.</p>
             <p className="normal-case tracking-normal text-slate-500 font-medium text-[11px]">
