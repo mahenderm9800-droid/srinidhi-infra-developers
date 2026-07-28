@@ -34,7 +34,7 @@ const PageHero = ({
         <div className="absolute inset-0 hero-lines opacity-60" />
         <div className="glow-blob w-[520px] h-[520px] bg-accent-500/30 -top-40 -left-24" />
         <div className="glow-blob w-[420px] h-[420px] bg-emerald-400/20 -bottom-32 right-0" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/95 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950 to-transparent" />
       </div>
 
       <motion.div
