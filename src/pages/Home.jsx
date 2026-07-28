@@ -373,42 +373,42 @@ const Home = () => {
               {/* Value Propositions */}
               <div className="space-y-4 pt-2">
                 <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-800">Milestone-Based Auditing</h3>
-                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                    <h3 className="text-sm font-bold text-white">Milestone-Based Auditing</h3>
+                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
                       We offer full visibility into raw material receipts, soil testing reports, and structural certifications at every concrete pour stage.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-800">Architectural & Vastu Harmony</h3>
-                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                    <h3 className="text-sm font-bold text-white">Architectural & Vastu Harmony</h3>
+                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
                       Every project is designed by professional structural engineers and Vastu experts to ensure safety, ventilation, and peace of mind.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-5 h-5 rounded-full bg-accent-50 flex items-center justify-center text-accent-600 mt-1 shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-accent-500/20 border border-accent-400/30 flex items-center justify-center text-accent-300 mt-1 shrink-0">
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-800">Fixed Cost Guarantee</h3>
-                    <p className="text-xs text-slate-500 font-light mt-0.5 leading-relaxed">
+                    <h3 className="text-sm font-bold text-white">Fixed Cost Guarantee</h3>
+                    <p className="text-xs text-slate-400 font-light mt-0.5 leading-relaxed">
                       Zero surprise escalations. The rates signed in our detailed work spec contract remain lock-in protected throughout construction.
                     </p>
                   </div>
@@ -419,7 +419,7 @@ const Home = () => {
               <div className="pt-4">
                 <Link 
                   to="/about"
-                  className="inline-flex items-center space-x-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-bold hover:bg-accent-600 transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-accent-500 to-emerald-500 text-white rounded-xl text-xs sm:text-sm font-bold hover:from-accent-400 hover:to-emerald-400 transition-colors duration-200 shadow-md hover:shadow-lg"
                 >
                   <span>Learn More About Our Journey</span>
                   <ArrowRight className="h-4 w-4" />
