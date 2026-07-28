@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://www.srinidhiinfra.com/sitemap.xml
+
+# Crawl delay (optional – be polite to bots)
+Crawl-delay: 5
