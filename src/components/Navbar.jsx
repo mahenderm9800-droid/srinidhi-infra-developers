@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Building2, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -52,18 +52,12 @@ const Navbar = () => {
           {/* Logo & Navigation links grouped together on the left (Notion style) */}
           <div className="flex items-center space-x-10">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2.5 group">
-              <div className="bg-gradient-to-tr from-accent-500 to-accent-600 p-2 rounded-lg text-white shadow-sm group-hover:scale-105 transition-transform duration-200">
-                <Building2 className="h-5.5 w-5.5" />
-              </div>
-              <div>
-                <span className="font-serif text-base md:text-lg font-bold text-slate-900 tracking-wide block leading-tight">
-                  SRINIDHI
-                </span>
-                <span className="text-[9px] uppercase tracking-[0.2em] text-accent-600 font-semibold block leading-none">
-                  Infra Developers
-                </span>
-              </div>
+            <Link to="/" className="flex items-center group">
+              <img
+                src="/logo.png"
+                alt="Srinidhi Infra Developers"
+                className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+              />
             </Link>
 
             {/* Desktop Navigation Links aligned left immediately next to logo */}

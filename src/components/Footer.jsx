@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, Clock, ArrowRight, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getSettings } from '../services/db';
 
@@ -110,18 +110,12 @@ const Footer = () => {
 
           {/* About Column */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="bg-accent-500 p-2 rounded-lg text-white shadow-md">
-                <Building2 className="h-6 w-6" />
-              </div>
-              <div>
-                <span className="font-serif text-lg font-bold text-white tracking-wide block leading-tight">
-                  SRINIDHI
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-accent-400 font-semibold block leading-none">
-                  Infra Developers
-                </span>
-              </div>
+            <Link to="/" className="flex items-center group">
+              <img
+                src="/logo.png"
+                alt="Srinidhi Infra Developers"
+                className="h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-200"
+              />
             </Link>
             <p className="text-xs leading-relaxed text-slate-300">
               Srinidhi Infra Developers is committed to crafting high-quality residential, commercial, and turnkey developments that redefine design, utility and inspire trust.
