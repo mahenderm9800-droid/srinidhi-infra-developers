@@ -47,7 +47,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-20">
 
           {/* Logo — Left */}
           <Link to="/" className="flex items-center group shrink-0 z-10">
@@ -58,17 +58,17 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Nav Links — Absolute center */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-6">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-[13px] transition-colors duration-200 py-1 whitespace-nowrap ${
+                className={`text-base lg:text-[17px] tracking-wide whitespace-nowrap transition-all duration-200 pb-0.5 ${
                   isActive(link.path)
-                    ? 'text-slate-900 font-medium'
-                    : 'text-slate-500 hover:text-slate-900 font-normal'
+                    ? 'text-slate-900 font-semibold border-b-2 border-accent-500'
+                    : 'text-slate-500 hover:text-slate-900 font-medium hover:border-b-2 hover:border-accent-400'
                 }`}
+                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 {link.name}
               </Link>
