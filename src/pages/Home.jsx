@@ -317,10 +317,10 @@ const Home = () => {
             {/* Left Column: Media / Illustration */}
             <div className="lg:col-span-6 relative">
               {/* Decorative Frame */}
-              <div className="absolute -inset-4 bg-slate-100/70 rounded-3xl -rotate-1 pointer-events-none" />
+              <div className="absolute -inset-4 bg-white/5 border border-white/10 rounded-3xl -rotate-1 pointer-events-none backdrop-blur-sm" />
               
               {/* Main Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15">
                 <img 
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" 
                   alt="Srinidhi Construction Site Engineering" 
