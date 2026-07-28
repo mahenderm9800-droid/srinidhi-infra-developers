@@ -532,8 +532,8 @@ const Home = () => {
               <div className="absolute -inset-5 bg-gradient-to-bl from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
                 <img
-                  src="/AdobeStock_464201407.jpg"
-                  alt="Quality construction standards at Srinidhi Infra Developers"
+                  src="/quality-construction.jpg"
+                  alt="Construction engineer reviewing blueprints at a premium high-rise site, representing Srinidhi Infra Developers' commitment to quality and precision"
                   className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
