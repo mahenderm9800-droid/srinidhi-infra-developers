@@ -513,7 +513,7 @@ const Home = () => {
             alt="Construction Quality Background"
             className="w-full h-full object-cover object-center opacity-85 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-slate-950/20" />
         </div>
 
         {/* Glow Blob */}
