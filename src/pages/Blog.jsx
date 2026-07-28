@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, User, Calendar, ArrowRight } from 'lucide-react';
 import { getPosts } from '../services/db';
+import PageHero from '../components/PageHero';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -24,23 +25,14 @@ const Blog = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* Header Banner */}
-      <section className="relative pt-32 pb-12 text-white overflow-hidden border-b border-slate-800 bg-slate-900">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=80" 
-            alt="Newspaper Background" 
-            className="w-full h-full object-cover opacity-35"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-          <span className="text-accent-400 text-xs font-semibold tracking-widest uppercase block mb-2">Market Insights</span>
-          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-white">News & Blogs</h1>
-          <p className="text-xs sm:text-sm text-slate-350 mt-2 max-w-xl">
-            Keep up to date with real estate guidelines, investment updates, legal rules, and infrastructure announcements in Hyderabad.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Market Insights"
+        title="News & Blogs"
+        align="left"
+        image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1600&q=80"
+        description="Keep up to date with real estate guidelines, investment updates, legal rules, and infrastructure announcements in Hyderabad."
+      />
+
 
       {/* Blog Listing Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative overflow-hidden">
@@ -64,7 +56,7 @@ const Blog = () => {
             {posts.map((post) => (
               <article 
                 key={post.id} 
-                className="premium-card premium-card-hover overflow-hidden flex flex-col group"
+                className="premium-card premium-card-hover card-sheen overflow-hidden flex flex-col group"
               >
                 <div className="relative h-48 sm:h-64 overflow-hidden bg-slate-100">
                   <img 

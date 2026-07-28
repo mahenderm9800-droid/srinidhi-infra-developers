@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Target, Eye, ShieldCheck, Compass, Heart, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getSettings, getLeadership, getMilestones } from '../services/db';
+import PageHero from '../components/PageHero';
 
 const About = () => {
   const [settings, setSettings] = useState(null);
@@ -38,22 +39,13 @@ const About = () => {
   return (
     <div className="bg-white min-h-screen text-slate-800 font-sans">
       {/* 1. Header Section */}
-      <section className="relative pt-48 pb-28 text-white text-center overflow-hidden border-b border-slate-800 bg-slate-900">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/consulting.jpg" 
-            alt="Consulting Banner Background" 
-            className="w-full h-full object-cover opacity-90"
-          />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <span className="text-accent-400 text-xs font-bold uppercase tracking-widest block mb-2">Our Story</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">About Us</h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Crafting inspiring spaces built on quality, clarity, and trust.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Story"
+        title="About Us"
+        image="/consulting.jpg"
+        description="Crafting inspiring spaces built on quality, clarity, and trust."
+      />
+
 
       {/* 2. Brand Story, Mission & Vision */}
       <section className="py-24 relative overflow-hidden bg-white border-b border-slate-200/60 premium-grid">
@@ -72,7 +64,7 @@ const About = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block">Our Journey</span>
+              <span className="section-eyebrow mb-2">Our Journey</span>
               <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient leading-tight">
                 Our Story
               </h2>
@@ -83,7 +75,7 @@ const About = () => {
             </div>
             
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="premium-card premium-card-hover p-6 sm:p-8 flex flex-col items-start relative overflow-hidden group shadow-md shadow-slate-100/50">
+              <div className="premium-card premium-card-hover card-sheen p-6 sm:p-8 flex flex-col items-start relative overflow-hidden group shadow-md shadow-slate-100/50">
                 <div className="glow-blob w-32 h-32 bg-accent-500/10 -top-10 -right-10 group-hover:scale-125 transition-transform" />
                 <div className="p-3 bg-accent-500/10 rounded-xl text-accent-600 mb-6 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                   <Target className="h-6 w-6" />
@@ -94,7 +86,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="premium-card premium-card-hover p-6 sm:p-8 flex flex-col items-start relative overflow-hidden group shadow-md shadow-slate-100/50">
+              <div className="premium-card premium-card-hover card-sheen p-6 sm:p-8 flex flex-col items-start relative overflow-hidden group shadow-md shadow-slate-100/50">
                 <div className="glow-blob w-32 h-32 bg-primary-500/10 -top-10 -right-10 group-hover:scale-125 transition-transform" />
                 <div className="p-3 bg-accent-500/10 rounded-xl text-accent-600 mb-6 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                   <Eye className="h-6 w-6" />
@@ -116,14 +108,14 @@ const About = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-3">How We Operate</span>
+            <span className="section-eyebrow mb-4">How We Operate</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Our Core Values</h2>
             <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {values.map((v, i) => (
-              <div key={i} className="premium-card premium-card-hover p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-5 group">
+              <div key={i} className="premium-card premium-card-hover card-sheen p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-5 group">
                 <div className="p-3 bg-accent-500/10 rounded-xl text-accent-600 shrink-0 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                   <v.icon className="h-6 w-6" />
                 </div>
@@ -140,14 +132,14 @@ const About = () => {
       {/* 4. Leadership Section */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-3">Management</span>
+          <span className="section-eyebrow mb-4">Management</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Our Leadership Team</h2>
           <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
           {leadership.map((leader, index) => (
-            <div key={index} className="premium-card premium-card-hover p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 group relative overflow-hidden">
+            <div key={index} className="premium-card premium-card-hover card-sheen p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 group relative overflow-hidden">
               <div className="glow-blob w-32 h-32 bg-accent-500/5 -bottom-10 -right-10 group-hover:scale-125 transition-transform" />
               <img 
                 src={leader.photo} 

@@ -444,7 +444,7 @@ const Home = () => {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         >
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-3">Pricing Plans</span>
+            <span className="section-eyebrow mb-4">Pricing Plans</span>
             <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Home Construction Packages</h2>
             <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
             <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed font-light">
@@ -606,7 +606,7 @@ const Home = () => {
           className="relative z-10"
         >
           <div className="text-center max-w-3xl mx-auto mb-8">
-            <span className="text-accent-600 text-xs font-bold tracking-widest uppercase block mb-2">Client Testimonials</span>
+            <span className="section-eyebrow mb-4">Client Testimonials</span>
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-gradient">Words from Our Clients</h2>
             <div className="h-1 w-20 bg-accent-500 mx-auto mt-3 rounded-full" />
           </div>
