@@ -196,7 +196,7 @@ const Projects = () => {
 
                       <Link
                         to={`/projects/${proj.id}`}
-                        className="w-full inline-flex items-center justify-center px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all duration-200 group/btn"
+                        className="w-full wp-btn-primary py-2.5"
                       >
                         View Project Details
                         <ArrowRight className="h-3.5 w-3.5 ml-1.5 group-hover/btn:translate-x-1 transition-transform" />

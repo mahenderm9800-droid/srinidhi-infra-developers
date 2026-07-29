@@ -266,7 +266,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all duration-200 disabled:opacity-50 text-xs uppercase tracking-wider shadow"
+                  className="w-full sm:w-auto wp-btn-primary py-3.5 px-8"
                 >
                   {submitting ? "Sending..." : (
                     <>

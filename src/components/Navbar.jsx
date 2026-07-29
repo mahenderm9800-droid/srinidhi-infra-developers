@@ -79,7 +79,7 @@ const Navbar = () => {
           <div className="hidden md:block z-10">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-5 py-2 text-[13px] font-medium rounded-md bg-slate-900 text-white hover:bg-slate-800 transition-colors duration-200 shadow-sm"
+              className="wp-btn-primary shadow-sm hover:shadow-md py-2 px-5 text-xs font-extrabold"
             >
               Enquire Now
             </Link>

@@ -231,9 +231,19 @@ const Home = () => {
                   {slides[currentSlide].title}
                 </h1>
                 
-                <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
+                <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed font-light">
                   Srinidhi Infra Developers is a leading design-build firm specializing in turning residential and commercial visions into structurally superior environments.
                 </p>
+
+                <div className="mt-6 flex flex-wrap gap-4 pt-2">
+                  <Link to="/projects" className="wp-btn-primary">
+                    <span>Explore Projects</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link to="/contact" className="wp-btn-accent">
+                    <span>Get Free Quote</span>
+                  </Link>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -329,14 +339,14 @@ const Home = () => {
                 <div className="mt-9 flex flex-wrap items-center gap-4">
                   <Link
                     to="/about"
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                    className="wp-btn-primary"
                   >
                     <span>Read More</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
+                    className="wp-btn-accent"
                   >
                     <span>Contact Us</span>
                   </Link>
@@ -411,11 +421,7 @@ const Home = () => {
                       <div className="mt-8 pt-4">
                         <Link 
                           to="/contact" 
-                          className={`w-full inline-flex items-center justify-center py-2.5 font-semibold text-xs rounded-xl transition-all duration-200 ${
-                            isFeatured 
-                              ? 'bg-accent-500 hover:bg-accent-600 text-white shadow-lg hover:shadow-accent-500/20' 
-                              : 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm'
-                          }`}
+                          className={`w-full ${isFeatured ? 'wp-btn-primary' : 'wp-btn-accent'}`}
                         >
                           Select Plan
                         </Link>
@@ -673,13 +679,13 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link 
                   to="/contact" 
-                  className="w-full sm:w-auto px-8 py-4 bg-accent-500 hover:bg-accent-400 text-white font-medium rounded-xl transition-all duration-300 shadow-lg shadow-accent-500/10 hover:shadow-accent-500/20 text-sm flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto wp-btn-primary py-3.5 px-8"
                 >
-                  Submit Enquiry <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  Submit Enquiry <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a 
                   href={`tel:${settings?.contact?.phone || '9866615535'}`}
-                  className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white font-medium rounded-xl transition-all duration-300 border border-slate-800 text-sm flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto wp-btn-blue py-3.5 px-8"
                 >
                   Call Specialist: {settings?.contact?.phone || '9866615535'}
                 </a>
