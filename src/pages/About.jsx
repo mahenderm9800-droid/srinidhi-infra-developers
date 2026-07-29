@@ -64,9 +64,19 @@ const About = () => {
               <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-4 whitespace-pre-line font-light">
                 {settings?.about?.story || "At Srinidhi Infra Developers, we believe that constructing homes and business hubs is a sacred duty. We started our journey in Hyderabad with a simple goal: to provide high-quality, legally sound real estate that stands the test of time.\n\nOver the last decade, we have successfully developed premium residential townships, commercial workspaces, and highly profitable open layouts. By prioritizing strategic locations, utilizing premium building materials, and strictly complying with state mandates like RERA, we have earned the trust of thousands of clients."}
               </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 pt-2">
+                <img
+                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+                  alt="High quality civil engineering construction site"
+                  className="w-full h-48 sm:h-56 object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-4">
+                  <span className="text-white text-xs font-semibold tracking-wider">Quality Civil Construction & On-Site Engineering</span>
+                </div>
+              </div>
             </div>
             
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="lg:col-span-6 space-y-6">
               <div className="relative rounded-3xl bg-slate-50 border border-slate-200/80 p-8 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
                 <div className="absolute -top-12 -right-12 w-32 h-32 bg-accent-500/5 rounded-full group-hover:scale-125 transition-transform" />
                 <div className="p-3.5 bg-accent-500/10 rounded-xl text-accent-600 mb-6 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors duration-300 w-fit">
@@ -87,6 +97,19 @@ const About = () => {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
                   {settings?.about?.vision || "To be the most trusted infrastructure development brand, known for transparent dealings, quality engineering, and customer satisfaction."}
                 </p>
+              </div>
+
+              {/* Added Construction Blueprint / Engineering card */}
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 shadow-md group">
+                <img
+                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+                  alt="Architectural blueprints and engineering design"
+                  className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-slate-900/60 flex flex-col justify-end p-5 text-white">
+                  <span className="text-accent-400 text-[10px] font-bold uppercase tracking-widest">Architectural Precision</span>
+                  <p className="text-xs font-medium text-slate-200 mt-1">100% Vastu Compliant Structural Layouts & Modern Blueprinting</p>
+                </div>
               </div>
             </div>
           </div>

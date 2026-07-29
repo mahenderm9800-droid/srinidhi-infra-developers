@@ -143,6 +143,45 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Construction Site Execution Banner */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200/80 group h-56">
+              <img
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
+                alt="Structural RCC Casting & Steel Framework"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-accent-400 text-[10px] font-bold uppercase tracking-wider">Civil Engineering</span>
+                <h4 className="text-white text-sm font-bold font-serif">Structural RCC Casting & TMT Steel Framing</h4>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200/80 group h-56">
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+                alt="Architectural Blueprint & On-Site Audits"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-accent-400 text-[10px] font-bold uppercase tracking-wider">Site Governance</span>
+                <h4 className="text-white text-sm font-bold font-serif">Detailed Blueprinting & Quality Audits</h4>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200/80 group h-56">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                alt="Turnkey Luxury Finishing & Handover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-accent-400 text-[10px] font-bold uppercase tracking-wider">Turnkey Delivery</span>
+                <h4 className="text-white text-sm font-bold font-serif">Residential Gated Township Handover</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

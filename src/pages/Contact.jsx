@@ -145,6 +145,19 @@ const Contact = () => {
               </div>
             </div>
 
+            {/* Construction Site Consultation Card */}
+            <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200/80 group relative">
+              <img
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+                alt="On-Site Construction Consultation"
+                className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-accent-400 text-[10px] font-bold uppercase tracking-wider">Site Visits & Audits</span>
+                <h4 className="text-white text-xs font-bold font-serif mt-1">Book an On-Site Engineering Inspection</h4>
+              </div>
+            </div>
+
             {/* Quick Notes */}
             <div className="premium-card p-6 relative overflow-hidden group">
               <div className="glow-blob w-20 h-20 bg-accent-500/5 -bottom-5 -right-5" />
