@@ -11,32 +11,38 @@ const Services = () => {
     {
       title: "Building Constructions",
       desc: "From residential villas to commercial workspaces, we construct high-performance environments with structured civil protocols and quality check audits.",
-      icon: Building2
+      icon: Building2,
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Architectural Design",
       desc: "Vastu-compliant layouts, spatial flow mapping, and detailed construction documentation delivered by our core design pods.",
-      icon: PenTool
+      icon: PenTool,
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Interiors & Styling",
       desc: "Premium residential styling, modular kitchens, custom cabinetry, corporate flooring layouts, and lighting automation.",
-      icon: Layout
+      icon: Layout,
+      image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "PMC (Project Management Consultancy)",
       desc: "Complete project governance from cost estimation and BOQ preparation to scheduling, timeline management, and snag resolution.",
-      icon: ClipboardList
+      icon: ClipboardList,
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Engineering & Contracting",
       desc: "Structured steel drafting, high-grade concrete casting, MEP coordination, and site safety management under strict supervision.",
-      icon: HardHat
+      icon: HardHat,
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Renovation & Remodeling",
       desc: "Modernizing vintage spaces, structural restoration, damp treatment, space resizing, and cosmetic renewals.",
-      icon: RefreshCw
+      icon: RefreshCw,
+      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -88,7 +94,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {competencies.map((comp, idx) => (
               <motion.div
                 key={idx}
@@ -96,14 +102,28 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: idx * 0.06 }}
-                className="group relative bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-7 shadow-sm hover:shadow-xl hover:shadow-accent-500/10 hover:border-accent-400/50 hover:-translate-y-1.5 transition-all duration-300"
+                className="group relative bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-accent-500/10 hover:border-accent-400/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
               >
-                <div className="absolute inset-x-7 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="p-3.5 w-fit bg-accent-500/10 rounded-xl text-accent-600 mb-6 border border-accent-500/20 group-hover:bg-gradient-to-br group-hover:from-accent-500 group-hover:to-emerald-500 group-hover:text-white group-hover:border-transparent transition-all duration-300">
-                  <comp.icon className="h-6 w-6" />
+                {/* Image Header */}
+                <div className="relative h-44 w-full overflow-hidden shrink-0">
+                  <img
+                    src={comp.image}
+                    alt={comp.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                  <div className="absolute top-3 left-3 p-2.5 bg-white/90 backdrop-blur-md rounded-xl text-slate-900 border border-white/50 shadow-md">
+                    <comp.icon className="h-5 w-5 text-accent-600" />
+                  </div>
                 </div>
-                <h3 className="font-serif text-lg font-bold mb-3 text-slate-900 group-hover:text-accent-700 transition-colors">{comp.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{comp.desc}</p>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-serif text-lg font-bold mb-2 text-slate-900 group-hover:text-accent-700 transition-colors">{comp.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">{comp.desc}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
