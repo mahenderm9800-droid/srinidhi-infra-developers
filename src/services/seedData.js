@@ -154,21 +154,39 @@ export const seedTestimonials = [
 export const seedPosts = [
   {
     id: "blog-1",
-    title: "Why Gachibowli remains the Top Real Estate Investment Hotspot in Hyderabad",
+    title: "Why Gachibowli & Financial District Remain Top Real Estate Hotspots in Hyderabad",
     slug: "gachibowli-top-real-estate-investment-hotspot",
     content: "With the continuous expansion of IT parks, outer ring road connectivity, and upcoming metro extensions, Gachibowli and surrounding financial districts continue to deliver double-digit capital appreciation. In this article, we analyze the infrastructure developments driving this demand and why buying a residential property here offers high rental yields and secure long-term value.",
-    coverImageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
+    coverImageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=75",
     author: "Srinidhi Editorial Team",
     publishedAt: new Date("2026-06-15").toISOString()
   },
   {
     id: "blog-2",
-    title: "Understanding RERA guidelines before buying a flat or open plot",
+    title: "Understanding RERA Guidelines & Legal Verification Checklist Before Buying Property",
     slug: "understanding-rera-guidelines-buying-property",
     content: "The Real Estate Regulatory Authority (RERA) has transformed real estate transactions by bringing transparency and accountability. In this guide, we break down what RERA numbers mean, how you can verify property registrations on the state RERA portal, and how buying a RERA-approved project protects your financial interest and guarantees timely completion.",
-    coverImageUrl: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+    coverImageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=75",
     author: "Legal Compliance Officer",
     publishedAt: new Date("2026-07-02").toISOString()
+  },
+  {
+    id: "blog-3",
+    title: "The Rise of Gated Community Villa Layouts & Open Plot Investments in Telangana",
+    slug: "gated-community-villas-open-plots-investment",
+    content: "Gated villa communities and engineered plot layouts in emerging suburban corridors offer unmatched peaceful living coupled with rapid appreciation. Learn how master-planned infrastructure like blacktop roads, underground utilities, and avenue plantation elevate long-term property values.",
+    coverImageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=75",
+    author: "Infrastructure Planning Team",
+    publishedAt: new Date("2026-07-18").toISOString()
+  },
+  {
+    id: "blog-4",
+    title: "Modern Architectural Standards & Quality Civil Engineering in Home Construction",
+    slug: "modern-architectural-standards-quality-engineering",
+    content: "Quality building construction starts long before concrete is poured. From soil testing and seismic structural design to premium plumbing and moisture-proof waterproofing, explore Srinidhi Infra's rigorous quality assurance standards for modern homes.",
+    coverImageUrl: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=75",
+    author: "Chief Civil Engineer",
+    publishedAt: new Date("2026-07-25").toISOString()
   }
 ];
 

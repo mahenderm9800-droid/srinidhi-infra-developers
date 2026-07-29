@@ -85,14 +85,18 @@ const initMockDB = () => {
 
     // Seeding Blog Posts
     const storedPosts = localStorage.getItem('srinidhi_posts');
-    if (!storedPosts) {
+    if (!storedPosts || storedPosts.includes('photo-1582407947304') || storedPosts.includes('photo-1450133064473')) {
       localStorage.setItem('srinidhi_posts', JSON.stringify(seedPosts));
     } else {
       const currentStored = JSON.parse(storedPosts);
       let changed = false;
       seedPosts.forEach(sp => {
-        if (!currentStored.some(p => p.id === sp.id)) {
+        const existingIdx = currentStored.findIndex(p => p.id === sp.id);
+        if (existingIdx === -1) {
           currentStored.push(sp);
+          changed = true;
+        } else {
+          currentStored[existingIdx] = sp;
           changed = true;
         }
       });
