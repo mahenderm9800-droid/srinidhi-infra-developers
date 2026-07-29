@@ -314,11 +314,11 @@ const Home = () => {
                 className="lg:col-span-6 relative"
               >
                 <div className="absolute -inset-5 bg-gradient-to-br from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
-                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-xl sm:shadow-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80"
                     alt="Srinidhi Infra Developers construction site in Hyderabad"
-                    className="w-full h-[430px] object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-56 sm:h-80 lg:h-[430px] object-cover hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
                 </div>
