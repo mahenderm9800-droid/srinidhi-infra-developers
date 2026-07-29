@@ -37,12 +37,7 @@ const PageHero = ({
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950 to-transparent" />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col ${alignment}`}
-      >
+      <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col ${alignment}`}>
         {eyebrow && <span className="section-eyebrow-light mb-5">{eyebrow}</span>}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight max-w-4xl">
           {title}
@@ -54,7 +49,7 @@ const PageHero = ({
           </p>
         )}
         {children && <div className="mt-8 w-full">{children}</div>}
-      </motion.div>
+      </div>
     </section>
   );
 };
