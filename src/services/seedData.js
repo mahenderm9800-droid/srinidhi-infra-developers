@@ -155,7 +155,7 @@ export const seedPosts = [
   {
     id: "blog-1",
     title: "Why Gachibowli & Financial District Remain Top Real Estate Hotspots in Hyderabad (2026 Guide)",
-    slug: "gachibowli-top-real-estate-investment-hotspot",
+    slug: "why-gachibowli-financial-district-remain-top-real-estate-hotspots-in-hyderabad-2026-guide",
     metaTitle: "Why Gachibowli & Financial District Are Top Real Estate Hotspots in Hyderabad | Srinidhi Infra",
     metaDescription: "Discover why Gachibowli & Financial District in Hyderabad offer double-digit ROI, prime commercial infrastructure, and high rental yields for home buyers and real estate investors.",
     keywords: ["Real estate investment Hyderabad", "Gachibowli flats for sale", "Financial District property", "Hyderabad real estate trends 2026", "Srinidhi Infra Developers", "commercial office spaces Hyderabad"],
@@ -204,7 +204,7 @@ Whether you are a long-term real estate investor seeking capital growth or a hom
   {
     id: "blog-2",
     title: "Understanding RERA Guidelines & Legal Verification Checklist Before Buying Property in Telangana",
-    slug: "understanding-rera-guidelines-buying-property",
+    slug: "understanding-rera-guidelines-legal-verification-checklist-before-buying-property-in-telangana",
     metaTitle: "TS-RERA Guidelines & Property Legal Checklist 2026 | Srinidhi Infra Developers",
     metaDescription: "Step-by-step legal verification checklist for buying property in Hyderabad. Learn how TS-RERA protects buyers, verifies title deeds, and prevents illegal layouts.",
     keywords: ["Telangana RERA registration", "RERA guidelines Hyderabad", "TS RERA plot verification", "real estate legal checklist", "buying flats in Hyderabad", "HMDA DTCP approvals"],
@@ -254,7 +254,7 @@ At Srinidhi Infra Developers, 100% of our residential, commercial, and plot deve
   {
     id: "blog-3",
     title: "The Rise of Gated Community Villa Layouts & Open Plot Investments in Telangana",
-    slug: "gated-community-villas-open-plots-investment",
+    slug: "the-rise-of-gated-community-villa-layouts-open-plot-investments-in-telangana",
     metaTitle: "Gated Villa Plots Investment Guide Telangana | Srinidhi Infra Developers",
     metaDescription: "Explore why gated plot layouts and villa communities in Hyderabad suburban corridors like Shankarpally are outperforming traditional real estate investments.",
     keywords: ["Gated community plots Hyderabad", "Shankarpally villa plots", "open plots in Telangana", "HMDA approved plots", "Srinidhi Emerald Valley", "villa layouts Hyderabad"],
@@ -300,7 +300,7 @@ Investing in a HMDA/DTCP-approved gated plot layout is one of the safest and mos
   {
     id: "blog-4",
     title: "Modern Architectural Standards & Quality Civil Engineering in Home Construction",
-    slug: "modern-architectural-standards-quality-engineering",
+    slug: "modern-architectural-standards-quality-civil-engineering-in-home-construction",
     metaTitle: "Civil Engineering & Building Quality Standards | Srinidhi Infra Developers",
     metaDescription: "Learn the 5 critical civil engineering audit standards for home construction, including soil load testing, RCC frame integrity, anti-termite treatment, and waterproofing.",
     keywords: ["Quality construction standards Hyderabad", "civil engineering protocols", "residential building quality audit", "structural integrity", "Srinidhi Infra Developers", "building waterproofing standards"],

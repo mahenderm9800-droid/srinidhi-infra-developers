@@ -432,6 +432,17 @@ export const getPosts = async () => {
   return getMockData('srinidhi_posts');
 };
 
+export const slugifyTitle = (title) => {
+  if (!title) return '';
+  return title
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+};
+
 export const getPostById = async (id) => {
   if (isFirebaseAvailable) {
     try {
@@ -445,7 +456,12 @@ export const getPostById = async (id) => {
     }
   }
   const posts = getMockData('srinidhi_posts');
-  return posts.find(p => p.id === id || p.slug === id) || null;
+  const targetId = id ? id.toLowerCase().trim() : '';
+  return posts.find(p => 
+    p.id === id || 
+    (p.slug && p.slug.toLowerCase() === targetId) || 
+    (p.title && slugifyTitle(p.title) === targetId)
+  ) || null;
 };
 
 export const addPost = async (postData) => {

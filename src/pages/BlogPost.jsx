@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, ArrowRight, Clock, Share2, HelpCircle, CheckCircle2, ChevronDown, Tag } from 'lucide-react';
-import { getPostById, getPosts } from '../services/db';
+import { getPostById, getPosts, slugifyTitle } from '../services/db';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -293,7 +293,7 @@ const BlogPost = () => {
               {suggestedPosts.map((sPost) => (
                 <Link 
                   key={sPost.id} 
-                  to={`/blog/${sPost.slug || sPost.id}`} 
+                  to={`/blog/${sPost.slug || slugifyTitle(sPost.title)}`} 
                   className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group"
                 >
                   <div className="h-40 relative bg-slate-100 overflow-hidden">

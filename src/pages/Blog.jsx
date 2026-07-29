@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, User, Calendar, ArrowRight } from 'lucide-react';
-import { getPosts } from '../services/db';
+import { getPosts, slugifyTitle } from '../services/db';
 import PageHero from '../components/PageHero';
 
 const Blog = () => {
@@ -93,7 +93,7 @@ const Blog = () => {
 
                   <div className="border-t border-slate-100 pt-5 mt-6">
                     <Link 
-                      to={`/blog/${post.slug || post.id}`} 
+                      to={`/blog/${post.slug || slugifyTitle(post.title)}`} 
                       className="inline-flex items-center text-xs font-semibold text-accent-600 hover:text-accent-700 transition-colors group/link"
                     >
                       Read Full Article 
