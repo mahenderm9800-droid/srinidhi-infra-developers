@@ -150,8 +150,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-3 text-accent-400 shrink-0" />
-                <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfra.com'}`} className="hover:text-white transition-colors">
-                  {settings?.contact?.email || "info@srinidhiinfra.com"}
+                <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfradevelopers.com'}`} className="hover:text-white transition-colors">
+                  {settings?.contact?.email || "info@srinidhiinfradevelopers.com"}
                 </a>
               </li>
             </ul>

@@ -6,7 +6,7 @@ import {
 } from 'firebase/auth';
 
 const OFFLINE_ADMIN = {
-  email: "admin@srinidhi.com",
+  email: "admin@srinidhiinfradevelopers.com",
   uid: "offline-admin-uid",
   role: "admin"
 };
@@ -35,7 +35,7 @@ export const login = async (email, password) => {
   }
 
   // Mock Authentication Flow
-  if (email === OFFLINE_ADMIN.email && password === "admin123") {
+  if ((email === OFFLINE_ADMIN.email || email === "admin@srinidhi.com") && password === "admin123") {
     currentMockUser = OFFLINE_ADMIN;
     localStorage.setItem('srinidhi_admin_user', JSON.stringify(OFFLINE_ADMIN));
     // Trigger listeners

@@ -343,7 +343,7 @@ const ProjectDetail = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    placeholder="name@example.com"
+                    placeholder="name@srinidhiinfradevelopers.com"
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-800 text-xs font-light transition-all duration-200"
                   />
                 </div>

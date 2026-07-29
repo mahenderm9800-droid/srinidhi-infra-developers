@@ -383,7 +383,7 @@ export const seedSettings = {
   contact: {
     phone: "+91 98666 15535",
     phone2: "+91 98666 15525",
-    email: "info@srinidhiinfra.com",
+    email: "info@srinidhiinfradevelopers.com",
     address: "H.no..1-159/1  Gandhi nagar kapra.secunderbad pin code 500062",
     hours: "Mon - Sat: 09:30 AM - 06:30 PM",
     whatsapp: "+91 98666 15535"

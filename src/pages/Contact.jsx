@@ -117,8 +117,8 @@ const Contact = () => {
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-4.5 w-4.5 mr-3.5 text-accent-600 shrink-0" />
-                  <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfra.com'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
-                    {settings?.contact?.email || "info@srinidhiinfra.com"}
+                  <a href={`mailto:${settings?.contact?.email || 'info@srinidhiinfradevelopers.com'}`} className="hover:text-accent-605 text-slate-600 hover:text-slate-900 transition-colors font-light">
+                    {settings?.contact?.email || "info@srinidhiinfradevelopers.com"}
                   </a>
                 </li>
                 <li className="flex items-start">
@@ -215,7 +215,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      placeholder="name@example.com"
+                      placeholder="name@srinidhiinfradevelopers.com"
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-800 text-xs font-light transition-all duration-200"
                     />
                   </div>
