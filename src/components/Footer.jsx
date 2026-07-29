@@ -78,7 +78,7 @@ const Footer = () => {
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0" style={{ background: 'rgba(5,15,50,0.78)' }} />
+        <div className="absolute inset-0 bg-black/65" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
