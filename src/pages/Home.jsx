@@ -288,74 +288,76 @@ const Home = () => {
       </motion.section>
 
       {/* 2.5. ABOUT US SECTION */}
-      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-accent-50/40">
-        {/* Soft construction gradient wash */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_90%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
-        <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
+      <section className="py-8 md:py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden bg-gradient-to-br from-white via-slate-50 to-accent-50/30 p-6 sm:p-10 md:p-14">
+            {/* Soft construction gradient wash */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_90%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
+            <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
 
-            {/* Left Column: Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-6 relative"
-            >
-              <div className="absolute -inset-5 bg-gradient-to-br from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80"
-                  alt="Srinidhi Infra Developers construction site in Hyderabad"
-                  className="w-full h-[430px] object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
+              {/* Left Column: Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-6 relative"
+              >
+                <div className="absolute -inset-5 bg-gradient-to-br from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
+                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80"
+                    alt="Srinidhi Infra Developers construction site in Hyderabad"
+                    className="w-full h-[430px] object-cover hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
 
-            {/* Right Column: Narrative */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="lg:col-span-6"
-            >
-              <span className="block text-accent-600 text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em]">
-                About Us
-              </span>
+              {/* Right Column: Narrative */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="lg:col-span-6"
+              >
+                <span className="block text-accent-600 text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em]">
+                  About Us
+                </span>
 
-              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold uppercase text-slate-900 tracking-tight leading-[1.1]">
-                Turning visions into reality with a{' '}
-                <span className="bg-gradient-to-r from-accent-600 to-emerald-500 bg-clip-text text-transparent">
-                  legacy of quality
-                </span>{' '}
-                and trust.
-              </h2>
+                <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold uppercase text-slate-900 tracking-tight leading-[1.1]">
+                  Turning visions into reality with a{' '}
+                  <span className="bg-gradient-to-r from-accent-600 to-emerald-500 bg-clip-text text-transparent">
+                    legacy of quality
+                  </span>{' '}
+                  and trust.
+                </h2>
 
-              <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
-                Srinidhi Infra Developers specializes in delivering superior construction, design, and project management services. Our experienced team of architects, engineers, and interior designers works passionately to build spaces that inspire.
-              </p>
+                <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                  Srinidhi Infra Developers specializes in delivering superior construction, design, and project management services. Our experienced team of architects, engineers, and interior designers works passionately to build spaces that inspire.
+                </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <span>Read More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <span>Contact Us</span>
-                </Link>
-              </div>
-            </motion.div>
+                <div className="mt-9 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/about"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    <span>Read More</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    <span>Contact Us</span>
+                  </Link>
+                </div>
+              </motion.div>
 
+            </div>
           </div>
         </div>
       </section>
@@ -363,169 +365,173 @@ const Home = () => {
 
 
       {/* 4. HOME CONSTRUCTION PACKAGES */}
-      <section 
-        className="border-t border-b border-slate-200/50 py-12 md:py-24 relative overflow-hidden bg-slate-50/50 premium-grid"
-      >
-        {/* Glow Blobs */}
-        <div className="glow-blob w-[500px] h-[500px] bg-accent-400/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <section className="py-8 md:py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden bg-slate-50/50 p-6 sm:p-10 md:p-14 premium-grid">
+            {/* Glow Blobs */}
+            <div className="glow-blob w-[500px] h-[500px] bg-accent-400/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
-        >
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="section-eyebrow mb-4">Pricing Plans</span>
-            <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Home Construction Packages</h2>
-            <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
-            <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed font-light">
-              Transparent, milestone-based packages utilizing premium materials and vetted trade partner specifications.
-            </p>
-          </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10"
+            >
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="section-eyebrow mb-4">Pricing Plans</span>
+                <h2 className="text-3xl md:text-5xl font-bold font-serif text-gradient">Home Construction Packages</h2>
+                <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
+                <p className="text-slate-500 text-sm sm:text-base mt-5 leading-relaxed font-light">
+                  Transparent, milestone-based packages utilizing premium materials and vetted trade partner specifications.
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {packages.map((pkg, idx) => {
-              const isFeatured = pkg.name === "Premium Signature";
-              return (
-                <div 
-                  key={idx} 
-                  className={`relative flex flex-col justify-between rounded-2xl transition-all duration-300 p-6 ${
-                    isFeatured 
-                      ? 'bg-slate-900 text-white border-2 border-accent-500 shadow-2xl scale-[1.03] md:translate-y-[-4px] z-20' 
-                      : 'bg-white text-slate-800 border border-slate-200/80 shadow-sm hover:border-accent-500/30 hover:shadow-lg hover:scale-[1.01] z-10'
-                  }`}
-                >
-                  {isFeatured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
-                      Most Popular
-                    </span>
-                  )}
-                  <div>
-                    <h3 className={`font-serif text-base font-bold mb-2 ${isFeatured ? 'text-white' : 'text-slate-900'}`}>{pkg.name}</h3>
-                    <div className={`text-2xl font-extrabold mb-6 tracking-tight ${isFeatured ? 'text-accent-400' : 'text-accent-600'}`}>{pkg.price}</div>
-                    
-                    <div className={`h-px w-full my-4 ${isFeatured ? 'bg-white/10' : 'bg-slate-100'}`} />
-
-                    <ul className="space-y-3.5 text-xs font-light">
-                      {pkg.details.map((detail, dIdx) => (
-                        <li key={dIdx} className="flex items-start">
-                          <span className="h-1.5 w-1.5 bg-accent-500 rounded-full mr-2.5 mt-2 flex-shrink-0" />
-                          <span className={isFeatured ? 'text-slate-300' : 'text-slate-600'}>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-8 pt-4">
-                    <Link 
-                      to="/contact" 
-                      className={`w-full inline-flex items-center justify-center py-2.5 font-semibold text-xs rounded-xl transition-all duration-200 ${
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                {packages.map((pkg, idx) => {
+                  const isFeatured = pkg.name === "Premium Signature";
+                  return (
+                    <div 
+                      key={idx} 
+                      className={`relative flex flex-col justify-between rounded-2xl transition-all duration-300 p-6 ${
                         isFeatured 
-                          ? 'bg-accent-500 hover:bg-accent-600 text-white shadow-lg hover:shadow-accent-500/20' 
-                          : 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm'
+                          ? 'bg-slate-900 text-white border-2 border-accent-500 shadow-2xl scale-[1.03] md:translate-y-[-4px] z-20' 
+                          : 'bg-white text-slate-800 border border-slate-200/80 shadow-sm hover:border-accent-500/30 hover:shadow-lg hover:scale-[1.01] z-10'
                       }`}
                     >
-                      Select Plan
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                      {isFeatured && (
+                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+                          Most Popular
+                        </span>
+                      )}
+                      <div>
+                        <h3 className={`font-serif text-base font-bold mb-2 ${isFeatured ? 'text-white' : 'text-slate-900'}`}>{pkg.name}</h3>
+                        <div className={`text-2xl font-extrabold mb-6 tracking-tight ${isFeatured ? 'text-accent-400' : 'text-accent-600'}`}>{pkg.price}</div>
+                        
+                        <div className={`h-px w-full my-4 ${isFeatured ? 'bg-white/10' : 'bg-slate-100'}`} />
+
+                        <ul className="space-y-3.5 text-xs font-light">
+                          {pkg.details.map((detail, dIdx) => (
+                            <li key={dIdx} className="flex items-start">
+                              <span className="h-1.5 w-1.5 bg-accent-500 rounded-full mr-2.5 mt-2 flex-shrink-0" />
+                              <span className={isFeatured ? 'text-slate-300' : 'text-slate-600'}>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="mt-8 pt-4">
+                        <Link 
+                          to="/contact" 
+                          className={`w-full inline-flex items-center justify-center py-2.5 font-semibold text-xs rounded-xl transition-all duration-200 ${
+                            isFeatured 
+                              ? 'bg-accent-500 hover:bg-accent-600 text-white shadow-lg hover:shadow-accent-500/20' 
+                              : 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm'
+                          }`}
+                        >
+                          Select Plan
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* 5. WHY CHOOSE US / OUR QUALITY */}
-      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/40">
-        {/* Soft construction gradient wash */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_10%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
-        <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
+      <section className="py-8 md:py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/30 p-6 sm:p-10 md:p-14">
+            {/* Soft construction gradient wash */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_10%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
+            <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
 
-            {/* Left Column: Narrative */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-6"
-            >
-              <span className="block text-accent-600 text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em]">
-                Our Quality
-              </span>
+              {/* Left Column: Narrative */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-6"
+              >
+                <span className="block text-accent-600 text-xs sm:text-sm font-extrabold uppercase tracking-[0.35em]">
+                  Our Quality
+                </span>
 
-              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold uppercase text-slate-900 tracking-tight leading-[1.1]">
-                Building excellence with{' '}
-                <span className="bg-gradient-to-r from-accent-600 to-emerald-500 bg-clip-text text-transparent">
-                  dedication
-                </span>{' '}
-                in every detail.
-              </h2>
+                <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[2.9rem] font-extrabold uppercase text-slate-900 tracking-tight leading-[1.1]">
+                  Building excellence with{' '}
+                  <span className="bg-gradient-to-r from-accent-600 to-emerald-500 bg-clip-text text-transparent">
+                    dedication
+                  </span>{' '}
+                  in every detail.
+                </h2>
 
-              <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
-                We stand apart from other builders by maintaining absolute adherence to legal parameters, utilizing the highest grade materials, and upholding transparency at every milestone.
-              </p>
+                <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                  We stand apart from other builders by maintaining absolute adherence to legal parameters, utilizing the highest grade materials, and upholding transparency at every milestone.
+                </p>
 
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  "Uncompromising Quality",
-                  "Experienced Professionals",
-                  "Tailored Solutions",
-                  "Timely Completion",
-                  "Transparent Communication"
-                ].map((pt, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 rounded-2xl bg-white/80 border border-slate-200/80 backdrop-blur-sm px-4 py-3 shadow-sm hover:shadow-md hover:border-accent-500/40 transition-all duration-300"
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    "Uncompromising Quality",
+                    "Experienced Professionals",
+                    "Tailored Solutions",
+                    "Timely Completion",
+                    "Transparent Communication"
+                  ].map((pt, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 rounded-2xl bg-white/80 border border-slate-200/80 backdrop-blur-sm px-4 py-3 shadow-sm hover:shadow-md hover:border-accent-500/40 transition-all duration-300"
+                    >
+                      <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-accent-500/15 text-accent-600 flex items-center justify-center text-xs font-extrabold">
+                        0{i + 1}
+                      </span>
+                      <span className="text-slate-800 text-xs sm:text-sm font-semibold">{pt}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-9 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/about"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                   >
-                    <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-accent-500/15 text-accent-600 flex items-center justify-center text-xs font-extrabold">
-                      0{i + 1}
-                    </span>
-                    <span className="text-slate-800 text-xs sm:text-sm font-semibold">{pt}</span>
-                  </div>
-                ))}
-              </div>
+                    <span>Read More</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    <span>Contact Us</span>
+                  </Link>
+                </div>
+              </motion.div>
 
-              <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent-500 to-emerald-500 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <span>Read More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-lg hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <span>Contact Us</span>
-                </Link>
-              </div>
-            </motion.div>
+              {/* Right Column: Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="lg:col-span-6 relative order-first lg:order-last"
+              >
+                <div className="absolute -inset-5 bg-gradient-to-bl from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
+                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                  <img
+                    src="/quality-construction.jpg"
+                    alt="Construction engineer reviewing blueprints at a premium high-rise site, representing Srinidhi Infra Developers' commitment to quality and precision"
+                    className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
 
-            {/* Right Column: Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="lg:col-span-6 relative order-first lg:order-last"
-            >
-              <div className="absolute -inset-5 bg-gradient-to-bl from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
-                <img
-                  src="/quality-construction.jpg"
-                  alt="Construction engineer reviewing blueprints at a premium high-rise site, representing Srinidhi Infra Developers' commitment to quality and precision"
-                  className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
-
+            </div>
           </div>
         </div>
       </section>

@@ -167,74 +167,78 @@ const About = () => {
       </section>
 
       {/* 5. Timeline / Milestones */}
-      <section className="bg-slate-950 py-12 md:py-24 border-y border-slate-900 relative overflow-hidden text-white">
-        {/* Tech Grid Pattern inside the section */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 pointer-events-none" />
-        
-        {/* Glow Blobs */}
-        <div className="absolute -top-24 -right-24 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl" />
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
-        >
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block mb-3">MILESTONES</span>
-            <h2 className="text-3xl md:text-5xl font-bold font-serif text-white tracking-tight">Our Journey of Excellence</h2>
-            <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
-            <p className="text-slate-300 text-sm sm:text-base mt-5 leading-relaxed font-light">
-              Key milestones demonstrating our commitment to quality, planning accuracy, and sustainable growth.
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Connecting line */}
-            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-800/80 -translate-y-1/2 hidden md:block z-0" />
+      <section className="py-10 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl border border-slate-800 shadow-2xl overflow-hidden bg-slate-950 text-white p-6 sm:p-10 md:p-16">
+            {/* Tech Grid Pattern inside the section */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 pointer-events-none" />
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
-              {milestones.map((m, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-slate-900/40 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex flex-col justify-between hover:bg-slate-900/75 hover:border-accent-500/30 transition-all duration-300 relative shadow-2xl hover:-translate-y-2 group h-full"
-                >
-                  {/* Floating glow bubble on hover */}
-                  <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-500/5 rounded-full blur-2xl group-hover:bg-accent-500/10 transition-all duration-300 pointer-events-none" />
+            {/* Glow Blobs */}
+            <div className="absolute -top-24 -right-24 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl" />
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10"
+            >
+              <div className="text-center max-w-2xl mx-auto mb-20">
+                <span className="text-accent-400 text-xs font-bold tracking-widest uppercase block mb-3">MILESTONES</span>
+                <h2 className="text-3xl md:text-5xl font-bold font-serif text-white tracking-tight">Our Journey of Excellence</h2>
+                <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
+                <p className="text-slate-300 text-sm sm:text-base mt-5 leading-relaxed font-light">
+                  Key milestones demonstrating our commitment to quality, planning accuracy, and sustainable growth.
+                </p>
+              </div>
 
-                  <div>
-                    {/* Node connector dot on top of connecting line */}
-                    <div className="hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-800 flex items-center justify-center group-hover:border-accent-500 transition-colors duration-300">
-                        <div className="w-2.5 h-2.5 rounded-full bg-slate-700 group-hover:bg-accent-500 transition-colors duration-300" />
+              <div className="relative">
+                {/* Connecting line */}
+                <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-800/80 -translate-y-1/2 hidden md:block z-0" />
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
+                  {milestones.map((m, idx) => (
+                    <div 
+                      key={idx} 
+                      className="bg-slate-900/40 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex flex-col justify-between hover:bg-slate-900/75 hover:border-accent-500/30 transition-all duration-300 relative shadow-2xl hover:-translate-y-2 group h-full"
+                    >
+                      {/* Floating glow bubble on hover */}
+                      <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-500/5 rounded-full blur-2xl group-hover:bg-accent-500/10 transition-all duration-300 pointer-events-none" />
+
+                      <div>
+                        {/* Node connector dot on top of connecting line */}
+                        <div className="hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+                          <div className="w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-800 flex items-center justify-center group-hover:border-accent-500 transition-colors duration-300">
+                            <div className="w-2.5 h-2.5 rounded-full bg-slate-700 group-hover:bg-accent-500 transition-colors duration-300" />
+                          </div>
+                        </div>
+
+                        {/* Year Badge */}
+                        <div className="bg-gradient-to-r from-accent-600 to-accent-500 rounded-lg px-3.5 py-1 text-sm font-black text-white font-sans tracking-tight shrink-0 shadow-md w-fit mb-4 mt-2">
+                          {m.year}
+                        </div>
+                        
+                        <h3 className="font-serif text-base font-bold text-white mb-2 transition-colors group-hover:text-accent-400">
+                          {m.title}
+                        </h3>
+                        <p className="text-xs text-slate-400 leading-relaxed font-light">
+                          {m.desc}
+                        </p>
+                      </div>
+                      
+                      {/* Step count in footer */}
+                      <div className="border-t border-white/5 pt-4 mt-6 flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+                        <span>Phase</span>
+                        <span>0{idx + 1}</span>
                       </div>
                     </div>
-
-                    {/* Year Badge */}
-                    <div className="bg-gradient-to-r from-accent-600 to-accent-500 rounded-lg px-3.5 py-1 text-sm font-black text-white font-sans tracking-tight shrink-0 shadow-md w-fit mb-4 mt-2">
-                      {m.year}
-                    </div>
-                    
-                    <h3 className="font-serif text-base font-bold text-white mb-2 transition-colors group-hover:text-accent-400">
-                      {m.title}
-                    </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed font-light">
-                      {m.desc}
-                    </p>
-                  </div>
-                  
-                  {/* Step count in footer */}
-                  <div className="border-t border-white/5 pt-4 mt-6 flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-wider">
-                    <span>Phase</span>
-                    <span className="text-accent-500/80 group-hover:text-accent-400 transition-colors">0{idx + 1}</span>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* 6. Certifications & Badges */}
