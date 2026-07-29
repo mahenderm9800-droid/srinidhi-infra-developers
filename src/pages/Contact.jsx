@@ -290,6 +290,8 @@ const Contact = () => {
           className="w-full h-full border-0 grayscale"
           allowFullScreen=""
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-same-origin"
         />
         <div className="absolute inset-0 bg-slate-900/5 pointer-events-none" />
       </section>

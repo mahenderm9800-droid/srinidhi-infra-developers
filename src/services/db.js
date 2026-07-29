@@ -351,7 +351,7 @@ export const getEnquiries = async () => {
   return getMockData('srinidhi_enquiries');
 };
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mgogqlyn";
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "https://formspree.io/f/mgogqlyn";
 
 export const addEnquiry = async (enquiryData) => {
   const newEnquiry = {

@@ -241,16 +241,14 @@ const ProjectDetail = () => {
                 Location Map
               </h3>
               <div className="h-64 rounded-2xl overflow-hidden border border-slate-200/80 relative bg-slate-100 shadow-inner">
-                {/* Embedded Hyderabad Google Maps Search */}
+                {/* Embedded Google Maps Search (no API key required) */}
                 <iframe
                   title="Google Map location"
-                  src={`https://www.google.com/maps/embed/v1/place?key=MOCK_MAP_KEY_FALLBACK&q=${encodeURIComponent(project.name + ', ' + project.location)}`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(project.name + ', ' + project.location)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
                   className="w-full h-full border-0 grayscale"
                   loading="lazy"
-                  onError={(e) => {
-                    // Fallback to static link/map if api key is mock/not working
-                    e.target.style.display = 'none';
-                  }}
+                  referrerPolicy="no-referrer-when-downgrade"
+                  sandbox="allow-scripts allow-same-origin"
                 />
                 <div className="absolute inset-0 bg-slate-900/5 pointer-events-none" />
                 {/* Fallback Map Interface */}
@@ -377,11 +375,11 @@ const ProjectDetail = () => {
               <div className="border-t border-slate-100 pt-4 text-center">
                 <span className="text-[9px] text-slate-500 uppercase tracking-widest block mb-2 font-bold">Or Call Us Directly</span>
                 <a 
-                  href="tel:+919876543210" 
+                  href="tel:+919866615535" 
                   className="inline-flex items-center text-sm font-bold text-accent-600 hover:underline"
                 >
                   <Phone className="h-4 w-4 mr-1.5" />
-                  +91 98765 43210
+                  +91 98666 15535
                 </a>
               </div>
 

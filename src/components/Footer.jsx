@@ -196,9 +196,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex space-x-6">
-            <span className="hover:underline hover:text-white cursor-pointer">Privacy Policy</span>
-            <span className="hover:underline hover:text-white cursor-pointer">Terms of Service</span>
-            <span className="hover:underline hover:text-white cursor-pointer">Disclaimer</span>
+            <Link to="/contact" className="hover:underline hover:text-white cursor-pointer">Privacy Policy</Link>
+            <Link to="/contact" className="hover:underline hover:text-white cursor-pointer">Terms of Service</Link>
+            <Link to="/contact" className="hover:underline hover:text-white cursor-pointer">Disclaimer</Link>
           </div>
         </div>
       </div>

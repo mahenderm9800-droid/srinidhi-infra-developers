@@ -35,7 +35,10 @@ export const login = async (email, password) => {
   }
 
   // Mock Authentication Flow (offline/dev mode only)
-  const MOCK_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || "admin123";
+  const MOCK_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
+  if (!MOCK_PASSWORD) {
+    throw new Error("auth/mock-auth-disabled: VITE_ADMIN_PASSWORD environment variable is not set.");
+  }
   if ((email === OFFLINE_ADMIN.email || email === "admin@srinidhi.com") && password === MOCK_PASSWORD) {
     currentMockUser = OFFLINE_ADMIN;
     localStorage.setItem('srinidhi_admin_user', JSON.stringify(OFFLINE_ADMIN));
