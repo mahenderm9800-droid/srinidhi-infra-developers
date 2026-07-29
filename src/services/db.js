@@ -351,12 +351,35 @@ export const getEnquiries = async () => {
   return getMockData('srinidhi_enquiries');
 };
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mgogqlyn";
+
 export const addEnquiry = async (enquiryData) => {
   const newEnquiry = {
     ...enquiryData,
     status: "new",
     createdAt: new Date().toISOString()
   };
+
+  // Send submission directly to Formspree email endpoint
+  try {
+    await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: enquiryData.name || enquiryData.fullName,
+        email: enquiryData.email,
+        phone: enquiryData.phone || enquiryData.mobile,
+        project: enquiryData.projectRef || enquiryData.projectName || "General Enquiry",
+        message: enquiryData.message || enquiryData.comments || enquiryData.notes || "Inquiry from website",
+        submittedAt: newEnquiry.createdAt
+      })
+    });
+  } catch (formspreeError) {
+    console.error("Formspree post submission error:", formspreeError);
+  }
 
   if (isFirebaseAvailable) {
     try {
