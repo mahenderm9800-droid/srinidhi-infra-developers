@@ -12,7 +12,7 @@ const CollapsibleFooterSection = ({ title, children }) => {
       {/* Mobile Header (clickable) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex md:hidden items-center justify-between text-white font-serif text-sm font-bold mb-2 tracking-wide pb-2 border-b border-slate-900"
+        className="w-full flex md:hidden items-center justify-between text-white font-serif text-sm font-bold mb-2 tracking-wide pb-2 border-b border-white/20"
       >
         <span>{title}</span>
         <motion.div
@@ -69,40 +69,31 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="relative bg-slate-950 text-slate-300 pt-8 md:pt-16 pb-8 font-sans border-t border-slate-900 overflow-hidden">
-      {/* Modern Technical Blueprint/Grid SVG Backdrop */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-40">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          {/* Tech Grid */}
+    <footer className="relative text-white pt-8 md:pt-16 pb-8 font-sans overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f2460 0%, #1a3a8f 30%, #1e4fc2 60%, #1565c0 80%, #0d47a1 100%)' }}>
+      {/* Blue Gradient Backdrop with grid and glow blobs */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+        {/* Subtle white grid lines */}
+        <svg className="w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="footer-tech-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#334155" strokeWidth="0.5" className="opacity-30" />
-              <circle cx="0" cy="0" r="1.5" fill="#475569" className="opacity-40" />
+            <pattern id="footer-blue-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" strokeWidth="0.6" />
+              <circle cx="0" cy="0" r="1.5" fill="#ffffff" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#footer-tech-grid)" />
-
-          {/* Compass / Engineering circle graphics on the bottom-right */}
-          <g transform="translate(1100, 80)" stroke="#475569" strokeWidth="0.75" fill="none" className="opacity-25">
-            <circle cx="100" cy="100" r="70" />
-            <circle cx="100" cy="100" r="75" strokeDasharray="3 3" />
-            <circle cx="100" cy="100" r="30" />
-            <line x1="100" y1="10" x2="100" y2="190" />
-            <line x1="10" y1="100" x2="190" y2="100" />
-          </g>
-
-          {/* Schematic Blueprint Isometric lines on the bottom-left */}
-          <g transform="translate(50, 40)" stroke="#475569" strokeWidth="0.5" fill="none" className="opacity-20">
-            {/* Draw abstract isometric building cubes */}
-            <path d="M 0 50 L 50 25 L 100 50 L 50 75 Z" />
-            <path d="M 0 50 L 0 100 L 50 125 L 50 75 Z" />
-            <path d="M 100 50 L 100 100 L 50 125 Z" />
-
-            <path d="M 120 70 L 150 55 L 180 70 L 150 85 Z" strokeDasharray="2 2" />
-            <path d="M 120 70 L 120 110 L 150 125 L 150 85 Z" strokeDasharray="2 2" />
-            <path d="M 180 70 L 180 110 L 150 125 Z" strokeDasharray="2 2" />
+          <rect width="100%" height="100%" fill="url(#footer-blue-grid)" />
+          {/* Decorative circle arcs */}
+          <g transform="translate(1100, 60)" stroke="#ffffff" strokeWidth="0.8" fill="none" opacity="0.15">
+            <circle cx="100" cy="100" r="80" />
+            <circle cx="100" cy="100" r="90" strokeDasharray="4 4" />
+            <circle cx="100" cy="100" r="35" />
+            <line x1="100" y1="5" x2="100" y2="195" />
+            <line x1="5" y1="100" x2="195" y2="100" />
           </g>
         </svg>
+        {/* Glow blobs */}
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl" style={{ background: 'rgba(255,255,255,0.06)' }} />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl" style={{ background: 'rgba(96,165,250,0.12)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl" style={{ background: 'rgba(255,255,255,0.03)' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,14 +108,14 @@ const Footer = () => {
                 className="h-20 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-200"
               />
             </Link>
-            <p className="text-xs leading-relaxed text-slate-300">
+            <p className="text-xs leading-relaxed text-blue-100">
               Srinidhi Infra Developers is committed to crafting high-quality residential, commercial, and turnkey developments that redefine design, utility and inspire trust.
             </p>
           </div>
 
           {/* Quick Links Column */}
           <CollapsibleFooterSection title="Quick Links">
-            <ul className="space-y-2.5 text-xs font-medium text-slate-300">
+            <ul className="space-y-2.5 text-xs font-medium text-blue-100">
               <li>
                 <Link to="/about" className="hover:text-white transition-colors flex items-center">
                   <ArrowRight className="h-3 w-3 mr-2 text-accent-400" /> Company Profile
@@ -150,7 +141,7 @@ const Footer = () => {
 
           {/* Contact Details Column */}
           <CollapsibleFooterSection title="Contact Us">
-            <ul className="space-y-3.5 text-xs font-medium text-slate-200">
+            <ul className="space-y-3.5 text-xs font-medium text-blue-100">
               <li className="flex items-start">
                 <MapPin className="h-4.5 w-4.5 mr-3 text-accent-400 shrink-0 mt-0.5" />
                 <span className="whitespace-pre-line leading-relaxed font-light">
@@ -165,7 +156,7 @@ const Footer = () => {
                   </a>
                 </div>
                 {(settings?.contact?.phone2 || "9866615525") && (
-                  <div className="flex items-center pl-7 text-[11px] text-slate-400">
+                  <div className="flex items-center pl-7 text-[11px] text-blue-200">
                     <a href={`tel:${settings?.contact?.phone2 || '9866615525'}`} className="hover:text-white transition-colors">
                       {settings?.contact?.phone2 || "9866615525"}
                     </a>
@@ -183,19 +174,19 @@ const Footer = () => {
 
           {/* Office Hours Column */}
           <CollapsibleFooterSection title="Office Hours">
-            <ul className="space-y-3.5 text-xs font-medium text-slate-300">
+            <ul className="space-y-3.5 text-xs font-medium text-blue-100">
               <li className="flex items-center">
                 <Clock className="h-4 w-4 mr-3 text-accent-400" />
                 <div>
-                  <p className="font-bold text-slate-100">Business Hours</p>
-                  <p className="text-[10px] text-slate-305">{settings?.contact?.hours || "Mon - Sat: 09:30 AM - 06:30 PM"}</p>
+                  <p className="font-bold text-white">Business Hours</p>
+                  <p className="text-[10px] text-blue-200">{settings?.contact?.hours || "Mon - Sat: 09:30 AM - 06:30 PM"}</p>
                 </div>
               </li>
               <li className="flex items-center">
                 <Clock className="h-4 w-4 mr-3 text-slate-600" />
                 <div>
-                  <p className="font-bold text-slate-400">Sunday</p>
-                  <p className="text-[10px] text-slate-400">Closed</p>
+                  <p className="font-bold text-blue-200">Sunday</p>
+                  <p className="text-[10px] text-blue-200">Closed</p>
                 </div>
               </li>
             </ul>
@@ -204,10 +195,10 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom / Disclaimers */}
-        <div className="border-t border-slate-900 pt-6 mt-4 md:mt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 space-y-4 md:space-y-0 font-semibold uppercase tracking-wider">
+        <div className="border-t border-white/10 pt-6 mt-4 md:mt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-200 space-y-4 md:space-y-0 font-semibold uppercase tracking-wider">
           <div className="space-y-2 text-center md:text-left">
             <p>© {currentYear} Srinidhi Infra Developers. All rights reserved.</p>
-            <p className="normal-case tracking-normal text-slate-500 font-medium text-[11px]">
+            <p className="normal-case tracking-normal text-blue-200 font-medium text-[11px]">
               Developed By{' '}
               <a 
                 href="https://www.octaleads.com" 
