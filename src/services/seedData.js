@@ -198,9 +198,9 @@ export const seedEnquiries = [
 export const seedSettings = {
   stats: {
     experience: "12+",
-    projects: "25+",
-    developed: "5M+",
-    families: "2,000+"
+    projects: "120+",
+    developed: "160+",
+    families: "100+"
   },
   contact: {
     phone: "+91 98666 15535",

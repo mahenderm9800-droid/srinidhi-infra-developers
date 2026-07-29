@@ -120,9 +120,9 @@ const Home = () => {
 
   const stats = [
     { value: settings?.stats?.experience || '12+', label: 'Years Experience', icon: Award },
-    { value: settings?.stats?.projects || '150+', label: 'Projects Completed', icon: Building2 },
-    { value: settings?.stats?.developed || '650+', label: 'Turnkey Projects', icon: Key },
-    { value: settings?.stats?.families || '300+', label: 'Happy Clients', icon: Users },
+    { value: settings?.stats?.projects || '120+', label: 'Projects Completed', icon: Building2 },
+    { value: settings?.stats?.developed || '160+', label: 'Turnkey Projects', icon: Key },
+    { value: settings?.stats?.families || '100+', label: 'Happy Clients', icon: Users },
   ];
 
   const features = [
