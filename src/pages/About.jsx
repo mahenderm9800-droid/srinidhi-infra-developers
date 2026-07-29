@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Target, Eye, ShieldCheck, Compass, Heart, Award } from 'lucide-react';
+import { Target, Eye, ShieldCheck, Compass, Heart, Award, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getSettings, getLeadership, getMilestones } from '../services/db';
 import PageHero from '../components/PageHero';
@@ -168,19 +168,17 @@ const About = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {leadership.map((leader, index) => (
-            <div key={index} className="relative rounded-3xl bg-slate-50 border border-slate-200/80 p-8 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 group hover:shadow-md transition-all duration-300 overflow-hidden">
+            <div key={index} className="relative rounded-3xl bg-slate-50 border border-slate-200/80 p-8 flex flex-col items-start text-left gap-4 group hover:shadow-md transition-all duration-300 overflow-hidden">
               <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-accent-500/5 rounded-full group-hover:scale-125 transition-transform" />
-              <img 
-                src={leader.photo} 
-                alt={leader.name} 
-                className="h-28 sm:h-36 w-28 sm:w-36 rounded-2xl object-cover shrink-0 border border-slate-200 shadow-sm transition-all duration-300"
-              />
+              <div className="p-3 bg-amber-500/10 text-amber-700 rounded-xl border border-amber-500/20 font-bold text-xs">
+                <User className="h-5 w-5 text-amber-600" />
+              </div>
               <div className="flex-grow">
-                <h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-accent-500 transition-colors duration-300 leading-snug">{leader.name}</h3>
-                <span className="text-[10px] sm:text-xs text-accent-600 font-bold uppercase tracking-wider block mt-1 mb-3">
+                <h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-300 leading-snug">{leader.name}</h3>
+                <span className="text-[10px] sm:text-xs text-amber-700 font-bold uppercase tracking-wider block mt-1 mb-3">
                   {leader.role}
                 </span>
-                <p className="text-xs sm:text-sm text-slate-505 leading-relaxed font-light line-clamp-4">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
                   {leader.bio}
                 </p>
               </div>
