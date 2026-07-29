@@ -55,7 +55,7 @@ const Home = () => {
   
   // Tab 0: Civil Construction Calculator States
   const [constArea, setConstArea] = useState(2500);
-  const [constPkg, setConstPkg] = useState('signature');
+  const [constPkg, setConstPkg] = useState('premium');
   
   // Tab 1: Architectural Design Calculator States
   const [archPlot, setArchPlot] = useState(250);
@@ -66,17 +66,13 @@ const Home = () => {
   const [intPkg, setIntPkg] = useState('luxury');
 
   const constRates = {
-    signature: 2200,
-    elite: 1985,
-    smart: 1785,
-    starter: 1685
+    premium: 1999,
+    standard: 1699
   };
 
   const constSpecs = {
-    signature: ["Fe 550D Steel Grade", "Ultratech Cement", "Premium Kajaria Tiles", "Kohler/Jaguar Fittings"],
-    elite: ["TATA / JSW Steel", "Ultratech/Birla Cement", "Kajaria Tiles", "Parryware Fittings"],
-    smart: ["Shree/Radha Steel", "Birla Cement", "Standard Tiles", "Cera Fittings"],
-    starter: ["Standard Steel Grade", "Coromandel Cement", "Ceramic Tiles", "Basic Class Fittings"]
+    premium: ["TATA / JSW Steel Grade", "Ultratech Cement", "1st Class Red Bricks", "Flooring Rs.110/sft", "Kohler/Jaguar Fittings"],
+    standard: ["TATA / JSW / Shree Steel", "Ultratech / Birla Cement", "Karimnagar Red Bricks", "Flooring Rs.75/sft", "Cera/Parryware Fittings"]
   };
 
   const archRates = {
@@ -163,47 +159,29 @@ const Home = () => {
 
   const packages = [
     {
+      name: "Standard Package",
+      price: "₹1,699/- per sft",
+      badge: "Best Value",
+      isFeatured: false,
+      details: [
+        "Steel: TATA / JSW / SHREE",
+        "Cement: Ultratech / Birla",
+        "Bricks: Karimnagar Red Bricks",
+        "Flooring: Rs.75/- per sft",
+        "Sanitary fittings: Rs.30,000/- per bathroom"
+      ]
+    },
+    {
       name: "Premium Signature",
-      price: "₹2,200/- per sft",
+      price: "₹1,999/- per sft",
+      badge: "Most Popular",
+      isFeatured: true,
       details: [
         "Steel: TATA / JSW",
         "Cement: Ultratech",
-        "Bricks: Karimnagar 1st class",
-        "Flooring: Rs.120/- per sft",
-        "Sanitary fittings: 45,000/- per bathroom"
-      ]
-    },
-    {
-      name: "Elite Comfort",
-      price: "₹1,985/- per sft",
-      details: [
-        "Steel: TATA / JSW",
-        "Cement: Ultratech",
-        "Bricks: Karimnagar Red bricks",
-        "Flooring: Rs.85/- per sft",
-        "Sanitary fittings: 35,000/- per bathroom"
-      ]
-    },
-    {
-      name: "Smart Value",
-      price: "₹1,785/- per sft",
-      details: [
-        "Steel: SHREE / RADHA",
-        "Cement: Ultratech",
-        "Bricks: Karimnagar Red bricks",
-        "Flooring: Rs.65/- per sft",
-        "Sanitary fittings: 30,000/- per bathroom"
-      ]
-    },
-    {
-      name: "Essential Starter",
-      price: "₹1,685/- per sft",
-      details: [
-        "Steel: SHREE / RADHA",
-        "Cement: Ultratech",
-        "Bricks: Red bricks",
-        "Flooring: Rs.50/- per sft",
-        "Sanitary fittings: 20,000/- per bathroom"
+        "Bricks: Karimnagar 1st class Red Bricks",
+        "Flooring: Rs.110/- per sft",
+        "Sanitary fittings: Rs.45,000/- per bathroom"
       ]
     }
   ];
@@ -395,9 +373,9 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {packages.map((pkg, idx) => {
-                  const isFeatured = pkg.name === "Premium Signature";
+                  const isFeatured = pkg.isFeatured;
                   return (
                     <div 
                       key={idx} 
@@ -407,9 +385,11 @@ const Home = () => {
                           : 'bg-white text-slate-800 border border-slate-200/80 shadow-sm hover:border-accent-500/30 hover:shadow-lg hover:scale-[1.01] z-10'
                       }`}
                     >
-                      {isFeatured && (
-                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
-                          Most Popular
+                      {pkg.badge && (
+                        <span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold tracking-wider uppercase px-3.5 py-1 rounded-full shadow-md ${
+                          isFeatured ? 'bg-accent-500 text-white' : 'bg-slate-800 text-white'
+                        }`}>
+                          {pkg.badge}
                         </span>
                       )}
                       <div>
