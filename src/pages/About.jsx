@@ -94,29 +94,40 @@ const About = () => {
       </section>
 
       {/* 3. Core Values */}
-      <section className="bg-slate-50/50 border-t border-b border-slate-200/60 py-12 md:py-20 relative overflow-hidden">
+      <section className="relative py-12 md:py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/how-we-operate-bg.jpg"
+            alt=""
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="section-eyebrow text-accent-500 mb-4 inline-block">HOW WE OPERATE</span>
-            <h2 className="text-3xl md:text-5xl font-bold font-serif text-slate-900">Our Core Values</h2>
+            <span className="section-eyebrow text-blue-300 mb-4 inline-block tracking-widest text-xs font-bold uppercase">HOW WE OPERATE</span>
+            <h2 className="text-3xl md:text-5xl font-bold font-serif text-white">Our Core Values</h2>
             <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((v, i) => (
-              <div key={i} className="relative rounded-3xl bg-white border border-slate-200/80 p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center sm:items-start text-center sm:text-left group">
-                <div className="p-3.5 bg-accent-500/10 rounded-xl text-accent-600 shrink-0 border border-accent-500/20 group-hover:bg-accent-500 group-hover:text-white transition-colors duration-300 w-fit mb-6">
+              <div key={i} className="relative rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 shadow-lg hover:bg-white/15 transition-all duration-300 flex flex-col items-center sm:items-start text-center sm:text-left group">
+                <div className="p-3.5 bg-white/10 rounded-xl text-white shrink-0 border border-white/20 group-hover:bg-accent-500 group-hover:border-accent-500 transition-colors duration-300 w-fit mb-6">
                   <v.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg font-bold text-slate-900 mb-2 group-hover:text-accent-500 transition-colors duration-300">{v.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-505 leading-relaxed font-light">{v.desc}</p>
+                  <h3 className="font-serif text-lg font-bold text-white mb-2 group-hover:text-accent-300 transition-colors duration-300">{v.title}</h3>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light">{v.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* 4. Leadership Section */}
       <section className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
