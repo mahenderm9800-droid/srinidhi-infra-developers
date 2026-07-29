@@ -64,14 +64,14 @@ const Blog = () => {
                     alt={post.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-wide uppercase">
+                  <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-3 py-1 rounded-full tracking-wide uppercase">
                     {post.category || "Guides & Analysis"}
                   </div>
                 </div>
 
                 <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between">
                   <div className="space-y-3">
-                    <div className="flex flex-wrap gap-4 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+                    <div className="flex flex-wrap gap-4 text-[10px] text-slate-500 font-medium uppercase tracking-wider">
                       <span className="flex items-center">
                         <Calendar className="h-3.5 w-3.5 mr-1.5 text-accent-600" />
                         {new Date(post.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
@@ -82,19 +82,19 @@ const Blog = () => {
                       </span>
                     </div>
 
-                    <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 group-hover:text-accent-600 transition-colors leading-snug">
+                    <h2 className="font-serif text-base sm:text-lg font-semibold text-slate-900 group-hover:text-accent-600 transition-colors leading-snug">
                       {post.title}
                     </h2>
                     
-                    <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-3">
+                    <p className="text-xs text-slate-500 leading-relaxed font-normal line-clamp-3">
                       {post.summary || post.content}
                     </p>
                   </div>
 
                   <div className="border-t border-slate-100 pt-5 mt-6">
                     <Link 
-                      to={`/blog/${post.id}`} 
-                      className="inline-flex items-center text-xs font-bold text-accent-600 hover:text-accent-700 transition-colors group/link"
+                      to={`/blog/${post.slug || post.id}`} 
+                      className="inline-flex items-center text-xs font-semibold text-accent-600 hover:text-accent-700 transition-colors group/link"
                     >
                       Read Full Article 
                       <ArrowRight className="h-3.5 w-3.5 ml-1.5 group-hover/link:translate-x-1 transition-transform" />
