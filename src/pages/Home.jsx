@@ -533,11 +533,11 @@ const Home = () => {
                 className="lg:col-span-6 relative order-first lg:order-last"
               >
                 <div className="absolute -inset-5 bg-gradient-to-bl from-slate-200/50 to-transparent rounded-[2.5rem] blur-xl pointer-events-none" />
-                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-xl sm:shadow-2xl">
                   <img
                     src="/quality-construction.jpg"
                     alt="Construction engineer reviewing blueprints at a premium high-rise site, representing Srinidhi Infra Developers' commitment to quality and precision"
-                    className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-56 sm:h-80 lg:h-[520px] object-cover hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
                 </div>
