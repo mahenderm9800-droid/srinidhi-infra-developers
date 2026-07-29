@@ -65,7 +65,7 @@ const Blog = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-wide uppercase">
-                    Guides & Analysis
+                    {post.category || "Guides & Analysis"}
                   </div>
                 </div>
 
@@ -87,7 +87,7 @@ const Blog = () => {
                     </h2>
                     
                     <p className="text-xs text-slate-500 leading-relaxed font-light line-clamp-3">
-                      {post.content}
+                      {post.summary || post.content}
                     </p>
                   </div>
 

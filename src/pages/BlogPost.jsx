@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Calendar, User, ArrowLeft, ArrowRight, Clock, Share2, HelpCircle } from 'lucide-react';
+import { Calendar, User, ArrowLeft, ArrowRight, Clock, Share2, HelpCircle, CheckCircle2, ChevronDown, Tag } from 'lucide-react';
 import { getPostById, getPosts } from '../services/db';
 
 const BlogPost = () => {
@@ -8,6 +8,7 @@ const BlogPost = () => {
   const [post, setPost] = useState(null);
   const [suggestedPosts, setSuggestedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     const loadPostAndSuggestions = async () => {
@@ -16,10 +17,66 @@ const BlogPost = () => {
         if (data) {
           setPost(data);
           
+          // Update Page Title and Meta Tags for Google SEO
+          document.title = data.metaTitle || `${data.title} | Srinidhi Infra Developers`;
+          
+          let metaDesc = document.querySelector("meta[name='description']");
+          if (!metaDesc) {
+            metaDesc = document.createElement('meta');
+            metaDesc.name = 'description';
+            document.head.appendChild(metaDesc);
+          }
+          metaDesc.content = data.metaDescription || data.summary || data.title;
+
+          let metaKeywords = document.querySelector("meta[name='keywords']");
+          if (!metaKeywords) {
+            metaKeywords = document.createElement('meta');
+            metaKeywords.name = 'keywords';
+            document.head.appendChild(metaKeywords);
+          }
+          metaKeywords.content = data.keywords ? data.keywords.join(', ') : 'Real Estate Hyderabad, Srinidhi Infra';
+
+          // Inject JSON-LD Structured Data Schema for Google Search
+          const existingSchema = document.getElementById('jsonld-blog-schema');
+          if (existingSchema) existingSchema.remove();
+
+          const articleSchema = {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": data.title,
+            "description": data.metaDescription || data.summary,
+            "image": [data.coverImageUrl],
+            "datePublished": data.publishedAt,
+            "author": {
+              "@type": "Organization",
+              "name": data.author || "Srinidhi Infra Developers",
+              "url": window.location.origin
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Srinidhi Infra Developers",
+              "logo": {
+                "@type": "ImageObject",
+                "url": `${window.location.origin}/logo-header.png`
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": window.location.href
+            }
+          };
+
+          const script = document.createElement('script');
+          script.id = 'jsonld-blog-schema';
+          script.type = 'application/ld+json';
+          script.text = JSON.stringify(articleSchema);
+          document.head.appendChild(script);
+
+          // Fetch suggested articles
           const allPosts = await getPosts();
           const suggestions = allPosts
             .filter(p => p.id !== data.id)
-            .slice(0, 2); // show up to 2 other suggestions
+            .slice(0, 2);
           setSuggestedPosts(suggestions);
         }
       } catch (err) {
@@ -35,13 +92,48 @@ const BlogPost = () => {
     if (navigator.share) {
       navigator.share({
         title: post.title,
-        text: post.content.substring(0, 100) + '...',
+        text: post.metaDescription || post.summary || post.title,
         url: window.location.href
       }).catch(err => console.log(err));
     } else {
       navigator.clipboard.writeText(window.location.href);
       alert("Article link copied to clipboard!");
     }
+  };
+
+  // Helper to render content formatted with ## headings
+  const renderFormattedContent = (content) => {
+    if (!content) return null;
+
+    const sections = content.split('\n\n');
+    return sections.map((paragraph, index) => {
+      if (paragraph.startsWith('## ')) {
+        const headingText = paragraph.replace('## ', '');
+        return (
+          <h2 key={index} className="font-serif text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4 border-l-4 border-accent-500 pl-4">
+            {headingText}
+          </h2>
+        );
+      }
+      if (paragraph.startsWith('- ')) {
+        const items = paragraph.split('\n');
+        return (
+          <ul key={index} className="space-y-2 my-4 pl-2">
+            {items.map((item, i) => (
+              <li key={i} className="flex items-start text-slate-700 text-sm sm:text-base">
+                <span className="h-2 w-2 rounded-full bg-accent-500 mt-2 mr-3 shrink-0" />
+                <span>{item.replace('- ', '')}</span>
+              </li>
+            ))}
+          </ul>
+        );
+      }
+      return (
+        <p key={index} className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+          {paragraph}
+        </p>
+      );
+    });
   };
 
   if (loading) {
@@ -67,21 +159,24 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="bg-white pt-24 min-h-screen pb-20">
+    <div className="bg-slate-50/50 pt-24 min-h-screen pb-20 font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Back Link */}
-        <div className="py-6">
-          <Link to="/blog" className="inline-flex items-center text-xs font-bold text-slate-500 hover:text-slate-800 transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-1.5" /> Back to Blog
+        {/* Back Link & Category */}
+        <div className="py-6 flex justify-between items-center">
+          <Link to="/blog" className="inline-flex items-center text-xs font-bold text-slate-600 hover:text-accent-600 transition-colors">
+            <ArrowLeft className="h-4 w-4 mr-1.5" /> Back to Articles
           </Link>
+          <span className="bg-accent-500/10 text-accent-700 border border-accent-500/20 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            {post.category || "Real Estate Guide"}
+          </span>
         </div>
 
-        {/* Article Meta */}
+        {/* Article Header */}
         <div className="space-y-4 mb-8">
           <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 font-semibold uppercase">
-            <span className="flex items-center bg-slate-100 px-2.5 py-1 rounded">
-              <Calendar className="h-3.5 w-3.5 mr-1.5 text-accent-500" />
+            <span className="flex items-center bg-white border border-slate-200 px-3 py-1 rounded-lg shadow-2xs">
+              <Calendar className="h-3.5 w-3.5 mr-1.5 text-accent-600" />
               {new Date(post.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
             </span>
             <span className="flex items-center">
@@ -90,7 +185,7 @@ const BlogPost = () => {
             </span>
             <span className="flex items-center">
               <Clock className="h-3.5 w-3.5 mr-1.5 text-slate-400" />
-              4 min read
+              {post.readTime || "5 min read"}
             </span>
           </div>
 
@@ -100,7 +195,7 @@ const BlogPost = () => {
         </div>
 
         {/* Cover Image */}
-        <div className="h-64 sm:h-[400px] rounded-xl overflow-hidden border border-slate-200 bg-slate-100 mb-8 shadow-sm">
+        <div className="h-64 sm:h-[420px] rounded-3xl overflow-hidden border border-slate-200 shadow-md mb-10 relative">
           <img 
             src={post.coverImageUrl} 
             alt={post.title} 
@@ -108,54 +203,118 @@ const BlogPost = () => {
           />
         </div>
 
-        {/* Article Content & Actions */}
-        <div className="bg-white p-6 sm:p-10 rounded-xl border border-slate-200 shadow-sm space-y-6">
+        {/* Key Takeaways Box (SEO Summary Box) */}
+        {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+          <div className="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-xl mb-10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-accent-500/10 rounded-full blur-2xl pointer-events-none" />
+            <h3 className="font-serif text-lg font-bold text-white mb-4 flex items-center">
+              <CheckCircle2 className="h-5 w-5 text-accent-400 mr-2 shrink-0" />
+              Executive Key Takeaways
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {post.keyTakeaways.map((item, idx) => (
+                <div key={idx} className="flex items-start text-xs sm:text-sm text-slate-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent-400 mt-2 mr-2.5 shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Main Article Content Card */}
+        <div className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200/80 shadow-xl space-y-6">
           {/* Share Action */}
           <div className="flex justify-between items-center border-b border-slate-100 pb-4">
-            <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">Official Publication</span>
+            <span className="text-xs text-slate-400 font-bold uppercase tracking-wider flex items-center">
+              <Tag className="h-3.5 w-3.5 mr-1 text-accent-600" /> SEO Verified Publication
+            </span>
             <button 
               onClick={handleShare}
-              className="inline-flex items-center text-xs font-bold text-slate-600 hover:text-accent-600 border border-slate-200 rounded-lg px-3 py-1.5 hover:border-accent-500 transition-colors"
+              className="inline-flex items-center text-xs font-bold text-slate-600 hover:text-accent-600 border border-slate-200 rounded-xl px-3.5 py-1.5 hover:border-accent-500 transition-colors shadow-2xs"
             >
-              <Share2 className="h-4 w-4 mr-1.5" /> Share Article
+              <Share2 className="h-4 w-4 mr-1.5 text-accent-600" /> Share Article
             </button>
           </div>
 
-          {/* Article Text */}
-          <div className="text-slate-700 text-sm sm:text-base leading-relaxed space-y-6 whitespace-pre-line font-sans">
-            {post.content}
+          {/* Formatted Body */}
+          <div className="prose prose-slate max-w-none">
+            {renderFormattedContent(post.content)}
           </div>
+
+          {/* Keywords / SEO Tags */}
+          {post.keywords && (
+            <div className="border-t border-slate-100 pt-6 mt-8">
+              <span className="text-xs text-slate-400 font-bold uppercase tracking-wider block mb-3">Topic Keywords</span>
+              <div className="flex flex-wrap gap-2">
+                {post.keywords.map((kw, i) => (
+                  <span key={i} className="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-lg border border-slate-200/60">
+                    #{kw}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Suggested Blogs Section */}
+        {/* FAQ Accordion Section for Google Search Snippets */}
+        {post.faqs && post.faqs.length > 0 && (
+          <div className="mt-12 bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-xl">
+            <div className="mb-6">
+              <span className="text-xs text-accent-600 font-bold tracking-widest uppercase block mb-1">Search Answers</span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">Frequently Asked Questions</h3>
+            </div>
+
+            <div className="space-y-4">
+              {post.faqs.map((faq, idx) => (
+                <div key={idx} className="border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                    className="w-full p-5 text-left font-serif font-bold text-slate-900 text-sm sm:text-base flex justify-between items-center hover:bg-slate-50 transition-colors"
+                  >
+                    <span>{faq.question}</span>
+                    <ChevronDown className={`h-4 w-4 text-accent-600 transition-transform duration-300 shrink-0 ml-4 ${openFaq === idx ? 'rotate-180' : ''}`} />
+                  </button>
+                  {openFaq === idx && (
+                    <div className="p-5 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Suggested Articles */}
         {suggestedPosts.length > 0 && (
           <div className="mt-16 border-t border-slate-200 pt-12 space-y-6">
-            <h3 className="font-serif text-xl font-bold text-slate-950">Suggested Articles</h3>
+            <h3 className="font-serif text-2xl font-bold text-slate-950">Recommended Reading</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {suggestedPosts.map((sPost) => (
                 <Link 
                   key={sPost.id} 
                   to={`/blog/${sPost.id}`} 
-                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group"
+                  className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
                 >
-                  <div className="h-40 relative bg-slate-100 overflow-hidden">
+                  <div className="h-44 relative bg-slate-100 overflow-hidden">
                     <img 
                       src={sPost.coverImageUrl} 
                       alt={sPost.title} 
-                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-[10px] text-slate-400 font-semibold tracking-wider block mb-1 uppercase">
-                        {new Date(sPost.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      <span className="text-[10px] text-accent-600 font-bold tracking-wider block mb-1 uppercase">
+                        {sPost.category || "Guide"}
                       </span>
-                      <h4 className="font-serif text-sm font-bold text-slate-950 group-hover:text-accent-600 transition-colors line-clamp-2">
+                      <h4 className="font-serif text-base font-bold text-slate-950 group-hover:text-accent-600 transition-colors line-clamp-2">
                         {sPost.title}
                       </h4>
                     </div>
                     <span className="text-xs text-accent-600 font-bold group-hover:underline flex items-center mt-4">
-                      Read Article <ArrowRight className="h-3 w-3 ml-1" />
+                      Read Article <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
                     </span>
                   </div>
                 </Link>
