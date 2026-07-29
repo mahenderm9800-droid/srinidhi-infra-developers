@@ -34,8 +34,9 @@ export const login = async (email, password) => {
     }
   }
 
-  // Mock Authentication Flow
-  if ((email === OFFLINE_ADMIN.email || email === "admin@srinidhi.com") && password === "admin123") {
+  // Mock Authentication Flow (offline/dev mode only)
+  const MOCK_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || "admin123";
+  if ((email === OFFLINE_ADMIN.email || email === "admin@srinidhi.com") && password === MOCK_PASSWORD) {
     currentMockUser = OFFLINE_ADMIN;
     localStorage.setItem('srinidhi_admin_user', JSON.stringify(OFFLINE_ADMIN));
     // Trigger listeners
