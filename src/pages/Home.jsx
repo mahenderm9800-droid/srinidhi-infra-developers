@@ -217,7 +217,7 @@ const Home = () => {
           {/* Static fallback background displayed immediately while video buffers */}
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80')` }}
+            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=75')` }}
           />
           <video
             src="/smiridhi6.mp4"
@@ -226,7 +226,7 @@ const Home = () => {
             loop
             muted
             playsInline
-            poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+            poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=75"
           />
         </div>
         
