@@ -8,7 +8,7 @@ Disallow: /api/
 Disallow: /*.json$
 
 # Sitemap
-Sitemap: https://www.srinidhiinfra.com/sitemap.xml
+Sitemap: https://srinidhiinfradevelopers.com/sitemap.xml
 
-# Crawl delay (optional – be polite to bots)
+# Crawl delay (polite crawling for search engines)
 Crawl-delay: 5
