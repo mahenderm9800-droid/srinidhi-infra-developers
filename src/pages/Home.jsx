@@ -452,10 +452,14 @@ const Home = () => {
       {/* 5. WHY CHOOSE US / OUR QUALITY */}
       <section className="py-8 md:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/30 p-6 sm:p-10 md:p-14">
+          <div className="relative rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden bg-gradient-to-bl from-white via-slate-50 to-accent-50/40 p-6 sm:p-10 md:p-14">
             {/* Soft construction gradient wash */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.10),transparent_55%),radial-gradient(circle_at_10%_85%,rgba(15,23,42,0.06),transparent_50%)] pointer-events-none" />
-            <div className="absolute inset-0 premium-grid opacity-[0.05] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.14),transparent_55%),radial-gradient(circle_at_10%_85%,rgba(15,23,42,0.07),transparent_50%)] pointer-events-none" />
+            <div className="absolute inset-0 premium-grid opacity-[0.07] pointer-events-none" />
+            <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[repeating-linear-gradient(-45deg,#0f172a_0px,#0f172a_1px,transparent_1px,transparent_14px)]" />
+            <div className="glow-blob w-72 h-72 md:w-[420px] md:h-[420px] bg-accent-400/40 -top-24 -right-20" />
+            <div className="glow-blob w-64 h-64 md:w-[360px] md:h-[360px] bg-emerald-300/40 -bottom-24 -left-16" />
+            <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-accent-500 to-transparent" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
 
