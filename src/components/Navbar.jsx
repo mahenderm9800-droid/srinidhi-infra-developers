@@ -38,23 +38,27 @@ const Navbar = () => {
     return location.pathname.startsWith(path);
   };
 
+  const isTransparent = location.pathname === '/' && !scrolled;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-sm border-b border-slate-200/50' 
-          : 'bg-white border-b border-slate-200/30'
+        isTransparent
+          ? 'bg-transparent border-b border-white/15'
+          : 'bg-white shadow-sm border-b border-slate-200/50'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-14">
+        <div className="relative flex h-14 items-center justify-between md:h-20">
 
           {/* Logo — Left */}
           <Link to="/" className="flex items-center group shrink-0 z-10">
             <img
-              src="/logo-header.png"
+              src={isTransparent ? '/logo.png' : '/logo-header.png'}
               alt="Srinidhi Infra Developers"
-              className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+              className={`h-10 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90 md:h-16 lg:h-[70px] ${
+                isTransparent ? 'brightness-0 invert' : ''
+              }`}
             />
           </Link>
 
@@ -65,8 +69,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-base lg:text-[17px] tracking-wide whitespace-nowrap transition-all duration-200 pb-0.5 ${
                   isActive(link.path)
-                    ? 'text-slate-900 font-semibold border-b-2 border-accent-500'
-                    : 'text-slate-500 hover:text-slate-900 font-medium hover:border-b-2 hover:border-accent-400'
+                    ? `${isTransparent ? 'text-white' : 'text-slate-900'} font-semibold border-b-2 border-accent-500`
+                    : `${isTransparent ? 'text-white/80 hover:text-white' : 'text-slate-500 hover:text-slate-900'} font-medium hover:border-b-2 hover:border-accent-400`
                 }`}
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
@@ -89,7 +93,11 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none"
+              className={`p-2 rounded-md focus:outline-none ${
+                isTransparent
+                  ? 'text-white hover:bg-white/10'
+                  : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+              }`}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
