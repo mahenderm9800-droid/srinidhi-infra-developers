@@ -19,6 +19,9 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (!pathname.startsWith('/blog/')) {
+      document.title = 'Srinidhi Infra Developers | Premium Construction & Real Estate in Hyderabad';
+    }
   }, [pathname]);
 
   return null;

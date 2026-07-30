@@ -212,6 +212,7 @@ const Home = () => {
 
   const recentWork = [
     { src: "/recent-work-modern-home.webp", alt: "Completed modern residential home" },
+    { src: "/recent-work-blue-residence.webp", alt: "Completed multi-storey blue residential building" },
     { src: "/recent-work-bedroom.webp", alt: "Custom bedroom interiors and woodwork" },
     { src: "/recent-work-tv-wall.webp", alt: "Completed television wall and cabinetry" },
     { src: "/recent-work-kitchen.webp", alt: "Completed kitchen and living space" },
@@ -473,17 +474,16 @@ const Home = () => {
               <span className="text-xs font-semibold text-amber-700">4 packages</span>
             </div>
 
-            <div className="relative z-10 -mx-4 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:-mt-20 lg:grid lg:grid-cols-4 lg:items-end lg:gap-0 lg:overflow-visible lg:px-5 lg:pb-0">
+            <div className="relative z-10 -mx-4 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
               {packages.map((pkg, idx) => {
                 const isFeatured = pkg.isFeatured;
-                const tierHeight = idx === 0 ? 'lg:min-h-[500px]' : idx === 1 ? 'lg:min-h-[540px]' : idx === 2 ? 'lg:min-h-[600px]' : 'lg:min-h-[640px]';
                 return (
                   <article
                     key={pkg.name}
-                    className={`relative flex min-h-[520px] w-[86vw] max-w-[370px] shrink-0 snap-center flex-col justify-between overflow-hidden border p-6 transition-all duration-300 sm:w-[70vw] sm:p-7 lg:w-auto lg:max-w-none lg:shrink lg:snap-none lg:rounded-none lg:p-7 ${tierHeight} ${
+                    className={`relative flex min-h-[520px] w-[86vw] max-w-[370px] shrink-0 snap-center flex-col justify-between overflow-hidden rounded-2xl border p-6 transition-all duration-300 sm:w-[70vw] sm:p-7 lg:h-full lg:w-auto lg:max-w-none lg:shrink lg:snap-none lg:p-7 ${
                       isFeatured
-                        ? 'z-20 border-amber-500 bg-[#071d35] text-white shadow-[0_30px_70px_-30px_rgba(7,29,53,0.75)] rounded-2xl lg:rounded-t-2xl'
-                        : 'z-10 border-slate-200 bg-[#fffefa] text-slate-900 shadow-[0_18px_45px_-34px_rgba(15,23,42,0.45)] rounded-2xl lg:first:rounded-tl-2xl lg:[&:not(:first-child)]:border-l-0'
+                        ? 'z-20 border-amber-500 bg-[#071d35] text-white shadow-[0_30px_70px_-30px_rgba(7,29,53,0.75)]'
+                        : 'z-10 border-slate-200 bg-[#fffefa] text-slate-900 shadow-[0_18px_45px_-34px_rgba(15,23,42,0.45)]'
                     }`}
                   >
                     <div>
