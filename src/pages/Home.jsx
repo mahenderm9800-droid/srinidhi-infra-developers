@@ -215,16 +215,6 @@ const Home = () => {
             className="absolute inset-0 h-full w-full object-cover object-center"
             aria-hidden="true"
           />
-          <video
-            src="/smiridhi6.mp4"
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.12] mix-blend-screen"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/hero-golden-hour.png"
-            aria-hidden="true"
-          />
         </div>
 
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
