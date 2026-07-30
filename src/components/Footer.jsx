@@ -73,9 +73,11 @@ const Footer = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/footer-bg.jpg"
+          src="/footer-bg.webp"
           alt=""
           className="w-full h-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/65" />
@@ -90,6 +92,10 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="Srinidhi Infra Developers"
+                width={500}
+                height={500}
+                loading="lazy"
+                decoding="async"
                 className="h-20 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-200"
               />
             </Link>

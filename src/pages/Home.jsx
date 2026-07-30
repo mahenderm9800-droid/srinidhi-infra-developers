@@ -134,6 +134,25 @@ const Home = () => {
     },
   ];
 
+  const premiumStructuralDetails = [
+    "Pre-construction: Soil test and geotechnical report from a certified professional",
+    "Pre-construction: Site survey by a certified professional",
+    "Pre-construction: Earthwork using JCB / earth mover / labour",
+    "Pre-construction: Termite treatment at foundation or plinth-beam level",
+    "RCC: Columns, beams and slabs; basement, PCC and stonework with M-sand; RMC with Ultratech cement; M10 PCC and M25 structure as per drawings",
+    "Steel: JAIRAJ Fe-550 TMT",
+    "Cement: ULTRATECH / Ramco",
+    "Wall construction: Standard red bricks with river sand",
+    "Plastering: Internal, external and ceiling with single or double-coat smooth finish; PVC chicken mesh at column and brick joints",
+    "Overhead tank: Three-layer Sintex tank, 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
+    "Sump: 5,000-litre brick sump included; RCC sump at Rs.18/- per litre if required",
+    "Parapet wall: 3'6\" height with 4\" thickness, as per structure",
+    "Railings: SS railing, Grade 350",
+    "Waterproofing: Dr. Fixit or Fosroc (RFX)",
+    "Rainwater harvesting pit: As per guidelines",
+    "CC camera: One reputed-brand camera with monitoring console"
+  ];
+
   const packages = [
     {
       name: "Semi Deluxe",
@@ -141,11 +160,15 @@ const Home = () => {
       badge: "Essential",
       isFeatured: false,
       details: [
-        "Steel: TATA / JSW / SHREE",
-        "Cement: Ultratech / Birla",
-        "Bricks: Karimnagar Red Bricks",
-        "Flooring: Rs.75/- per sft",
-        "Sanitary fittings: Rs.30,000/- per bathroom"
+        "RCC: Columns, beams and slabs using RMC with Ultratech cement and M-sand; M10 PCC and M25 structure as per drawings",
+        "Steel: SHREE / RADHA Fe-550 TMT",
+        "Cement: ULTRATECH / BHARATI",
+        "Wall construction: Solid cement concrete bricks with M-sand",
+        "Plastering: Internal, external and ceiling with single or double-coat smooth finish; PVC chicken mesh at column and brick joints; P-sand",
+        "Overhead tank: Three-layer Sintex tank, 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
+        "Sump: 5,000-litre brick sump included; RCC sump at Rs.18/- per litre if required",
+        "Parapet wall: 3'6\" height with 4\" thickness, as per structure",
+        "Railings: SS railing, Grade 302"
       ]
     },
     {
@@ -154,11 +177,18 @@ const Home = () => {
       badge: "Best Value",
       isFeatured: false,
       details: [
-        "Steel: TATA / JSW / SHREE",
-        "Cement: Ultratech / Birla",
-        "Bricks: Karimnagar 1st class Red Bricks",
-        "Flooring: Package allowance included",
-        "Sanitary fittings: Package allowance included"
+        "RCC: Columns, beams and slabs using RMC with Ultratech cement and river sand; M10 PCC and M20 structure as per drawings",
+        "Steel: SHREE / RADHA Fe-550 TMT",
+        "Cement: ULTRATECH for footings, columns, beams and slabs",
+        "Wall construction: Moulded red clay bricks",
+        "Plastering: Internal, external and ceiling with single or double-coat sponge finish using ACC / Nagarjuna / Priya / Ramco cement; PVC chicken mesh at joints; river sand",
+        "Overhead tank: Three-layer Sintex tank, 1,500-litre capacity; RCC water tank at Rs.18/- per litre if required",
+        "Sump: 5,000-litre brick sump included; RCC sump at Rs.18/- per litre if required",
+        "Parapet wall: 3'6\" height with 4\" thickness, as per structure",
+        "Railings: SS railing, Grade 302",
+        "Waterproofing: Dr. Fixit or Fosroc",
+        "Rainwater harvesting pit: As per guidelines",
+        "CC camera: One reputed-brand camera with monitoring console"
       ]
     },
     {
@@ -166,13 +196,7 @@ const Home = () => {
       price: "₹1,950/- per sft",
       badge: "Most Popular",
       isFeatured: true,
-      details: [
-        "Steel: TATA / JSW",
-        "Cement: Ultratech",
-        "Bricks: Karimnagar 1st class Red Bricks",
-        "Flooring: Rs.110/- per sft",
-        "Sanitary fittings: Rs.45,000/- per bathroom"
-      ]
+      details: premiumStructuralDetails
     },
     {
       name: "Premium Plus",
@@ -180,28 +204,24 @@ const Home = () => {
       badge: "Borewell Included",
       isFeatured: false,
       details: [
-        "Steel: TATA / JSW",
-        "Cement: Ultratech",
-        "Bricks: Karimnagar 1st class Red Bricks",
-        "Flooring: Rs.110/- per sft",
-        "Sanitary fittings: Rs.45,000/- per bathroom",
+        ...premiumStructuralDetails,
         "Borewell included"
       ]
     }
   ];
 
   const recentWork = [
-    { src: "/recent-work-modern-home.jpeg", alt: "Completed modern residential home" },
-    { src: "/recent-work-bedroom.jpeg", alt: "Custom bedroom interiors and woodwork" },
-    { src: "/recent-work-tv-wall.jpeg", alt: "Completed television wall and cabinetry" },
-    { src: "/recent-work-kitchen.jpeg", alt: "Completed kitchen and living space" },
-    { src: "/recent-work-ganesha-detail.jpeg", alt: "Ganesha architectural detail" },
-    { src: "/recent-work-water-system.jpeg", alt: "Installed residential water system" },
-    { src: "/recent-work-carved-door.jpeg", alt: "Traditional carved entrance door" },
-    { src: "/recent-work-interior-hall.jpeg", alt: "Completed interior hall" },
-    { src: "/recent-work-apartment-exterior.jpeg", alt: "Completed apartment exterior" },
-    { src: "/recent-work-traditional-home.jpeg", alt: "Completed traditional residence" },
-    { src: "/recent-work-lawn-villa.jpeg", alt: "Completed villa and landscaped lawn" }
+    { src: "/recent-work-modern-home.webp", alt: "Completed modern residential home" },
+    { src: "/recent-work-bedroom.webp", alt: "Custom bedroom interiors and woodwork" },
+    { src: "/recent-work-tv-wall.webp", alt: "Completed television wall and cabinetry" },
+    { src: "/recent-work-kitchen.webp", alt: "Completed kitchen and living space" },
+    { src: "/recent-work-ganesha-detail.webp", alt: "Ganesha architectural detail" },
+    { src: "/recent-work-water-system.webp", alt: "Installed residential water system" },
+    { src: "/recent-work-carved-door.webp", alt: "Traditional carved entrance door" },
+    { src: "/recent-work-interior-hall.webp", alt: "Completed interior hall" },
+    { src: "/recent-work-apartment-exterior.webp", alt: "Completed apartment exterior" },
+    { src: "/recent-work-traditional-home.webp", alt: "Completed traditional residence" },
+    { src: "/recent-work-lawn-villa.webp", alt: "Completed villa and landscaped lawn" }
   ];
 
   return (
@@ -210,8 +230,15 @@ const Home = () => {
       <section className="relative flex h-[100dvh] min-h-[680px] items-center justify-start overflow-hidden bg-[#17120d] md:h-[calc(100vh-112px)] md:min-h-[680px]">
         <div className="absolute inset-0 z-0 bg-[#17120d]">
           <img
-            src="/hero-golden-hour.png"
+            src="/hero-golden-hour.webp"
+            srcSet="/hero-golden-hour-960.webp 960w, /hero-golden-hour.webp 1672w"
+            sizes="100vw"
             alt=""
+            width={1672}
+            height={941}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover object-center"
             aria-hidden="true"
           />
@@ -307,18 +334,24 @@ const Home = () => {
                   <img
                     src="/quality-construction.jpg"
                     alt="Engineer reviewing a Srinidhi Infra construction project"
+                    width={1200}
+                    height={800}
                     className="h-[360px] w-full object-cover object-center transition-transform duration-700 hover:scale-[1.025] sm:h-[500px] lg:h-[610px]"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-amber-100/10" />
                 </div>
 
                 <div className="absolute -bottom-7 -right-2 hidden w-[44%] overflow-hidden rounded-2xl border-[6px] border-[#f7f5f0] bg-white shadow-2xl sm:block lg:-right-10">
                   <img
-                    src="/about-rebar-detail.png"
+                    src="/about-rebar-detail.webp"
                     alt="Construction quality and structural detailing"
+                    width={900}
+                    height={1125}
                     className="h-40 w-full object-cover object-center lg:h-48"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-slate-950/10" />
                 </div>
@@ -410,8 +443,11 @@ const Home = () => {
                 src="/quality-construction.jpg"
                 alt=""
                 aria-hidden="true"
+                width={1200}
+                height={800}
                 className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] object-cover object-center opacity-30 lg:block"
                 loading="lazy"
+                decoding="async"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#fbfaf7] via-[#fbfaf7] to-[#fbfaf7]/10" />
               <div className="pointer-events-none absolute inset-0 premium-grid opacity-40" />
@@ -430,14 +466,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative z-10 -mt-1 grid grid-cols-2 items-end gap-3 sm:gap-5 lg:-mt-20 lg:grid-cols-4 lg:gap-0 lg:px-5">
+            <div className="mb-3 flex items-center justify-between lg:hidden">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+                Swipe to compare plans
+              </span>
+              <span className="text-xs font-semibold text-amber-700">4 packages</span>
+            </div>
+
+            <div className="relative z-10 -mx-4 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:-mt-20 lg:grid lg:grid-cols-4 lg:items-end lg:gap-0 lg:overflow-visible lg:px-5 lg:pb-0">
               {packages.map((pkg, idx) => {
                 const isFeatured = pkg.isFeatured;
                 const tierHeight = idx === 0 ? 'lg:min-h-[500px]' : idx === 1 ? 'lg:min-h-[540px]' : idx === 2 ? 'lg:min-h-[600px]' : 'lg:min-h-[640px]';
                 return (
                   <article
                     key={pkg.name}
-                    className={`relative flex min-h-[430px] flex-col justify-between overflow-hidden border p-4 transition-all duration-300 sm:min-h-[490px] sm:p-7 lg:rounded-none lg:p-7 ${tierHeight} ${
+                    className={`relative flex min-h-[520px] w-[86vw] max-w-[370px] shrink-0 snap-center flex-col justify-between overflow-hidden border p-6 transition-all duration-300 sm:w-[70vw] sm:p-7 lg:w-auto lg:max-w-none lg:shrink lg:snap-none lg:rounded-none lg:p-7 ${tierHeight} ${
                       isFeatured
                         ? 'z-20 border-amber-500 bg-[#071d35] text-white shadow-[0_30px_70px_-30px_rgba(7,29,53,0.75)] rounded-2xl lg:rounded-t-2xl'
                         : 'z-10 border-slate-200 bg-[#fffefa] text-slate-900 shadow-[0_18px_45px_-34px_rgba(15,23,42,0.45)] rounded-2xl lg:first:rounded-tl-2xl lg:[&:not(:first-child)]:border-l-0'
@@ -450,10 +493,10 @@ const Home = () => {
                           0{idx + 1}
                         </span>
                         <span className={`h-8 w-px ${isFeatured ? 'bg-white/20' : 'bg-slate-200'}`} />
-                        <h3 className={`text-sm font-extrabold sm:text-xl ${isFeatured ? 'text-white' : 'text-slate-950'}`}>{pkg.name}</h3>
+                        <h3 className={`text-xl font-extrabold ${isFeatured ? 'text-white' : 'text-slate-950'}`}>{pkg.name}</h3>
                       </div>
 
-                      <div className={`mt-5 text-lg font-extrabold tracking-[-0.025em] sm:text-2xl lg:text-3xl ${
+                      <div className={`mt-5 text-2xl font-extrabold tracking-[-0.025em] lg:text-3xl ${
                         isFeatured ? 'text-amber-400' : 'text-emerald-700'
                       }`}>
                         {pkg.price}
@@ -461,7 +504,7 @@ const Home = () => {
 
                       <div className={`my-6 h-px w-full ${isFeatured ? 'bg-white/15' : 'bg-slate-200'}`} />
 
-                      <ul className="space-y-3 text-[10px] leading-4 sm:text-xs sm:leading-5">
+                      <ul className="space-y-3 text-sm leading-6 lg:text-xs lg:leading-5">
                         {pkg.details.map((detail) => {
                           const isBorewell = detail === "Borewell included";
                           return (
@@ -493,7 +536,7 @@ const Home = () => {
 
                     <Link
                       to="/contact"
-                      className={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-3 py-3 text-[10px] font-extrabold uppercase tracking-[0.12em] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 sm:py-3.5 sm:text-xs ${
+                      className={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-3 py-3.5 text-xs font-extrabold uppercase tracking-[0.12em] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 ${
                         isFeatured
                           ? 'bg-amber-500 text-slate-950 shadow-lg hover:bg-amber-400'
                           : 'bg-emerald-700 text-white hover:bg-emerald-600'
@@ -569,8 +612,11 @@ const Home = () => {
                 <img
                   src="/quality-construction.jpg"
                   alt="Construction engineer reviewing blueprints at a premium high-rise site"
+                  width={1200}
+                  height={800}
                   className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.025]"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/10 via-transparent to-amber-100/10" />
               </motion.div>
@@ -652,6 +698,7 @@ const Home = () => {
                 alt={recentWork[0].alt}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                 loading="lazy"
+                decoding="async"
               />
               <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#071a35] opacity-0 shadow-md transition-opacity group-hover:opacity-100">
                 <Maximize2 className="h-4 w-4" />
@@ -669,6 +716,7 @@ const Home = () => {
                 alt={recentWork[1].alt}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                 loading="lazy"
+                decoding="async"
               />
               <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#071a35] opacity-0 shadow-md transition-opacity group-hover:opacity-100">
                 <Maximize2 className="h-4 w-4" />
@@ -689,6 +737,7 @@ const Home = () => {
                     alt={work.alt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <span className="absolute inset-0 bg-[#071a35]/0 transition-colors group-hover:bg-[#071a35]/15" />
                 </button>
@@ -721,6 +770,7 @@ const Home = () => {
               <img
                 src={selectedWork.src}
                 alt={selectedWork.alt}
+                decoding="async"
                 className="max-h-[86vh] max-w-full rounded-2xl object-contain shadow-2xl"
               />
               <button
@@ -757,10 +807,13 @@ const Home = () => {
               <div className="grid lg:grid-cols-12">
                 <div className="relative min-h-[330px] overflow-hidden lg:col-span-5 lg:min-h-[680px]">
                   <img
-                    src="/testimonials-residential.png"
+                    src="/testimonials-residential.webp"
                     alt="Completed premium residential community at golden hour"
+                    width={1400}
+                    height={1120}
                     className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.025]"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-amber-100/10" />
                 </div>

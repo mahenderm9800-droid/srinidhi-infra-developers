@@ -31,9 +31,9 @@ const About = () => {
   }, []);
 
   const values = [
-    { title: "Transparency", desc: "Every agreement, calculation, and document is open for verification.", icon: Compass, image: "/value-transparency.png" },
-    { title: "Quality Standards", desc: "No compromise on raw material grading, steel benchmarks, or concrete tests.", icon: ShieldCheck, image: "/value-quality.png" },
-    { title: "Customer Centricity", desc: "Post-purchase customer care, maintenance assistance, and reliable handovers.", icon: Heart, image: "/value-customer.png" }
+    { title: "Transparency", desc: "Every agreement, calculation, and document is open for verification.", icon: Compass, image: "/value-transparency.webp" },
+    { title: "Quality Standards", desc: "No compromise on raw material grading, steel benchmarks, or concrete tests.", icon: ShieldCheck, image: "/value-quality.webp" },
+    { title: "Customer Centricity", desc: "Post-purchase customer care, maintenance assistance, and reliable handovers.", icon: Heart, image: "/value-customer.webp" }
   ];
 
   return (
@@ -42,7 +42,7 @@ const About = () => {
       <PageHero
         eyebrow="Our Story"
         title="About Us"
-        image="/consulting.jpg"
+        image="/consulting.webp"
         description="Crafting inspiring spaces built on quality, clarity, and trust."
       />
 
@@ -54,6 +54,10 @@ const About = () => {
             <img
               src="/quality-construction.jpg"
               alt="Construction engineer overseeing a high-rise project"
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#061a32]/75 via-[#061a32]/35 to-[#061a32]/10" />
@@ -128,6 +132,12 @@ const About = () => {
               <img
                 src={v.image}
                 alt=""
+                width={1200}
+                height={1200}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#061a32]/20 to-[#061a32] transition-colors duration-500 group-hover:via-[#061a32]/30" />
@@ -159,8 +169,10 @@ const About = () => {
             {/* Background Image inside the card */}
             <div className="absolute inset-0 z-0">
               <img
-                src="/how-we-operate-bg.jpg"
+                src="/how-we-operate-bg.webp"
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-black/60" />

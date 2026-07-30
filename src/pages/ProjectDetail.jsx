@@ -148,6 +148,8 @@ const ProjectDetail = () => {
                 <img 
                   src={activeImage} 
                   alt={project.name} 
+                  loading="eager"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
                 />
               </div>
@@ -162,7 +164,7 @@ const ProjectDetail = () => {
                         activeImage === img ? 'border-accent-500 scale-95 shadow-md' : 'border-slate-200 hover:border-slate-350'
                       }`}
                     >
-                      <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
+                      <img src={img} alt={`Thumbnail ${idx}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>

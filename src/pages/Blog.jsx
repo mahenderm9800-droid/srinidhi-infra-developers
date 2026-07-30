@@ -62,6 +62,8 @@ const Blog = () => {
                   <img 
                     src={post.coverImageUrl} 
                     alt={post.title} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-3 py-1 rounded-full tracking-wide uppercase">

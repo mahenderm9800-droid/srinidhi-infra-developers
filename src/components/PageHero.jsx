@@ -28,6 +28,8 @@ const PageHero = ({
             aria-hidden="true"
             className="w-full h-full object-cover scale-105 opacity-40"
             loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         )}
         <div className="hero-veil" />

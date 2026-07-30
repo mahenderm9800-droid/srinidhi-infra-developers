@@ -63,8 +63,13 @@ const Contact = () => {
       <section className="relative pt-48 pb-24 text-white overflow-hidden border-b border-slate-800 bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/thankyou.jpg" 
+            src="/thankyou.webp" 
             alt="Thank You Banner Background" 
+            width={1400}
+            height={661}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="w-full h-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
@@ -150,6 +155,8 @@ const Contact = () => {
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
                 alt="On-Site Construction Consultation"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent p-5 flex flex-col justify-end">

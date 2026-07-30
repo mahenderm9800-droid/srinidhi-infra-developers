@@ -54,8 +54,11 @@ const Navbar = () => {
           {/* Logo — Left */}
           <Link to="/" className="flex items-center group shrink-0 z-10">
             <img
-              src={isTransparent ? '/logo.png' : '/logo-header.png'}
+              src={isTransparent ? '/logo.png' : '/logo-header.webp'}
               alt="Srinidhi Infra Developers"
+              width={400}
+              height={400}
+              decoding="async"
               className={`h-10 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90 md:h-16 lg:h-[70px] ${
                 isTransparent ? 'brightness-0 invert' : ''
               }`}
