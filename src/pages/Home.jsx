@@ -14,6 +14,7 @@ const Home = () => {
   const [settings, setSettings] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedWork, setSelectedWork] = useState(null);
+  const [expandedPackages, setExpandedPackages] = useState({});
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -135,22 +136,22 @@ const Home = () => {
   ];
 
   const premiumStructuralDetails = [
-    "Pre-construction: Soil test and geotechnical report from a certified professional",
-    "Pre-construction: Site survey by a certified professional",
-    "Pre-construction: Earthwork using JCB / earth mover / labour",
-    "Pre-construction: Termite treatment at foundation or plinth-beam level",
-    "RCC: Columns, beams and slabs; basement, PCC and stonework with M-sand; RMC with Ultratech cement; M10 PCC and M25 structure as per drawings",
+    "Pre-construction - Soil Test and Geotechnical Report: From a certified professional",
+    "Pre-construction - Site Survey: From a certified professional",
+    "Pre-construction - Earth Work: JCB / earth mover / labor",
+    "Pre-construction - Termite Treatment: At foundation or plinth-beam level, as per requirements",
+    "RCC (Columns, Beams, Slabs): Basement, PCC and stonework with M-sand; RMC with Ultra Tech cement and sand; M10 (PCC) and M25 (structure) as per drawing specifications; Miller manual and certified RMC brand",
     "Steel: JAIRAJ Fe-550 TMT",
-    "Cement: ULTRATECH / Ramco",
-    "Wall construction: Standard red bricks with river sand",
-    "Plastering: Internal, external and ceiling with single or double-coat smooth finish; PVC chicken mesh at column and brick joints",
-    "Overhead tank: Three-layer Sintex tank, 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
-    "Sump: 5,000-litre brick sump included; RCC sump at Rs.18/- per litre if required",
-    "Parapet wall: 3'6\" height with 4\" thickness, as per structure",
+    "Cement: ULTRA TECH / Ramco",
+    "Wall Construction: Standard red bricks with river sand",
+    "Plastering (Internal / External / Ceiling): Single and double-coat smooth finish using cement; PVC chicken mesh at column and brick joints",
+    "OHT (Overhead Tank): Three-layer Sintex tank with 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
+    "Sump: 5,000-litre brick sump provided; RCC sump at Rs.18/- per litre if required extra",
+    "Parapet Wall: 3'6\" height with 4\" thickness, as per structure",
     "Railings: SS railing, Grade 350",
     "Waterproofing: Dr. Fixit or Fosroc (RFX)",
-    "Rainwater harvesting pit: As per guidelines",
-    "CC camera: One reputed-brand camera with monitoring console"
+    "Rainwater Harvesting Pit: As per guidelines",
+    "CC Camera: One reputed-brand camera with monitoring"
   ];
 
   const packages = [
@@ -160,14 +161,14 @@ const Home = () => {
       badge: "Essential",
       isFeatured: false,
       details: [
-        "RCC: Columns, beams and slabs using RMC with Ultratech cement and M-sand; M10 PCC and M25 structure as per drawings",
-        "Steel: SHREE / RADHA Fe-550 TMT",
+        "RCC (Columns, Beams, Slabs): RMC with Ultratech Cement and M-sand; M10 (PCC) and M25 (structure) as per drawing specifications; certified RMC brand",
+        "Steel: SHREE / RADHA, Fe-550 TMT",
         "Cement: ULTRATECH / BHARATI",
-        "Wall construction: Solid cement concrete bricks with M-sand",
-        "Plastering: Internal, external and ceiling with single or double-coat smooth finish; PVC chicken mesh at column and brick joints; P-sand",
-        "Overhead tank: Three-layer Sintex tank, 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
-        "Sump: 5,000-litre brick sump included; RCC sump at Rs.18/- per litre if required",
-        "Parapet wall: 3'6\" height with 4\" thickness, as per structure",
+        "Wall Construction: Solid cement concrete bricks with M-sand",
+        "Plastering (Internal / External / Ceiling): Single and double-coat smooth finish using cement; PVC chicken mesh at column and brick joints; P-sand",
+        "OHT (Overhead Tank): Three-layer Sintex tank with 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
+        "Sump: 5,000-litre brick sump provided; RCC sump at Rs.18/- per litre if required extra",
+        "Parapet Wall: 3'6\" height with 4\" thickness, as per structure",
         "Railings: SS railing, Grade 302"
       ]
     },
@@ -177,18 +178,34 @@ const Home = () => {
       badge: "Best Value",
       isFeatured: false,
       details: [
-        "RCC: Columns, beams and slabs using RMC with Ultratech cement and river sand; M10 PCC and M20 structure as per drawings",
-        "Steel: SHREE / RADHA Fe-550 TMT",
+        "Design: Concept, working and detailed elevation drawings plus complete footing, column, plinth-beam, slab and staircase structural drawings",
+        "Professional team: Senior consultant, project coordinator, Vaastu-certified architect, execution lead, structural engineer and qualified site engineer",
+        "Project controls: Daily digital progress updates, 200+ quality checks, transparent costing and scheduled delivery",
+        "Pre-construction: Certified soil and geotechnical report, professional site survey, earthwork and termite treatment",
+        "RCC (Columns, Beams, Slabs): Certified RMC with Ultratech cement and river sand; M10 (PCC) and M20 (structure) as per drawing specifications",
+        "Steel: SHREE / RADHA, Fe-550 TMT",
         "Cement: ULTRATECH for footings, columns, beams and slabs",
-        "Wall construction: Moulded red clay bricks",
-        "Plastering: Internal, external and ceiling with single or double-coat sponge finish using ACC / Nagarjuna / Priya / Ramco cement; PVC chicken mesh at joints; river sand",
-        "Overhead tank: Three-layer Sintex tank, 1,500-litre capacity; RCC water tank at Rs.18/- per litre if required",
-        "Sump: 5,000-litre brick sump included; RCC sump at Rs.18/- per litre if required",
-        "Parapet wall: 3'6\" height with 4\" thickness, as per structure",
+        "Wall Construction: Moulded red clay bricks",
+        "Plastering (Internal / External / Ceiling): Single and double-coat sponge finish using ACC / Nagarjuna / Priya / Ramco cement; PVC chicken mesh at column-brick and beam-brick joints; river sand",
+        "OHT (Overhead Tank): Three-layer Sintex tank, 1,500 litres x 1; RCC water tank at Rs.18/- per litre if required extra",
+        "Sump: 5,000-litre brick sump provided; RCC sump at Rs.18/- per litre if required extra",
+        "Parapet Wall: 3'6\" height with 4\" thickness, as per structure",
         "Railings: SS railing, Grade 302",
         "Waterproofing: Dr. Fixit or Fosroc",
-        "Rainwater harvesting pit: As per guidelines",
-        "CC camera: One reputed-brand camera with monitoring console"
+        "Rainwater Harvesting Pit: As per guidelines",
+        "CC Camera: One reputed-brand camera with monitoring console",
+        "Main Door: Teakwood frame and teak door up to Rs.25,000/- including fittings, installation and polish",
+        "Internal Doors: African teak frames with BWP flush shutters up to Rs.10,000/- including fittings, installation and laminates",
+        "Bathroom Doors: Waterproof WPC doors up to Rs.8,000/- including fittings and installation",
+        "Windows: UPVC three-track windows up to Rs.350/- per sq ft with mosquito mesh and 10 mm safety grills",
+        "Sanitary: Cera / Hindware / Parryware fittings up to Rs.20,000/- per toilet",
+        "Plumbing: Ashirwad / Astral CPVC plumbing and sewer lines",
+        "Electrical: Finolex / Fine Cab fire-resistant wiring, Sudhakar conduits and Anchor Roma / Penta switches and sockets",
+        "Electrical Points: Fan, light, socket, TV, AC, geyser, kitchen-appliance and MCB provisions as specified in the package",
+        "Painting: Birla White / JK putty with Asian primer and Tractor Emulsion inside; Asian ACE exterior finish",
+        "Flooring: ISI vitrified tiles up to Rs.50/- per sq ft for living, dining, kitchen and bedrooms",
+        "Other Flooring: Toilet, balcony, utility, corridor and parking tiles plus staircase granite within package allowances",
+        "Kitchen: Granite platform up to Rs.80/- per sq ft, ceramic dado, branded faucet, sink and RO / washing-machine / exhaust / chimney provisions"
       ]
     },
     {
@@ -467,16 +484,32 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="mb-3 flex items-center justify-between lg:hidden">
-              <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-                Swipe to compare plans
-              </span>
-              <span className="text-xs font-semibold text-amber-700">4 packages</span>
+            <div className="mb-4 rounded-xl border border-amber-300/70 bg-amber-50 px-4 py-3 shadow-sm lg:hidden">
+              <div className="flex items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-slate-800">
+                  Swipe left for the next plan
+                  <ArrowRight className="h-4 w-4 animate-pulse text-amber-700" />
+                </span>
+                <span className="shrink-0 text-xs font-bold text-amber-700">1 of 4</span>
+              </div>
+              <div className="mt-2 flex gap-1.5" aria-hidden="true">
+                <span className="h-1.5 w-7 rounded-full bg-amber-500" />
+                <span className="h-1.5 w-3 rounded-full bg-slate-300" />
+                <span className="h-1.5 w-3 rounded-full bg-slate-300" />
+                <span className="h-1.5 w-3 rounded-full bg-slate-300" />
+              </div>
             </div>
 
             <div className="relative z-10 -mx-4 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
               {packages.map((pkg, idx) => {
                 const isFeatured = pkg.isFeatured;
+                const isExpandable = ['Deluxe', 'Premium', 'Premium Plus'].includes(pkg.name);
+                const isExpanded = Boolean(expandedPackages[pkg.name]);
+                const visibleDetails = isExpandable && !isExpanded
+                  ? pkg.name === 'Premium Plus'
+                    ? [...pkg.details.slice(0, 5), pkg.details[pkg.details.length - 1]]
+                    : pkg.details.slice(0, 6)
+                  : pkg.details;
                 return (
                   <article
                     key={pkg.name}
@@ -505,7 +538,7 @@ const Home = () => {
                       <div className={`my-6 h-px w-full ${isFeatured ? 'bg-white/15' : 'bg-slate-200'}`} />
 
                       <ul className="space-y-3 text-sm leading-6 lg:text-xs lg:leading-5">
-                        {pkg.details.map((detail) => {
+                        {visibleDetails.map((detail) => {
                           const isBorewell = detail === "Borewell included";
                           return (
                           <li
@@ -532,6 +565,25 @@ const Home = () => {
                           );
                         })}
                       </ul>
+
+                      {isExpandable && (
+                        <button
+                          type="button"
+                          onClick={() => setExpandedPackages((current) => ({
+                            ...current,
+                            [pkg.name]: !current[pkg.name]
+                          }))}
+                          className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border px-4 py-3 text-xs font-extrabold uppercase tracking-[0.1em] transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                            isFeatured
+                              ? 'border-white/25 text-white hover:bg-white/10'
+                              : 'border-amber-300 bg-amber-50 text-amber-800 hover:bg-amber-100'
+                          }`}
+                          aria-expanded={isExpanded}
+                        >
+                          {isExpanded ? 'Show less' : `Read full specifications (${pkg.details.length})`}
+                          <ArrowRight className={`h-4 w-4 transition-transform ${isExpanded ? '-rotate-90' : 'rotate-90'}`} />
+                        </button>
+                      )}
                     </div>
 
                     <Link
