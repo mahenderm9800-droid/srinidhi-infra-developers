@@ -154,6 +154,16 @@ const Home = () => {
     "CC Camera: One reputed-brand camera with monitoring"
   ];
 
+  const premiumPlusStructuralDetails = premiumStructuralDetails.map((detail) => {
+    if (detail.startsWith("Steel:")) {
+      return "Steel: TATA Steel, Fe-550 TMT";
+    }
+    if (detail.startsWith("Wall Construction:")) {
+      return "Wall Construction: Pure Karimnagar red bricks with river sand";
+    }
+    return detail;
+  });
+
   const packages = [
     {
       name: "Semi Deluxe",
@@ -161,15 +171,34 @@ const Home = () => {
       badge: "Essential",
       isFeatured: false,
       details: [
-        "RCC (Columns, Beams, Slabs): RMC with Ultratech Cement and M-sand; M10 (PCC) and M25 (structure) as per drawing specifications; certified RMC brand",
+        "Design: Concept, working and detailed elevation drawings plus complete footing, column, plinth-beam, slab and staircase structural drawings",
+        "Professional Team: Senior consultant, project coordinator, Vaastu-certified architect, execution lead, structural engineer and qualified site engineer",
+        "Project Controls: Daily digital progress updates, 200+ quality checks, transparent costing and scheduled delivery",
+        "Pre-construction: Certified soil and geotechnical report, professional site survey, earthwork and termite treatment",
+        "RCC (Columns, Beams, Slabs): Certified RMC with Ultratech cement and M-sand; M10 (PCC) and M25 (structure) as per drawing specifications",
         "Steel: SHREE / RADHA, Fe-550 TMT",
         "Cement: ULTRATECH / BHARATI",
         "Wall Construction: Solid cement concrete bricks with M-sand",
-        "Plastering (Internal / External / Ceiling): Single and double-coat smooth finish using cement; PVC chicken mesh at column and brick joints; P-sand",
-        "OHT (Overhead Tank): Three-layer Sintex tank with 1,000-litre capacity; RCC water tank at Rs.18/- per litre",
+        "Plastering (Internal / External / Ceiling): Single and double-coat smooth finish using ACC / Nagarjuna / Ramco cement; PVC chicken mesh at column-brick and beam-brick joints; P-sand",
+        "OHT (Overhead Tank): Two three-layer Sintex tanks with 1,000-litre capacity each; RCC water tank at Rs.18/- per litre",
         "Sump: 5,000-litre brick sump provided; RCC sump at Rs.18/- per litre if required extra",
         "Parapet Wall: 3'6\" height with 4\" thickness, as per structure",
-        "Railings: SS railing, Grade 302"
+        "Railings: SS railing, Grade 302",
+        "Waterproofing: Dr. Fixit or Fosroc (RFX)",
+        "Rainwater Harvesting Pit: As per guidelines",
+        "CC Camera: One reputed-brand camera with monitoring console",
+        "Main Door: Teakwood frame and teak door, 7'6\" x 3'6\", up to Rs.25,000/- including fittings, installation and polish",
+        "Internal Doors: African teak frames with BWP flush shutters, 7' x 3', up to Rs.10,000/- including fittings, installation and laminates",
+        "Bathroom Doors: Waterproof WPC doors, 7' x 2'6\", up to Rs.8,000/- including fittings and installation",
+        "Windows: UPVC three-track windows up to Rs.350/- per sq ft with mosquito mesh and 10 mm safety grills",
+        "Sanitary: Cera / Hindware / Parryware fittings up to Rs.20,000/- per toilet",
+        "Plumbing: Ashirwad / Astral CPVC plumbing and sewer lines",
+        "Electrical: Finolex fire-resistant wiring, Sudhakar conduits and Anchor Roma / Penta switches and sockets",
+        "Electrical Points: Fan, light, socket, TV, AC, geyser, kitchen-appliance and MCB provisions as specified in the package",
+        "Painting: Birla White / JK putty with Asian primer and Tractor Emulsion inside; Asian ACE exterior finish",
+        "Flooring: ISI granite or tiles up to Rs.50/- per sq ft for living, dining, kitchen and bedrooms",
+        "Other Flooring: Toilet, balcony, utility, corridor and parking tiles plus staircase granite within package allowances",
+        "Kitchen: Granite platform up to Rs.80/- per sq ft, ceramic dado, branded faucet, sink and RO / washing-machine / exhaust / chimney provisions"
       ]
     },
     {
@@ -221,7 +250,7 @@ const Home = () => {
       badge: "Borewell Included",
       isFeatured: false,
       details: [
-        ...premiumStructuralDetails,
+        ...premiumPlusStructuralDetails,
         "Borewell included"
       ]
     }
@@ -503,7 +532,7 @@ const Home = () => {
             <div className="relative z-10 -mx-4 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-stretch lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
               {packages.map((pkg, idx) => {
                 const isFeatured = pkg.isFeatured;
-                const isExpandable = ['Deluxe', 'Premium', 'Premium Plus'].includes(pkg.name);
+                const isExpandable = pkg.details.length > 9;
                 const isExpanded = Boolean(expandedPackages[pkg.name]);
                 const visibleDetails = isExpandable && !isExpanded
                   ? pkg.name === 'Premium Plus'
