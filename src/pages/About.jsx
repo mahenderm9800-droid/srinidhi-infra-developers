@@ -205,8 +205,8 @@ const About = () => {
 
 
 
-      {/* 4. Leadership Section */}
-      <section className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+      {/* 4. Leadership Section — retained for future use, currently hidden */}
+      <section className="hidden py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="section-eyebrow text-accent-500 mb-4 inline-block">MANAGEMENT</span>
           <h2 className="text-3xl md:text-5xl font-bold font-serif text-slate-900">Our Leadership Team</h2>
