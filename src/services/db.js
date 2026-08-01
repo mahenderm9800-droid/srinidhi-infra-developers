@@ -124,8 +124,12 @@ const initMockDB = () => {
       const currentStored = JSON.parse(storedLeadership);
       let changed = false;
       seedLeadership.forEach(sl => {
-        if (!currentStored.some(l => l.id === sl.id)) {
+        const storedIndex = currentStored.findIndex(l => l.id === sl.id);
+        if (storedIndex === -1) {
           currentStored.push(sl);
+          changed = true;
+        } else if (JSON.stringify(currentStored[storedIndex]) !== JSON.stringify(sl)) {
+          currentStored[storedIndex] = sl;
           changed = true;
         }
       });

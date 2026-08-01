@@ -205,32 +205,44 @@ const About = () => {
 
 
 
-      {/* 4. Leadership Section — retained for future use, currently hidden */}
-      <section className="hidden py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-eyebrow text-accent-500 mb-4 inline-block">MANAGEMENT</span>
-          <h2 className="text-3xl md:text-5xl font-bold font-serif text-slate-900">Our Leadership Team</h2>
-          <div className="h-1 w-20 bg-accent-500 mx-auto mt-4 rounded-full" />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {leadership.map((leader, index) => (
-            <div key={index} className="relative rounded-3xl bg-slate-50 border border-slate-200/80 p-8 flex flex-col items-start text-left gap-4 group hover:shadow-md transition-all duration-300 overflow-hidden">
-              <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-accent-500/5 rounded-full group-hover:scale-125 transition-transform" />
-              <div className="p-3 bg-amber-500/10 text-amber-700 rounded-xl border border-amber-500/20 font-bold text-xs">
-                <User className="h-5 w-5 text-amber-600" />
+      {/* 4. Leadership Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/80 py-14 md:py-24">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a0a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a0a_1px,transparent_1px)] bg-[size:42px_42px] pointer-events-none" />
+        <div className="absolute -top-24 -right-20 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-28 -left-20 h-80 w-80 rounded-full bg-amber-400/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-12 left-[8%] h-20 w-20 rounded-2xl border border-blue-900/10 rotate-12 pointer-events-none" />
+        <div className="absolute bottom-10 right-[7%] h-16 w-16 rounded-full border border-amber-500/25 pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+            <span className="section-eyebrow text-accent-500 mb-4 inline-block">MANAGEMENT</span>
+            <h2 className="text-3xl md:text-5xl font-bold font-serif text-slate-900">Our Leadership Team</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-amber-500 mx-auto mt-4 rounded-full" />
+            <p className="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Experienced leadership guiding every project with integrity, precision, and a clear commitment to quality.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {leadership.map((leader, index) => (
+              <div key={index} className="relative rounded-3xl bg-white/85 backdrop-blur-sm border border-white p-7 lg:p-8 flex flex-col items-start text-left gap-4 group shadow-[0_18px_50px_-24px_rgba(15,23,42,0.35)] hover:shadow-[0_24px_60px_-22px_rgba(30,64,175,0.35)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-700 via-blue-500 to-amber-400" />
+                <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-blue-500/5 rounded-full group-hover:scale-125 transition-transform" />
+                <div className="p-3 bg-gradient-to-br from-blue-50 to-amber-50 text-blue-800 rounded-xl border border-blue-100 font-bold text-xs shadow-sm">
+                  <User className="h-5 w-5 text-blue-700" />
+                </div>
+                <div className="flex-grow relative z-10">
+                  <h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 leading-snug">{leader.name}</h3>
+                  <span className="text-[10px] sm:text-xs text-amber-700 font-bold uppercase tracking-wider block mt-1 mb-3">
+                    {leader.role}
+                  </span>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                    {leader.bio}
+                  </p>
+                </div>
               </div>
-              <div className="flex-grow">
-                <h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-300 leading-snug">{leader.name}</h3>
-                <span className="text-[10px] sm:text-xs text-amber-700 font-bold uppercase tracking-wider block mt-1 mb-3">
-                  {leader.role}
-                </span>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                  {leader.bio}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

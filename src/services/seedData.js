@@ -398,17 +398,24 @@ export const seedSettings = {
 export const seedLeadership = [
   {
     id: "lead-1",
-    name: "Sri. K. Srinivas Rao",
-    role: "Founder & Managing Director",
-    bio: "With over 20 years of hands-on experience in construction engineering and real estate procurement, Sri. Srinivas Rao founded Srinidhi Infra Developers with a vision of creating legal-clear and structurally-superior living spaces in Hyderabad.",
+    name: "M. Mahender",
+    role: "Founder",
+    bio: "Founder of Srinidhi Infra Developers, leading the company with a commitment to dependable construction, transparent service, and lasting value.",
     photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300&q=80"
   },
   {
     id: "lead-2",
-    name: "Smt. K. Lalitha",
-    role: "Executive Director",
-    bio: "Managing business operations, legal affairs, and client relationships. Lalitha ensures that every layout and project adheres to corporate governance, state RERA directives, and complete transparency.",
+    name: "M. Aparna",
+    role: "Co-Founder",
+    bio: "Co-Founder of Srinidhi Infra Developers, supporting business operations, customer relationships, and the company's quality-focused growth.",
     photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&h=300&q=80"
+  },
+  {
+    id: "lead-3",
+    name: "M. Laxman",
+    role: "Partner",
+    bio: "Partner at Srinidhi Infra Developers, contributing to project coordination, execution standards, and reliable delivery.",
+    photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300&q=80"
   }
 ];
 
