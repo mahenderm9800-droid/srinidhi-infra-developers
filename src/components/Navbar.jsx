@@ -22,7 +22,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -95,13 +95,16 @@ const Navbar = () => {
           {/* Mobile Hamburger — Right */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              onClick={() => setIsOpen((open) => !open)}
               className={`p-2 rounded-md focus:outline-none ${
                 isTransparent
                   ? 'text-white hover:bg-white/10'
                   : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
               }`}
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -113,6 +116,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -123,6 +127,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
+                  onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(link.path)
                       ? 'bg-slate-50 text-slate-900 font-medium'
@@ -135,6 +140,7 @@ const Navbar = () => {
               <div className="pt-4 pb-2 px-3">
                 <Link
                   to="/contact"
+                  onClick={() => setIsOpen(false)}
                   className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 font-semibold text-sm transition-colors"
                 >
                   Enquire Now
