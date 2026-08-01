@@ -249,10 +249,10 @@ const Contact = () => {
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 text-slate-700 text-xs font-light transition-all duration-200"
                     >
                       <option value="">General Query / Other</option>
-                      <option value="Premium Signature">Premium Signature (₹2,200/- per sft)</option>
-                      <option value="Elite Comfort">Elite Comfort (₹1,985/- per sft)</option>
-                      <option value="Smart Value">Smart Value (₹1,785/- per sft)</option>
-                      <option value="Essential Starter">Essential Starter (₹1,685/- per sft)</option>
+                      <option value="Semi Deluxe">Semi Deluxe (₹1,540/- per sft)</option>
+                      <option value="Deluxe">Deluxe (₹1,650/- per sft)</option>
+                      <option value="Premium">Premium (₹1,950/- per sft)</option>
+                      <option value="Premium Plus">Premium Plus (₹2,100/- per sft)</option>
                     </select>
                   </div>
                 </div>
