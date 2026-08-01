@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../router';
 import { motion } from 'framer-motion';
 import { Home, ArrowLeft, Search, Building2 } from 'lucide-react';
 

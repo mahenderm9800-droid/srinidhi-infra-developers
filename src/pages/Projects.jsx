@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ArrowRight, Grid, Home as HomeIcon, Layers, Filter } from 'lucide-react';
 import { getProjects } from '../services/db';

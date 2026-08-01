@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- About Us -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/about</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- Services -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/services</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- Projects -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/projects</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- Project: Srinidhi Grandeur -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/projects/srinidhi-grandeur</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -47,7 +47,7 @@
   <!-- Project: Srinidhi Heights -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/projects/srinidhi-heights</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -55,7 +55,7 @@
   <!-- Project: Srinidhi Emerald Valley -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/projects/srinidhi-emerald-valley</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -63,7 +63,23 @@
   <!-- Project: Srinidhi Boulevard -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/projects/srinidhi-boulevard</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Project: Srinidhi Pride -->
+  <url>
+    <loc>https://srinidhiinfradevelopers.com/projects/srinidhi-pride</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Project: Srinidhi Tech Park -->
+  <url>
+    <loc>https://srinidhiinfradevelopers.com/projects/srinidhi-tech-park</loc>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -71,7 +87,7 @@
   <!-- News & Blog Index -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/blog</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -79,7 +95,7 @@
   <!-- Blog Post 1: Gachibowli Real Estate -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/blog/why-gachibowli-financial-district-remain-top-real-estate-hotspots-in-hyderabad-2026-guide</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -87,7 +103,7 @@
   <!-- Blog Post 2: RERA Guidelines -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/blog/understanding-rera-guidelines-legal-verification-checklist-before-buying-property-in-telangana</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -95,7 +111,7 @@
   <!-- Blog Post 3: Gated Villa Layouts -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/blog/the-rise-of-gated-community-villa-layouts-open-plot-investments-in-telangana</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -103,7 +119,7 @@
   <!-- Blog Post 4: Modern Civil Engineering -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/blog/modern-architectural-standards-quality-civil-engineering-in-home-construction</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -111,7 +127,7 @@
   <!-- Contact -->
   <url>
     <loc>https://srinidhiinfradevelopers.com/contact</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

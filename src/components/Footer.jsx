@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../router';
 import { Phone, Mail, MapPin, Clock, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getSettings } from '../services/db';
 
 const CollapsibleFooterSection = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,6 +58,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
+        const { getSettings } = await import('../services/db');
         const data = await getSettings();
         setSettings(data);
       } catch (err) {

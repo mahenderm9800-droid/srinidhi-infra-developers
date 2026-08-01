@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../router';
 import { BookOpen, User, Calendar, ArrowRight } from 'lucide-react';
 import { getPosts, slugifyTitle } from '../services/db';
 import PageHero from '../components/PageHero';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from '../router';
 import { 
   MapPin, Tag, CheckCircle2, ChevronRight, FileDown, 
   Send, Phone, HelpCircle, Layers, Calendar, DollarSign

@@ -21,7 +21,3 @@ Disallow: /*.json$
 
 # Sitemaps & LLM Context
 Sitemap: https://srinidhiinfradevelopers.com/sitemap.xml
-Sitemap: https://srinidhiinfradevelopers.com/llms.txt
-
-# Crawl delay (polite crawling for search engines)
-Crawl-delay: 5

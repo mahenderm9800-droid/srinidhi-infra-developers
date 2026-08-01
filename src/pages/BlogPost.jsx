@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from '../router';
 import { Calendar, User, ArrowLeft, ArrowRight, Clock, Share2, HelpCircle, CheckCircle2, ChevronDown, Tag } from 'lucide-react';
 import { getPostById, getPosts, slugifyTitle } from '../services/db';
 

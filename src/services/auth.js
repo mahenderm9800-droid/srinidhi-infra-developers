@@ -5,23 +5,7 @@ import {
   onAuthStateChanged as fbOnAuthStateChanged 
 } from 'firebase/auth';
 
-const OFFLINE_ADMIN = {
-  email: "admin@srinidhiinfradevelopers.com",
-  uid: "offline-admin-uid",
-  role: "admin"
-};
-
-// Custom listener list for mock auth
 let mockListeners = [];
-let currentMockUser = null;
-
-// Initialize mock user from localStorage if it exists
-if (!isFirebaseAvailable) {
-  const storedUser = localStorage.getItem('srinidhi_admin_user');
-  if (storedUser) {
-    currentMockUser = JSON.parse(storedUser);
-  }
-}
 
 export const login = async (email, password) => {
   if (isFirebaseAvailable) {
@@ -34,20 +18,9 @@ export const login = async (email, password) => {
     }
   }
 
-  // Mock Authentication Flow (offline/dev mode only)
-  const MOCK_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
-  if (!MOCK_PASSWORD) {
-    throw new Error("auth/mock-auth-disabled: VITE_ADMIN_PASSWORD environment variable is not set.");
-  }
-  if ((email === OFFLINE_ADMIN.email || email === "admin@srinidhi.com") && password === MOCK_PASSWORD) {
-    currentMockUser = OFFLINE_ADMIN;
-    localStorage.setItem('srinidhi_admin_user', JSON.stringify(OFFLINE_ADMIN));
-    // Trigger listeners
-    mockListeners.forEach(listener => listener(OFFLINE_ADMIN));
-    return OFFLINE_ADMIN;
-  } else {
-    throw new Error("auth/invalid-credential");
-  }
+  // Never emulate privileged authentication in browser code. VITE_* values are
+  // public after bundling and cannot safely protect an administrator account.
+  throw new Error("auth/service-unavailable: Firebase authentication is not configured.");
 };
 
 export const logout = async () => {
@@ -61,8 +34,6 @@ export const logout = async () => {
     }
   }
 
-  currentMockUser = null;
-  localStorage.removeItem('srinidhi_admin_user');
   mockListeners.forEach(listener => listener(null));
 };
 
@@ -74,7 +45,7 @@ export const onAuthStateChanged = (callback) => {
   // Mock Auth State Changed
   mockListeners.push(callback);
   // Call immediately with current state
-  callback(currentMockUser);
+  callback(null);
 
   // Return unsubscribe function
   return () => {
