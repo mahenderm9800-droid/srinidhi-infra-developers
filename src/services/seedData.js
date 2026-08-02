@@ -413,8 +413,8 @@ export const seedLeadership = [
   {
     id: "lead-3",
     name: "M. Laxman",
-    role: "Partner",
-    bio: "Partner at Srinidhi Infra Developers, contributing to project coordination, execution standards, and reliable delivery.",
+    role: "",
+    bio: "Contributing to project coordination, execution standards, and reliable delivery at Srinidhi Infra Developers.",
     photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300&q=80"
   }
 ];

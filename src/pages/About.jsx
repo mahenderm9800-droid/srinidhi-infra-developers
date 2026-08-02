@@ -233,9 +233,11 @@ const About = () => {
                 </div>
                 <div className="flex-grow relative z-10">
                   <h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 leading-snug">{leader.name}</h3>
-                  <span className="text-[10px] sm:text-xs text-amber-700 font-bold uppercase tracking-wider block mt-1 mb-3">
-                    {leader.role}
-                  </span>
+                  {leader.role && (
+                    <span className="text-[10px] sm:text-xs text-amber-700 font-bold uppercase tracking-wider block mt-1 mb-3">
+                      {leader.role}
+                    </span>
+                  )}
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
                     {leader.bio}
                   </p>
