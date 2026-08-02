@@ -399,22 +399,22 @@ export const seedLeadership = [
   {
     id: "lead-1",
     name: "M. Mahender",
-    role: "Founder",
-    bio: "Founder of Srinidhi Infra Developers, leading the company with a commitment to dependable construction, transparent service, and lasting value.",
+    role: "Founder & Managing Director",
+    bio: "Founder and Managing Director of Srinidhi Infra Developers, leading the company with a commitment to dependable construction, transparent service, and lasting value.",
     photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300&q=80"
   },
   {
     id: "lead-2",
     name: "M. Aparna",
-    role: "Co-Founder",
-    bio: "Co-Founder of Srinidhi Infra Developers, supporting business operations, customer relationships, and the company's quality-focused growth.",
+    role: "Executive Director",
+    bio: "Executive Director at Srinidhi Infra Developers, supporting business operations, customer relationships, and the company's quality-focused growth.",
     photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&h=300&q=80"
   },
   {
     id: "lead-3",
     name: "M. Laxman",
-    role: "",
-    bio: "Contributing to project coordination, execution standards, and reliable delivery at Srinidhi Infra Developers.",
+    role: "Team Head",
+    bio: "Team Head at Srinidhi Infra Developers, contributing to project coordination, execution standards, and reliable delivery.",
     photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300&q=80"
   }
 ];
